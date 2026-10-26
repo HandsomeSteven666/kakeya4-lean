@@ -1,0 +1,4739 @@
+{
+  "version": 1,
+  "updated": "2026-10-26",
+  "source": "Manuscript statement and module classification.",
+  "legend": {
+    "zones": {
+      "foundation": "General definitions and reusable tools",
+      "construction": "Geometric and probabilistic constructions",
+      "hard": "Analytic and geometric input theorems",
+      "index": "Generated manuscript statement index",
+      "audit": "Axiom audit",
+      "root": "Library entry"
+    },
+    "status": {
+      "proved": "陈述真实、证明完整、#print axioms 仅三条标准公理",
+      "stated": "真实 Prop，无 sorry，但未证明",
+      "unformalized": "当前仍是 def ... : Prop := by sorry 占位符（陈述本身未形式化）",
+      "pending": "尚未开工",
+      "opaque": "def := by sorry，陈述未形式化"
+    },
+    "owners": {
+      "ai": "AI 主攻",
+      "human": "人工主攻（AI 准备接口/档案）"
+    }
+  },
+  "counts": {
+    "statements": 80,
+    "foundation": 2,
+    "construction": 77,
+    "hard": 1,
+    "hard_workitems": 5,
+    "foundation_workitems": 7,
+    "construction_workitems": 1,
+    "external_inputs": 9
+  },
+  "statements": [
+    {
+      "id": "thm:main",
+      "section": "01",
+      "env": "theorem",
+      "title": "",
+      "zone": "construction",
+      "zone_proof_architect": "H",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "全稿出口；证明=§2–§9 全部，无独立文献",
+      "manuscript": "L8-15",
+      "lean": "Kakeya4.Sec01.thm_main_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "def:exact-problem",
+      "section": "02",
+      "env": "definition",
+      "title": "Exact problems",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "模型本体（N0序列+worlds+两版本），编码大但无证明",
+      "manuscript": "L29-86",
+      "lean": "Kakeya4.Sec02.def_exact_problem_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:tempered",
+      "section": "02",
+      "env": "definition",
+      "title": "Tempered data",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "需半代数谓词+分片常密度+多项式界，纯编码",
+      "manuscript": "L93-116",
+      "lean": "Kakeya4.Sec02.a01_tempered_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:density-operations",
+      "section": "02",
+      "env": "lemma",
+      "title": "Restriction, refinement, and caps",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "低",
+      "proof_lines_tex": 20,
+      "cref_indegree": 7,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "限制/细化密度的初等测度估计",
+      "manuscript": "L155-176",
+      "lean": "Kakeya4.Sec02.a01_density_operations_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a01:flattening",
+      "section": "02",
+      "env": "lemma",
+      "title": "Joint base flattening",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 31,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "部分",
+      "reason": "网格平均 TV 估计；陈述耦合 tempered",
+      "manuscript": "L208-216",
+      "lean": "Kakeya4.Sec02.a01_flattening_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a01:homogenization",
+      "section": "02",
+      "env": "lemma",
+      "title": "Homogenization",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 50,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "子列对角+轮廓 Lipschitz；模型序列语义",
+      "manuscript": "L256-265",
+      "lean": "Kakeya4.Sec02.a01_homogenization_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:cap-class",
+      "section": "02",
+      "env": "definition",
+      "title": "The cap class",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": null,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "C(d) 定义（端点帽+角帽）",
+      "manuscript": "L333-348",
+      "lean": "Kakeya4.Sec02.a01_cap_class_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:angular-coarsening",
+      "section": "02",
+      "env": "lemma",
+      "title": "Angular caps under coarsening",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 22,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "条件概率角帽；初等但依赖 cap 编码",
+      "manuscript": "L350-364",
+      "lean": "Kakeya4.Sec02.a01_angular_coarsening_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "def:true-chart",
+      "section": "02",
+      "env": "definition",
+      "title": "Charts, true packets, and known atlases",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "chart/packet/true floor/known atlas 大定义",
+      "manuscript": "L397-454",
+      "lean": "Kakeya4.Sec02.def_true_chart_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:quadratic-sublevel",
+      "section": "02",
+      "env": "lemma",
+      "title": "Quadratic sublevel sets",
+      "zone": "foundation",
+      "zone_proof_architect": "F",
+      "difficulty": "低",
+      "proof_lines_tex": 8,
+      "cref_indegree": 5,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "已证：长度界+MVT+网格计数",
+      "manuscript": "L470-480",
+      "lean": "Kakeya4.Sec02.lem_quadratic_sublevel_statement",
+      "owner": "ai",
+      "status": "proved"
+    },
+    {
+      "id": "a01:saturation",
+      "section": "02",
+      "env": "lemma",
+      "title": "Saturation and label knowledge",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 45,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "删除+quadratic-sublevel+Markov",
+      "manuscript": "L497-507",
+      "lean": "Kakeya4.Sec02.a01_saturation_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:witness-budgets",
+      "section": "02",
+      "env": "lemma",
+      "title": "Restoring current floors and charging witnesses",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 34,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "单调删除+预算；抽象版见 08 a07:simultaneous-floors",
+      "manuscript": "L560-591",
+      "lean": "Kakeya4.Sec02.a01_witness_budgets_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a01:largest-axis",
+      "section": "02",
+      "env": "lemma",
+      "title": "Fullness of the largest spatial scale",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 17,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "用角帽排除 D_c 远小于 q",
+      "manuscript": "L628-637",
+      "lean": "Kakeya4.Sec02.a01_largest_axis_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:normalization",
+      "section": "02",
+      "env": "lemma",
+      "title": "Chart normalization and lifting",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 146,
+      "cref_indegree": 11,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "归一化/提升+精确密度变换；入度最高的 §2 枢纽",
+      "manuscript": "L666-692",
+      "lean": "Kakeya4.Sec02.lem_normalization_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "def:horizon",
+      "section": "02",
+      "env": "definition",
+      "title": "Minimum horizon",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": null,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "H(E) 定义（inf over 子列+选择）",
+      "manuscript": "L860-868",
+      "lean": "Kakeya4.Sec02.def_horizon_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:weighted-planks",
+      "section": "02",
+      "env": "lemma",
+      "title": "Weighted full-time plank estimate",
+      "zone": "construction",
+      "zone_proof_architect": "H",
+      "difficulty": "高",
+      "proof_lines_tex": 9,
+      "cref_indegree": 5,
+      "deps": [
+        "X-WP"
+      ],
+      "independent_literature": "有(未评审3D稿)",
+      "reason": "纯引用 3D 稿 Lemma；见 §3",
+      "manuscript": "L885-926",
+      "lean": "Kakeya4.Sec02.lem_weighted_planks_statement",
+      "owner": "ai",
+      "status": "stated"
+    },
+    {
+      "id": "a01:horizon-bound",
+      "section": "02",
+      "env": "proposition",
+      "title": "Initial horizon bound",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 185,
+      "cref_indegree": 1,
+      "deps": [
+        "X-WP"
+      ],
+      "independent_literature": "无",
+      "reason": "185 行贪心 plank 构造（用 WP）",
+      "manuscript": "L968-970",
+      "lean": "Kakeya4.Sec02.a01_horizon_bound_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "thm:model-reduction",
+      "section": "02",
+      "env": "theorem",
+      "title": "Reduction to a bad weighted problem",
+      "zone": "construction",
+      "zone_proof_architect": "H",
+      "difficulty": "高",
+      "proof_lines_tex": 477,
+      "cref_indegree": 2,
+      "deps": [
+        "X-WP",
+        "X-BPR"
+      ],
+      "independent_literature": "部分",
+      "reason": "477 行；外测度选择+半代数选择+面积公式",
+      "manuscript": "L1160-1168",
+      "lean": "Kakeya4.Sec02.thm_model_reduction_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:algebraic-norm",
+      "section": "03",
+      "env": "lemma",
+      "title": "Algebraic analytic norm comparison",
+      "zone": "foundation",
+      "zone_proof_architect": "F",
+      "difficulty": "高",
+      "proof_lines_tex": 86,
+      "cref_indegree": 21,
+      "deps": [
+        "X-BPR"
+      ],
+      "independent_literature": "有",
+      "reason": "Bernstein–Remez 型；BPR 参数一致界；全稿入度第一",
+      "manuscript": "L43-71",
+      "lean": "Kakeya4.Sec03.lem_algebraic_norm_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a02:algebraic-path",
+      "section": "03",
+      "env": "lemma",
+      "title": "Polynomial cost of continuation",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 53,
+      "cref_indegree": 4,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "代数叶延拓的多项式代价；通用",
+      "manuscript": "L183-202",
+      "lean": "Kakeya4.Sec03.a02_algebraic_path_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "lem:two-color-matching",
+      "section": "03",
+      "env": "lemma",
+      "title": "Two-color matching",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "高",
+      "proof_lines_tex": 471,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "471 行；双色列表不可能性；通用",
+      "manuscript": "L278-304",
+      "lean": "Kakeya4.Sec03.lem_two_color_matching_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a02:local-graph-matching",
+      "section": "03",
+      "env": "corollary",
+      "title": "Local matching of scalar graphs",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 28,
+      "cref_indegree": 11,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "由两色匹配+范数比较导出；hub",
+      "manuscript": "L779-803",
+      "lean": "Kakeya4.Sec03.a02_local_graph_matching_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "lem:terminal-extension",
+      "section": "03",
+      "env": "lemma",
+      "title": "Terminal time extension",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "约 910 行散文证明；§3 收口",
+      "manuscript": "L846-867",
+      "lean": "Kakeya4.Sec03.lem_terminal_extension_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:composition",
+      "section": "04",
+      "env": "lemma",
+      "title": "Composition of horizon costs",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 26,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "地平线成本可加",
+      "manuscript": "L32-48",
+      "lean": "Kakeya4.Sec04.a03_composition_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:positive-rate",
+      "section": "04",
+      "env": "lemma",
+      "title": "A positive critical time rate",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 17,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "k>0 由 terminal-extension 反推",
+      "manuscript": "L76-78",
+      "lean": "Kakeya4.Sec04.a03_positive_rate_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:critical-path",
+      "section": "04",
+      "env": "proposition",
+      "title": "Critical paths",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 140,
+      "cref_indegree": 9,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "三道极值化+线性轮廓",
+      "manuscript": "L121-152",
+      "lean": "Kakeya4.Sec04.prop_critical_path_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:zero-depth",
+      "section": "04",
+      "env": "corollary",
+      "title": "Depth-zero normalization and vanishing-depth nodes",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 23,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "深度 0 归一化不损失极值性",
+      "manuscript": "L294-306",
+      "lean": "Kakeya4.Sec04.a03_zero_depth_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:excluded-improvements",
+      "section": "04",
+      "env": "lemma",
+      "title": "Excluded improvements",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 8,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "两类禁止输出的规格",
+      "manuscript": "L331-341",
+      "lean": "Kakeya4.Sec04.a03_excluded_improvements_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:finite-guard",
+      "section": "04",
+      "env": "lemma",
+      "title": "The finite-sample exclusion",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 15,
+      "cref_indegree": 4,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "有限复杂度下把禁止输出变成有限条件",
+      "manuscript": "L383-400",
+      "lean": "Kakeya4.Sec04.a03_finite_guard_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:tangent-palette",
+      "section": "04",
+      "env": "proposition",
+      "title": "Prepared tangent data",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 312,
+      "cref_indegree": 7,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "312 行；切向 law 的预备",
+      "manuscript": "L485-535",
+      "lean": "Kakeya4.Sec04.prop_tangent_palette_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:finite-state-conditioning",
+      "section": "04",
+      "env": "lemma",
+      "title": "Likelihood truncation and finite-state conditioning",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 77,
+      "cref_indegree": 4,
+      "deps": [
+        "X-CT"
+      ],
+      "independent_literature": "有",
+      "reason": "KL 熵截断→联合次测度；通用信息论",
+      "manuscript": "L858-899",
+      "lean": "Kakeya4.Sec04.a03_finite_state_conditioning_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a03:time-slice",
+      "section": "04",
+      "env": "lemma",
+      "title": "Retained duration and fixed-time prior caps",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "低",
+      "proof_lines_tex": 12,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "dyadic 时间片+条件上界；初等",
+      "manuscript": "L994-1016",
+      "lean": "Kakeya4.Sec04.a03_time_slice_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a03:candidates",
+      "section": "04",
+      "env": "definition",
+      "title": "Improvement candidates",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": null,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "改进候选定义（time/strip candidate）",
+      "manuscript": "L1058-1091",
+      "lean": "Kakeya4.Sec04.a03_candidates_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:candidate-upgrade",
+      "section": "04",
+      "env": "proposition",
+      "title": "Conversion of candidates to actual improvements",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 8,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "约 605 行散文；候选→已知 atlas",
+      "manuscript": "L1104-1122",
+      "lean": "Kakeya4.Sec04.prop_candidate_upgrade_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:actual-lists",
+      "section": "04",
+      "env": "lemma",
+      "title": "Original-law recovery of finite lists",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 77,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "原 law 中恢复有限列表",
+      "manuscript": "L1132-1166",
+      "lean": "Kakeya4.Sec04.a03_actual_lists_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a03:breadth",
+      "section": "04",
+      "env": "corollary",
+      "title": "Breadth before sparse selections",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 36,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "ℓ=0 时速度不集中",
+      "manuscript": "L1741-1757",
+      "lean": "Kakeya4.Sec04.a03_breadth_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:scalar-clustering",
+      "section": "05",
+      "env": "lemma",
+      "title": "Scalar coefficient clustering",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 66,
+      "cref_indegree": 3,
+      "deps": [
+        "X-WP"
+      ],
+      "independent_literature": "无",
+      "reason": "由 WP 得系数聚集（05:78）",
+      "manuscript": "L38-57",
+      "lean": "Kakeya4.Sec05.lem_scalar_clustering_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a04:scalar-data",
+      "section": "05",
+      "env": "definition",
+      "title": "Scalar-normal data",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "scalar-normal 数据定义（多重帽）",
+      "manuscript": "L133-178",
+      "lean": "Kakeya4.Sec05.a04_scalar_data_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a04:dense-entropy",
+      "section": "05",
+      "env": "lemma",
+      "title": "Entropy on a dense tested event",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 77,
+      "cref_indegree": 4,
+      "deps": [
+        "X-CT"
+      ],
+      "independent_literature": "有",
+      "reason": "稠密事件上的熵恒等式；需熵 API",
+      "manuscript": "L203-225",
+      "lean": "Kakeya4.Sec05.a04_dense_entropy_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "prop:scalar-normal",
+      "section": "05",
+      "env": "proposition",
+      "title": "Scalar-normal first jet",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 5,
+      "deps": [
+        "X-WZ"
+      ],
+      "independent_literature": "无",
+      "reason": "首 jet 拟合；用 a04:planar-input",
+      "manuscript": "L324-348",
+      "lean": "Kakeya4.Sec05.prop_scalar_normal_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a04:planar-input",
+      "section": "05",
+      "env": "theorem",
+      "title": "Planar dot-product alternative",
+      "zone": "hard",
+      "zone_proof_architect": "H",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 1,
+      "deps": [
+        "X-WZ"
+      ],
+      "independent_literature": "有(评审)",
+      "reason": "WZ 稿 §8 定理 5.2+Def 4.2 的黑盒改写",
+      "manuscript": "L367-394",
+      "lean": "Kakeya4.Sec05.a04_planar_input_statement",
+      "owner": "human",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:higher-jets",
+      "section": "05",
+      "env": "proposition",
+      "title": "Higher-jet polynomial fitting",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 297,
+      "cref_indegree": 5,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "297 行；高阶 jet 拟合",
+      "manuscript": "L828-843",
+      "lean": "Kakeya4.Sec05.prop_higher_jets_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "thm:isotropic-improvement",
+      "section": "06",
+      "env": "theorem",
+      "title": "Isotropic improvement",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 4,
+      "deps": [
+        "X-CV"
+      ],
+      "independent_literature": "无",
+      "reason": "各向同性 regime 主引理",
+      "manuscript": "L15-39",
+      "lean": "Kakeya4.Sec06.thm_isotropic_improvement_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a05:velocity-graph",
+      "section": "06",
+      "env": "proposition",
+      "title": "Physical velocity graph",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 89,
+      "cref_indegree": 3,
+      "deps": [
+        "X-CV"
+      ],
+      "independent_literature": "无",
+      "reason": "89 行；速度图+粗列表",
+      "manuscript": "L355-366",
+      "lean": "Kakeya4.Sec06.a05_velocity_graph_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a05:qualification",
+      "section": "06",
+      "env": "proposition",
+      "title": "Polynomial qualification",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": null,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "多项式资格（失败集 e_N→0）",
+      "manuscript": "L464-477",
+      "lean": "Kakeya4.Sec06.a05_qualification_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a05:common-local-choice",
+      "section": "06",
+      "env": "lemma",
+      "title": "A common choice from local lists",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 28,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "局部列表→共同选择的组合引理",
+      "manuscript": "L486-514",
+      "lean": "Kakeya4.Sec06.a05_common_local_choice_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a05:conservativity",
+      "section": "06",
+      "env": "proposition",
+      "title": "Conservativity of the interpolated field",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 147,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "147 行；开关线路迫使近似保守",
+      "manuscript": "L1113-1120",
+      "lean": "Kakeya4.Sec06.a05_conservativity_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:tensor-kernels",
+      "section": "06",
+      "env": "lemma",
+      "title": "Seven-direction tensor tests",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 94,
+      "cref_indegree": 4,
+      "deps": [],
+      "independent_literature": "有",
+      "reason": "七方向张量核的线性代数",
+      "manuscript": "L1384-1415",
+      "lean": "Kakeya4.Sec06.lem_tensor_kernels_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "a05:real-conic",
+      "section": "06",
+      "env": "lemma",
+      "title": "Restoration of an approximate real conic",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 36,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "部分",
+      "reason": "近似实二次曲面恢复（定量代数几何）",
+      "manuscript": "L1512-1529",
+      "lean": "Kakeya4.Sec06.a05_real_conic_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "prop:degree-restoration",
+      "section": "06",
+      "env": "proposition",
+      "title": "Degree restoration",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 315,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "315 行；把高阶项塞进隐藏坐标",
+      "manuscript": "L1570-1575",
+      "lean": "Kakeya4.Sec06.prop_degree_restoration_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a05:scalar-zero-horizon",
+      "section": "06",
+      "env": "corollary",
+      "title": "Zero horizon in the scalar model",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 7,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "v1 排除；供投影用",
+      "manuscript": "L1916-1921",
+      "lean": "Kakeya4.Sec06.a05_scalar_zero_horizon_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "re:graph-bsg",
+      "section": "06a",
+      "env": "lemma",
+      "title": "Three paths retain graph edges",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "中",
+      "proof_lines_tex": 49,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "有",
+      "reason": "稿内有 49 行证明；SSV/Tao–Vu 方法",
+      "manuscript": "L35-47",
+      "lean": "Kakeya4.Sec06a.re_graph_bsg_statement",
+      "owner": "ai",
+      "status": "stated",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "re:common-sets",
+      "section": "06a",
+      "env": "lemma",
+      "title": "A common pair and scalar closure",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 110,
+      "cref_indegree": 4,
+      "deps": [],
+      "independent_literature": "部分",
+      "reason": "110 行；Ruzsa/Plünnecke 覆盖数形式",
+      "manuscript": "L170-186",
+      "lean": "Kakeya4.Sec06a.re_common_sets_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "re:flat-coefficients",
+      "section": "06a",
+      "env": "lemma",
+      "title": "Flat generated coefficients",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 44,
+      "cref_indegree": 2,
+      "deps": [
+        "X-ODSS"
+      ],
+      "independent_literature": "无",
+      "reason": "用 OdSS Thm 1.5 造平坦系数",
+      "manuscript": "L330-346",
+      "lean": "Kakeya4.Sec06a.re_flat_coefficients_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "re:parallel-strips",
+      "section": "06a",
+      "env": "lemma",
+      "title": "Weighted parallel strips",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 99,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "99 行；碰撞概率→平行条带",
+      "manuscript": "L394-404",
+      "lean": "Kakeya4.Sec06a.re_parallel_strips_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "re:retained-edge-rigidity",
+      "section": "06a",
+      "env": "proposition",
+      "title": "Retained-edge planar rigidity",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 18,
+      "cref_indegree": 2,
+      "deps": [
+        "X-ODSS"
+      ],
+      "independent_literature": "无",
+      "reason": "汇总为平面刚性（18 行证明）",
+      "manuscript": "L505-516",
+      "lean": "Kakeya4.Sec06a.re_retained_edge_rigidity_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a06:row-fit",
+      "section": "06a",
+      "env": "lemma",
+      "title": "Affine--skew row fit",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 160,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "160 行；仿射-斜行拟合（用于 07/08）",
+      "manuscript": "L545-568",
+      "lean": "Kakeya4.Sec06a.a06_row_fit_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "thm:scalar-mesh-projection",
+      "section": "07",
+      "env": "theorem",
+      "title": "Scalar mesh projection",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 209,
+      "cref_indegree": 6,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "209 行；标量网格投影",
+      "manuscript": "L45-86",
+      "lean": "Kakeya4.Sec07.thm_scalar_mesh_projection_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a06:projected-comparison",
+      "section": "07",
+      "env": "lemma",
+      "title": "Comparison on common stable domains",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 113,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "113 行；公共稳定域比较",
+      "manuscript": "L427-436",
+      "lean": "Kakeya4.Sec07.a06_projected_comparison_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:wide-interval",
+      "section": "07",
+      "env": "proposition",
+      "title": "Wide-interval improvement",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 329,
+      "cref_indegree": 7,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "329 行；宽区间改进",
+      "manuscript": "L553-589",
+      "lean": "Kakeya4.Sec07.prop_wide_interval_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:horizontal-model",
+      "section": "07",
+      "env": "proposition",
+      "title": "Reduction to the horizontal model",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 137,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "137 行；水平模型约化",
+      "manuscript": "L927-937",
+      "lean": "Kakeya4.Sec07.prop_horizontal_model_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a06:horizontal-affine-approximation",
+      "section": "07",
+      "env": "lemma",
+      "title": "Affine approximation of the hidden sheets",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 146,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "146 行；隐藏叶的仿射逼近",
+      "manuscript": "L1085-1092",
+      "lean": "Kakeya4.Sec07.a06_horizontal_affine_approximation_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "lem:horizontal-affine",
+      "section": "07",
+      "env": "lemma",
+      "title": "Residual normalization and fine-state bounds",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 59,
+      "cref_indegree": 4,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "残差归一化+细状态界",
+      "manuscript": "L1240-1270",
+      "lean": "Kakeya4.Sec07.lem_horizontal_affine_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a06:nested-affine-slopes",
+      "section": "07",
+      "env": "lemma",
+      "title": "Slopes of nested affine fits",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 45,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "嵌套仿射拟合斜率",
+      "manuscript": "L1346-1361",
+      "lean": "Kakeya4.Sec07.a06_nested_affine_slopes_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a06:horizontal-coefficient-count",
+      "section": "07",
+      "env": "lemma",
+      "title": "Horizontal coefficient count",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 110,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "110 行；水平系数计数",
+      "manuscript": "L1428-1443",
+      "lean": "Kakeya4.Sec07.a06_horizontal_coefficient_count_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a07:simultaneous-floors",
+      "section": "08",
+      "env": "lemma",
+      "title": "Simultaneous marginal floors",
+      "zone": "construction",
+      "zone_proof_architect": "F",
+      "difficulty": "低",
+      "proof_lines_tex": 11,
+      "cref_indegree": 5,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "抽象删除/同时下界引理",
+      "manuscript": "L50-60",
+      "lean": "Kakeya4.Sec08.a07_simultaneous_floors_statement",
+      "owner": "ai",
+      "status": "unformalized",
+      "workflow_note": "proof-architect 从数学可复用性判 FOUNDATION；按工作区口径（手稿专用/陈述未就绪/依赖 §2 模型）归构造区。保留 zone_proof_architect 字段备查。"
+    },
+    {
+      "id": "prop:critical-rate",
+      "section": "08",
+      "env": "proposition",
+      "title": "Critical-rate improvement",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 238,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "238 行；2k=1 情形",
+      "manuscript": "L76-90",
+      "lean": "Kakeya4.Sec08.prop_critical_rate_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a07:bootstrap-property",
+      "section": "08",
+      "env": "definition",
+      "title": "Full-time parameter estimates",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "G(u) 归纳性质定义",
+      "manuscript": "L338-365",
+      "lean": "Kakeya4.Sec08.a07_bootstrap_property_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a07:full-time-comparison",
+      "section": "08",
+      "env": "lemma",
+      "title": "Comparison with full-time predictors",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 43,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "43 行；与全时预测子比较",
+      "manuscript": "L367-396",
+      "lean": "Kakeya4.Sec08.a07_full_time_comparison_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:bootstrap",
+      "section": "08",
+      "env": "proposition",
+      "title": "Parameter bootstrap below the critical rate",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 355,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "355 行；自举到临界参数尺度",
+      "manuscript": "L442-450",
+      "lean": "Kakeya4.Sec08.prop_bootstrap_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:offcritical-wide",
+      "section": "08",
+      "env": "proposition",
+      "title": "Return to wide intervals",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 277,
+      "cref_indegree": 2,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "277 行；回到宽区间",
+      "manuscript": "L810-819",
+      "lean": "Kakeya4.Sec08.prop_offcritical_wide_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:unbounded-improvement",
+      "section": "09",
+      "env": "proposition",
+      "title": "Exclusion of unbounded optimized narrowness",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": null,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "§9 全节约 1190 行是其证明",
+      "manuscript": "L9-13",
+      "lean": "Kakeya4.Sec09.prop_unbounded_improvement_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "prop:full-time-localization",
+      "section": "09",
+      "env": "proposition",
+      "title": "Full-time localization",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 102,
+      "cref_indegree": 1,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "102 行；全时定位",
+      "manuscript": "L142-162",
+      "lean": "Kakeya4.Sec09.prop_full_time_localization_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a08:balanced-packets",
+      "section": "09",
+      "env": "lemma",
+      "title": "Normalization and relative density cancellation",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "高",
+      "proof_lines_tex": 129,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "129 行；归一化+相对密度抵消",
+      "manuscript": "L275-304",
+      "lean": "Kakeya4.Sec09.a08_balanced_packets_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a08:earlier-graphs",
+      "section": "09",
+      "env": "lemma",
+      "title": "Graph descriptions on the earlier charts",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 108,
+      "cref_indegree": 3,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "108 行；早期 chart 上的图描述",
+      "manuscript": "L548-577",
+      "lean": "Kakeya4.Sec09.a08_earlier_graphs_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "a08:projected-bounds",
+      "section": "09",
+      "env": "lemma",
+      "title": "Projected cap and support bounds",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "中",
+      "proof_lines_tex": 131,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "无",
+      "reason": "131 行；投影帽与支撑界",
+      "manuscript": "L733-750",
+      "lean": "Kakeya4.Sec09.a08_projected_bounds_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "cor:general-directions-four",
+      "section": "10",
+      "env": "corollary",
+      "title": "General direction-set bound",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "低",
+      "proof_lines_tex": 8,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "有(KM)",
+      "reason": "主定理+KM Thm1.4；不独立于主定理",
+      "manuscript": "L43-51",
+      "lean": "Kakeya4.Sec10.cor_general_directions_four_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "cor:nikodym-four",
+      "section": "10",
+      "env": "corollary",
+      "title": "Four-dimensional Nikodym dimension",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "低",
+      "proof_lines_tex": 10,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "有(GLX)",
+      "reason": "主定理+GLX Thm1.5；GLX 已出版",
+      "manuscript": "L105-110",
+      "lean": "Kakeya4.Sec10.cor_nikodym_four_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "cor:curved-kakeya-four",
+      "section": "10",
+      "env": "corollary",
+      "title": "Fixed-chart curved Kakeya dimension",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "低",
+      "proof_lines_tex": 64,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "有(GLX)",
+      "reason": "主定理+GLX 1.12/4.2+局部微分同胚",
+      "manuscript": "L184-193",
+      "lean": "Kakeya4.Sec10.cor_curved_kakeya_four_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    },
+    {
+      "id": "cor:quadratic-curved-three",
+      "section": "10",
+      "env": "corollary",
+      "title": "Rank-one quadratic curved Kakeya sets",
+      "zone": "construction",
+      "zone_proof_architect": "C",
+      "difficulty": "低",
+      "proof_lines_tex": 51,
+      "cref_indegree": 0,
+      "deps": [],
+      "independent_literature": "有(Nadj)",
+      "reason": "依赖 4D 主定理（非 3D）+Nadj Thm1.3",
+      "manuscript": "L280-290",
+      "lean": "Kakeya4.Sec10.cor_quadratic_curved_three_statement",
+      "owner": "ai",
+      "status": "unformalized"
+    }
+  ],
+  "extras": [
+    {
+      "id": "re:graph-data",
+      "section": "06a",
+      "env": "assumption",
+      "zone": "construction",
+      "owner": "ai",
+      "status": "pending"
+    },
+    {
+      "id": "a06:summable-pruning",
+      "section": "07",
+      "env": "remark",
+      "zone": "construction",
+      "owner": "ai",
+      "status": "pending"
+    },
+    {
+      "id": "sec10:packing-minkowski",
+      "section": "10",
+      "env": "prose-consequence",
+      "zone": "construction",
+      "owner": "ai",
+      "status": "pending"
+    },
+    {
+      "id": "sec10:orthogonal-projection",
+      "section": "10",
+      "env": "prose-consequence",
+      "zone": "construction",
+      "owner": "ai",
+      "status": "pending"
+    }
+  ],
+  "hard_workitems": [
+    {
+      "id": "H-002",
+      "title": "Carbery–Valdimarsson 行列式多线性 Kakeya 的陈述与证明",
+      "kind": "external-proof",
+      "owner": "ai",
+      "status": "proved",
+      "blocks": [
+        "thm:isotropic-improvement",
+        "a05:velocity-graph"
+      ],
+      "external_inputs": [
+        "X-CV"
+      ],
+      "finite_stage": {
+        "id": "D-010",
+        "status": "proved",
+        "entry": "Kakeya4.Hard.MultilinearKakeya.manuscriptBound",
+        "range": "2<=n<=4 (actual proof all n>=2)",
+        "general_line_measures": false,
+        "main_chain_integrated": false,
+        "review": "Kakeya4/Hard/Tasks/H-002/FINITE_ENDPOINT_REVIEW.md",
+        "audit": ".workbuddy/inspect/h002-finite-endpoint-audit.json"
+      },
+      "general_measure_stage": {
+        "id": "D-011",
+        "status": "proved",
+        "entry": "Kakeya4.Hard.finite_and_measure_determinantKakeya",
+        "external_proof": "Kakeya4.determinantMultilinearKakeya_proof",
+        "review": "Kakeya4/Hard/Tasks/H-002/LINE_MEASURE_COMPLETION_AUDIT.md",
+        "audit": ".workbuddy/inspect/d011-finite-line-laws-audit.json"
+      }
+    },
+    {
+      "id": "H-003",
+      "title": "Wang–Zahl restricted-triple dot-product 定理",
+      "kind": "external-proof",
+      "owner": "human",
+      "status": "pending",
+      "blocks": [
+        "a04:planar-input",
+        "prop:scalar-normal"
+      ],
+      "external_inputs": [
+        "X-WZ"
+      ]
+    },
+    {
+      "id": "H-004",
+      "title": "Orponen–de Saxcé–Shmerkin 乘性卷积 Fourier 衰减",
+      "kind": "external-proof",
+      "owner": "ai",
+      "status": "active",
+      "blocks": [
+        "re:flat-coefficients",
+        "re:retained-edge-rigidity"
+      ],
+      "external_inputs": [
+        "X-ODSS"
+      ],
+      "stage": "D-012"
+    },
+    {
+      "id": "H-005",
+      "title": "Basu–Pollack–Roy 实代数几何（参数一致 QE、C¹ 胞腔分解、半代数选择）",
+      "kind": "tooling",
+      "owner": "human",
+      "status": "pending",
+      "blocks": [
+        "thm:model-reduction"
+      ],
+      "external_inputs": [
+        "X-BPR"
+      ]
+    },
+    {
+      "id": "H-006",
+      "title": "面积公式 / Lipschitz 变量替换与正则纤维一致界",
+      "kind": "tooling",
+      "owner": "human",
+      "status": "pending",
+      "blocks": [
+        "thm:model-reduction"
+      ],
+      "external_inputs": [
+        "X-AREA"
+      ]
+    }
+  ],
+  "external_inputs": [
+    {
+      "id": "X-WP",
+      "title": "Weighted full-time plank estimate（OpenAI 3D 预印本 lem:weighted-set）",
+      "kind": "unreviewed-preprint",
+      "manuscript": "02:885–926",
+      "source": "OpenAI 3D preprint (2026-09-23), build/sections/05-inputs.tex:199–218",
+      "lean": "Kakeya4.Plank.WeightedPlanks",
+      "state": "stated",
+      "hard_workitem": "C-001",
+      "zone": "construction"
+    },
+    {
+      "id": "X-CV",
+      "title": "Carbery–Valdimarsson determinant multilinear Kakeya",
+      "kind": "peer-reviewed",
+      "manuscript": "06:328–353",
+      "source": "JFA 264 (2013) 1643–1663",
+      "lean": "Kakeya4.DeterminantMultilinearKakeya",
+      "state": "proved",
+      "hard_workitem": "H-002",
+      "zone": "hard",
+      "proof": "Kakeya4.determinantMultilinearKakeya_proof"
+    },
+    {
+      "id": "X-WZ",
+      "title": "Wang–Zahl restricted-triple dot-product theorem",
+      "kind": "peer-reviewed",
+      "manuscript": "05:367–401",
+      "source": "JAMS 39 (2026) 515–585; arXiv:2210.09581v2",
+      "lean": "Kakeya4.RestrictedTripleDotProduct",
+      "state": "opaque",
+      "hard_workitem": "H-003",
+      "zone": "hard"
+    },
+    {
+      "id": "X-ODSS",
+      "title": "Orponen–de Saxcé–Shmerkin multiplicative convolution estimate",
+      "kind": "preprint",
+      "manuscript": "06a:310–328",
+      "source": "arXiv:2309.03068v2 (2024-02-27)",
+      "lean": "Kakeya4.MultiplicativeConvolution",
+      "state": "opaque",
+      "hard_workitem": "H-004",
+      "zone": "hard"
+    },
+    {
+      "id": "X-GBS",
+      "title": "Graph Balog–Szemerédi–Gowers",
+      "kind": "peer-reviewed+manuscript-proof",
+      "manuscript": "06a:35–47（证明 48–96）",
+      "source": "SSV Duke 129 (2005); Tao–Vu (2006) Thm 2.29 + Ex. 6.4.10",
+      "lean": "Kakeya4.GraphBalogSzemerediGowers",
+      "state": "proved",
+      "hard_workitem": null,
+      "zone": "construction"
+    },
+    {
+      "id": "X-BPR",
+      "title": "Basu–Pollack–Roy 实代数几何工具",
+      "kind": "textbook",
+      "manuscript": "02:1489–1625、02:1539、03:16–24",
+      "source": "BPR, Algorithms in Real Algebraic Geometry, Springer 2006 (2nd ed)",
+      "lean": null,
+      "state": "unmodeled",
+      "hard_workitem": "H-005",
+      "zone": "hard"
+    },
+    {
+      "id": "X-CT",
+      "title": "Cover–Thomas 有限熵事实",
+      "kind": "textbook",
+      "manuscript": "03:460、04:858–899",
+      "source": "Cover–Thomas (Wiley 2006, 2nd ed) Ch.2",
+      "lean": null,
+      "state": "unmodeled",
+      "hard_workitem": null,
+      "zone": "foundation"
+    },
+    {
+      "id": "X-RT",
+      "title": "Tao–Vu Ruzsa/Plünnecke 覆盖数形式",
+      "kind": "textbook",
+      "manuscript": "06a:140–148",
+      "source": "Tao–Vu, Additive Combinatorics (CUP 2006)",
+      "lean": null,
+      "state": "unmodeled",
+      "hard_workitem": null,
+      "zone": "foundation"
+    },
+    {
+      "id": "X-AREA",
+      "title": "面积公式 / Lipschitz 变量替换",
+      "kind": "standard-gmt",
+      "manuscript": "02:1489–1625",
+      "source": "几何测度论标准工具（Federer 等）",
+      "lean": null,
+      "state": "unmodeled",
+      "hard_workitem": "H-006",
+      "zone": "hard"
+    }
+  ],
+  "modules": [
+    {
+      "path": "Kakeya4/Audit.lean",
+      "module": "Kakeya4.Audit",
+      "zone": "audit",
+      "target": "Kakeya4/Audit.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/BoxGeometry.lean",
+      "module": "Kakeya4.Construction.Combinatorics.BoxGeometry",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/BoxGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/BoxParameterBudget.lean",
+      "module": "Kakeya4.Construction.Combinatorics.BoxParameterBudget",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/BoxParameterBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/BoxParameterNet.lean",
+      "module": "Kakeya4.Construction.Combinatorics.BoxParameterNet",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/BoxParameterNet.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/BoxPerturbation.lean",
+      "module": "Kakeya4.Construction.Combinatorics.BoxPerturbation",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/BoxPerturbation.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/CarrierOverlap.lean",
+      "module": "Kakeya4.Construction.Combinatorics.CarrierOverlap",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/CarrierOverlap.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/CylinderVolume.lean",
+      "module": "Kakeya4.Construction.Combinatorics.CylinderVolume",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/CylinderVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/DisjointUnionMass.lean",
+      "module": "Kakeya4.Construction.Combinatorics.DisjointUnionMass",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/DisjointUnionMass.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/GraphBSG.lean",
+      "module": "Kakeya4.Construction.Combinatorics.GraphBSG",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/GraphBSG.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/GridPhase.lean",
+      "module": "Kakeya4.Construction.Combinatorics.GridPhase",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/GridPhase.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/LineCap.lean",
+      "module": "Kakeya4.Construction.Combinatorics.LineCap",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/LineCap.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/LocalMass.lean",
+      "module": "Kakeya4.Construction.Combinatorics.LocalMass",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/LocalMass.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/PairwiseSelection.lean",
+      "module": "Kakeya4.Construction.Combinatorics.PairwiseSelection",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/PairwiseSelection.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/ParameterNet.lean",
+      "module": "Kakeya4.Construction.Combinatorics.ParameterNet",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/ParameterNet.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/SampledLineCap.lean",
+      "module": "Kakeya4.Construction.Combinatorics.SampledLineCap",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/SampledLineCap.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Combinatorics/TruncatedConvexTest.lean",
+      "module": "Kakeya4.Construction.Combinatorics.TruncatedConvexTest",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Combinatorics/TruncatedConvexTest.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/ChartVolume.lean",
+      "module": "Kakeya4.Construction.Framework.ChartVolume",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/ChartVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/ConcretePrior.lean",
+      "module": "Kakeya4.Construction.Framework.ConcretePrior",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/ConcretePrior.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/CoordinateChange.lean",
+      "module": "Kakeya4.Construction.Framework.CoordinateChange",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/CoordinateChange.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/CoordinateObservationBridge.lean",
+      "module": "Kakeya4.Construction.Framework.CoordinateObservationBridge",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/CoordinateObservationBridge.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/CoordinateSemialgebraicPrior.lean",
+      "module": "Kakeya4.Construction.Framework.CoordinateSemialgebraicPrior",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/CoordinateSemialgebraicPrior.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/ExactSequence.lean",
+      "module": "Kakeya4.Construction.Framework.ExactSequence",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/ExactSequence.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/FiberDensity.lean",
+      "module": "Kakeya4.Construction.Framework.FiberDensity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/FiberDensity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/IncidenceMeasure.lean",
+      "module": "Kakeya4.Construction.Framework.IncidenceMeasure",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/IncidenceMeasure.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/Observation.lean",
+      "module": "Kakeya4.Construction.Framework.Observation",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/Observation.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/ObservationMeasure.lean",
+      "module": "Kakeya4.Construction.Framework.ObservationMeasure",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/ObservationMeasure.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/ObservedCoordinates.lean",
+      "module": "Kakeya4.Construction.Framework.ObservedCoordinates",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/ObservedCoordinates.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/PriorDensity.lean",
+      "module": "Kakeya4.Construction.Framework.PriorDensity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/PriorDensity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/SemialgebraicTests.lean",
+      "module": "Kakeya4.Construction.Framework.SemialgebraicTests",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/SemialgebraicTests.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/TemperedComplexity.lean",
+      "module": "Kakeya4.Construction.Framework.TemperedComplexity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/TemperedComplexity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/TimeShear.lean",
+      "module": "Kakeya4.Construction.Framework.TimeShear",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/TimeShear.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/Trajectory.lean",
+      "module": "Kakeya4.Construction.Framework.Trajectory",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/Trajectory.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/TrajectoryCoordinates.lean",
+      "module": "Kakeya4.Construction.Framework.TrajectoryCoordinates",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/TrajectoryCoordinates.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldCopyObservationBridge.lean",
+      "module": "Kakeya4.Construction.Framework.WorldCopyObservationBridge",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldCopyObservationBridge.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldCopySpatialAggregation.lean",
+      "module": "Kakeya4.Construction.Framework.WorldCopySpatialAggregation",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldCopySpatialAggregation.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldCopyTemperedComplexity.lean",
+      "module": "Kakeya4.Construction.Framework.WorldCopyTemperedComplexity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldCopyTemperedComplexity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldDensity.lean",
+      "module": "Kakeya4.Construction.Framework.WorldDensity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldDensity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldTemperedComplexity.lean",
+      "module": "Kakeya4.Construction.Framework.WorldTemperedComplexity",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldTemperedComplexity.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldTemperedObservationBridge.lean",
+      "module": "Kakeya4.Construction.Framework.WorldTemperedObservationBridge",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldTemperedObservationBridge.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Framework/WorldTemperedSpatialMass.lean",
+      "module": "Kakeya4.Construction.Framework.WorldTemperedSpatialMass",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Framework/WorldTemperedSpatialMass.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/ConvexBody.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.ConvexBody",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/ConvexBody.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/DimensionN/Prism.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.DimensionN.Prism",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/DimensionN/Prism.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/DimensionN/Volume.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.DimensionN.Volume",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/DimensionN/Volume.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Algebra/Submodule.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Algebra.Submodule",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Algebra/Submodule.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/AddTorsor.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Analysis.AddTorsor",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/AddTorsor.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/AffineSubspace.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Analysis.AffineSubspace",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/AffineSubspace.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/InnerProductSpace.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Analysis.InnerProductSpace",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Analysis/InnerProductSpace.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Convex/Body.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Convex.Body",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Convex/Body.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/ENNReal.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.ENNReal",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/ENNReal.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Geometry/AffineSubspace.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Geometry.AffineSubspace",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Geometry/AffineSubspace.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Geometry/Projection.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Geometry.Projection",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Geometry/Projection.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/MeasureTheory/Action.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.MeasureTheory.Action",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/MeasureTheory/Action.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/MeasureTheory/Simplex.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.MeasureTheory.Simplex",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/MeasureTheory/Simplex.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Topology/Lipschitz.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Topology.Lipschitz",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Topology/Lipschitz.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Topology/Metric.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Mathlib.Topology.Metric",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Mathlib/Topology/Metric.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Basic.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.Basic",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Basic.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/BoundingBox.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.BoundingBox",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/BoundingBox.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/InnerSimplex.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.InnerSimplex",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/InnerSimplex.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/OuterPrism.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.OuterPrism",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/OuterPrism.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Projection.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.Projection",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Projection.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Volume.lean",
+      "module": "Kakeya4.Construction.Imported.NuminaThickness.Thickness.Volume",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Imported/NuminaThickness/Thickness/Volume.lean"
+    },
+    {
+      "path": "Kakeya4/Construction/Main.lean",
+      "module": "Kakeya4.Construction.Main",
+      "zone": "construction",
+      "target": "Kakeya4/Construction/Main.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Basic.lean",
+      "module": "Kakeya4.Foundation.Basic",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Basic.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Defs/Kakeya.lean",
+      "module": "Kakeya4.Foundation.Defs.Kakeya",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Defs/Kakeya.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Defs/Plank.lean",
+      "module": "Kakeya4.Foundation.Defs.Plank",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Defs/Plank.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Defs/Segment.lean",
+      "module": "Kakeya4.Foundation.Defs.Segment",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Defs/Segment.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Lemmas/QuadraticSublevel.lean",
+      "module": "Kakeya4.Foundation.Lemmas.QuadraticSublevel",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Lemmas/QuadraticSublevel.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Measure/Basic.lean",
+      "module": "Kakeya4.Foundation.Measure.Basic",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Measure/Basic.lean"
+    },
+    {
+      "path": "Kakeya4/Foundation/Measure/Frostman.lean",
+      "module": "Kakeya4.Foundation.Measure.Frostman",
+      "zone": "foundation",
+      "target": "Kakeya4/Foundation/Measure/Frostman.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/AffineDerivative.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.AffineDerivative",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/AffineDerivative.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/AllowedRegion.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.AllowedRegion",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/AllowedRegion.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/CompactTimeTests.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.CompactTimeTests",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/CompactTimeTests.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/DiscreteProjection.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.DiscreteProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/DiscreteProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/EligibleFormula.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.EligibleFormula",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/EligibleFormula.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/EligibleSelector.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.EligibleSelector",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/EligibleSelector.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/EligibleSubpowerVolume.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.EligibleSubpowerVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/EligibleSubpowerVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/EligibleVolume.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.EligibleVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/EligibleVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/HiddenQuadratic.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.HiddenQuadratic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/HiddenQuadratic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/AlgebraicGraphPolynomial.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.AlgebraicGraphPolynomial",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/AlgebraicGraphPolynomial.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/AnalyticZeroNull.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.AnalyticZeroNull",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/AnalyticZeroNull.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/DecayWeightDeriv.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.DecayWeightDeriv",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/DecayWeightDeriv.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/HermiteSignature.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.HermiteSignature",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/HermiteSignature.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/InterpolateRealUpper.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.InterpolateRealUpper",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/InterpolateRealUpper.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialCoordinateRay.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialCoordinateRay",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialCoordinateRay.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialEmptyInterior.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialEmptyInterior",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialEmptyInterior.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialLineDegree.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialLineDegree",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialLineDegree.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetChoice.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetChoice",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetChoice.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetChoice2.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetChoice2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetChoice2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetFinite.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetFinite",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetFinite.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetFinite2.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetFinite2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetFinite2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetProjection.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetProjection2.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetProjection2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetProjection2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetQuery.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetQuery",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetQuery.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetRoot.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetRoot",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetRoot.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetSigns.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.PolynomialSignSetSigns",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/PolynomialSignSetSigns.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/RealPolynomialAnalyticRoot.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.RealPolynomialAnalyticRoot",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/RealPolynomialAnalyticRoot.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/RegularSimpleSheet.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.RegularSimpleSheet",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/RegularSimpleSheet.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootEvaluationSurjective.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.RootEvaluationSurjective",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootEvaluationSurjective.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootMomentCoefficients.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.RootMomentCoefficients",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootMomentCoefficients.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootSignPattern.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.RootSignPattern",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/RootSignPattern.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SampleAllChambers.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SampleAllChambers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SampleAllChambers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SemialgebraicAnalytic.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SemialgebraicAnalytic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SemialgebraicAnalytic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SeparableSpecialization.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SeparableSpecialization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SeparableSpecialization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SignatureRootValues.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SignatureRootValues",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SignatureRootValues.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SignVariationsPositiveRoots.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SignVariationsPositiveRoots",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SignVariationsPositiveRoots.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/SquarefreeRelationOffDenominator.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.SquarefreeRelationOffDenominator",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/SquarefreeRelationOffDenominator.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/TarskiQueryCharpoly.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.TarskiQueryCharpoly",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/TarskiQueryCharpoly.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/Imported/VectorGraphCoordinate.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.Imported.VectorGraphCoordinate",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/Imported/VectorGraphCoordinate.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/IsolatedFibers.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.IsolatedFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/IsolatedFibers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/ManuscriptEligibility.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.ManuscriptEligibility",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/ManuscriptEligibility.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/MeasurableSelector.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.MeasurableSelector",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/MeasurableSelector.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/PhysicalChartData.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.PhysicalChartData",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/PhysicalChartData.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/PhysicalRegionVolume.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.PhysicalRegionVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/PhysicalRegionVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/PolynomialNull.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.PolynomialNull",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/PolynomialNull.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/QuadraticPolynomial.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.QuadraticPolynomial",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/QuadraticPolynomial.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/QuadraticRepresentation.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.QuadraticRepresentation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/QuadraticRepresentation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/RegularFiberBound.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.RegularFiberBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/RegularFiberBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/SelectorFamily.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.SelectorFamily",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/SelectorFamily.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/SemialgebraicAudit.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.SemialgebraicAudit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/SemialgebraicAudit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/SignFormula.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.SignFormula",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/SignFormula.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/SlopeFiberFamily.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.SlopeFiberFamily",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/SlopeFiberFamily.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/SpatialRegionVolume.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.SpatialRegionVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/SpatialRegionVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/UniformDiscreteFibers.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.UniformDiscreteFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/UniformDiscreteFibers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/UniformLineFibers.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.UniformLineFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/UniformLineFibers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/AlgebraicGeometry/VectorAnalytic.lean",
+      "module": "Kakeya4.Hard.AlgebraicGeometry.VectorAnalytic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/AlgebraicGeometry/VectorAnalytic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/AffineGoodTimes.lean",
+      "module": "Kakeya4.Hard.Analysis.AffineGoodTimes",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/AffineGoodTimes.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/BoundedMultiplicity.lean",
+      "module": "Kakeya4.Hard.Analysis.BoundedMultiplicity",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/BoundedMultiplicity.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/BoundedMultiplicityAudit.lean",
+      "module": "Kakeya4.Hard.Analysis.BoundedMultiplicityAudit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/BoundedMultiplicityAudit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/MonicGoodTimes.lean",
+      "module": "Kakeya4.Hard.Analysis.MonicGoodTimes",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/MonicGoodTimes.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/PlanarRegionVolume.lean",
+      "module": "Kakeya4.Hard.Analysis.PlanarRegionVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/PlanarRegionVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/QuadraticSliceVolume.lean",
+      "module": "Kakeya4.Hard.Analysis.QuadraticSliceVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/QuadraticSliceVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/RegularFibers.lean",
+      "module": "Kakeya4.Hard.Analysis.RegularFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/RegularFibers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/RegularSlopeFibers.lean",
+      "module": "Kakeya4.Hard.Analysis.RegularSlopeFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/RegularSlopeFibers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/SelectorVolume.lean",
+      "module": "Kakeya4.Hard.Analysis.SelectorVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/SelectorVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/SlopeJacobian.lean",
+      "module": "Kakeya4.Hard.Analysis.SlopeJacobian",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/SlopeJacobian.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/SlopeVolumeAudit.lean",
+      "module": "Kakeya4.Hard.Analysis.SlopeVolumeAudit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/SlopeVolumeAudit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/SubpowerAbsorption.lean",
+      "module": "Kakeya4.Hard.Analysis.SubpowerAbsorption",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/SubpowerAbsorption.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Analysis/TimeSliceVolume.lean",
+      "module": "Kakeya4.Hard.Analysis.TimeSliceVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Analysis/TimeSliceVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/DeterminantKakeya.lean",
+      "module": "Kakeya4.Hard.DeterminantKakeya",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/DeterminantKakeya.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Externals/Bundle.lean",
+      "module": "Kakeya4.Hard.Externals.Bundle",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Externals/Bundle.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/Externals/Statements.lean",
+      "module": "Kakeya4.Hard.Externals.Statements",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/Externals/Statements.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/AffineBisectionEnergy.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.AffineBisectionEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/AffineBisectionEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/AntipodalCover.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.AntipodalCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/AntipodalCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Audit.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Audit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Audit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/BallTubeFactors.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.BallTubeFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/BallTubeFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Basic.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Basic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Basic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/BisectionEnergy.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.BisectionEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/BisectionEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/BoundedSpatialPacking.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.BoundedSpatialPacking",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/BoundedSpatialPacking.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/CoefficientEnergyContinuity.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.CoefficientEnergyContinuity",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/CoefficientEnergyContinuity.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/ContinuousEndpoint.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.ContinuousEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/ContinuousEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/ContinuousLineMeasureEndpoint.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.ContinuousLineMeasureEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/ContinuousLineMeasureEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/ConvexDeterminant.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.ConvexDeterminant",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/ConvexDeterminant.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/CriticalVariation.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.CriticalVariation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/CriticalVariation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/CylinderBudget.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.CylinderBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/CylinderBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/DirectionalFactors.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.DirectionalFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/DirectionalFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/DirectionalLowerBound.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.DirectionalLowerBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/DirectionalLowerBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/DiscreteEndpoint.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.DiscreteEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/DiscreteEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/DiscreteKernelMajorant.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.DiscreteKernelMajorant",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/DiscreteKernelMajorant.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/DiscreteLineMeasureEndpoint.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.DiscreteLineMeasureEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/DiscreteLineMeasureEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/EndpointDuality.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.EndpointDuality",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/EndpointDuality.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/EuclideanBisectionEnergy.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.EuclideanBisectionEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/EuclideanBisectionEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/FinalNormalization.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.FinalNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/FinalNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/FiniteFactors.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.FiniteFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/FiniteFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/FiniteMeasureFactorBudget.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.FiniteMeasureFactorBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/FiniteMeasureFactorBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/FiniteNeighbourColouring.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.FiniteNeighbourColouring",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/FiniteNeighbourColouring.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/FiniteSignedClasses.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.FiniteSignedClasses",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/FiniteSignedClasses.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/BorsukUlam.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.BorsukUlam",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/BorsukUlam.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Ambient/Basic.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Ambient.Basic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Ambient/Basic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Measure/RestrictedVolume.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Measure.RestrictedVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Measure/RestrictedVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Geometry.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.Geometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Geometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelBasic.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.KernelBasic",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelBasic.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelPower.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.KernelPower",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelPower.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelSegment.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.KernelSegment",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelSegment.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelTime.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.KernelTime",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/KernelTime.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Lp.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.Lp",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Lp.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/LpOne.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.LpOne",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/LpOne.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Mean.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.Mean",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Mean.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Smooth.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.Smooth",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/CKN/Poincare/Smooth.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/John/CompactConvexHull.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.John.CompactConvexHull",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/John/CompactConvexHull.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/John/Determinant.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.John.Determinant",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/John/Determinant.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/John/John.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.John.John",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/John/John.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/John/JohnIngredients.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.John.JohnIngredients",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/John/JohnIngredients.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Imported/NuminaBoundedOverlap/BoundedOverlap.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Imported.NuminaBoundedOverlap.BoundedOverlap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Imported/NuminaBoundedOverlap/BoundedOverlap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/IntegratedFactorMajorant.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.IntegratedFactorMajorant",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/IntegratedFactorMajorant.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/JohnEllipsoid.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.JohnEllipsoid",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/JohnEllipsoid.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/KernelLocalization.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.KernelLocalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/KernelLocalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureConsumers.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureConsumers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureConsumers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureGeometry.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureHolder.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureHolder",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureHolder.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureKernel.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureKernel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureKernel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureLocalization.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureLocalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureLocalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasurePushforward.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasurePushforward",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasurePushforward.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineMeasureScaling.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineMeasureScaling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineMeasureScaling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LineVariation.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LineVariation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LineVariation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/LocalEnergyBound.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.LocalEnergyBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/LocalEnergyBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/MeasurableBallTubeFactors.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.MeasurableBallTubeFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/MeasurableBallTubeFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/MonomialBisection.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.MonomialBisection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/MonomialBisection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/OperatorCandidates.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.OperatorCandidates",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/OperatorCandidates.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/OperatorPacking.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.OperatorPacking",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/OperatorPacking.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/OperatorShapeNet.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.OperatorShapeNet",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/OperatorShapeNet.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/PlanarEndpoint.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.PlanarEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/PlanarEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/PlanarGeometry.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.PlanarGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/PlanarGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/PolynomialBisection.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.PolynomialBisection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/PolynomialBisection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/PolynomialSignMass.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.PolynomialSignMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/PolynomialSignMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/RealFiniteFactors.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.RealFiniteFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/RealFiniteFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/RealKernel.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.RealKernel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/RealKernel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/RelativeOperatorGeometry.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.RelativeOperatorGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/RelativeOperatorGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/Scaling.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.Scaling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/Scaling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/ShapeClasses.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.ShapeClasses",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/ShapeClasses.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SignedSpatialClasses.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SignedSpatialClasses",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SignedSpatialClasses.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SimultaneousVisibility.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SimultaneousVisibility",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SimultaneousVisibility.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SmoothEnergy.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SmoothEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SmoothEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialBallCover.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialBallCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialBallCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialBisectionEnergy.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialBisectionEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialBisectionEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialPacking.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialPacking",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialPacking.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialSignCover.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialSignCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialSignCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialTestCoordinates.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialTestCoordinates",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialTestCoordinates.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialTestGeometry.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialTestGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialTestGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialTestPadding.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialTestPadding",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialTestPadding.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialTestVolume.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialTestVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialTestVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/SpatialVisibilityTests.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.SpatialVisibilityTests",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/SpatialVisibilityTests.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/ThresholdVisibility.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.ThresholdVisibility",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/ThresholdVisibility.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/TopologicalInput.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.TopologicalInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/TopologicalInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/TubeFactorBudget.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.TubeFactorBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/TubeFactorBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/UniformSmoothing.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.UniformSmoothing",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/UniformSmoothing.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/VisibilityAmplification.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.VisibilityAmplification",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/VisibilityAmplification.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/VisibilityBody.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.VisibilityBody",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/VisibilityBody.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultilinearKakeya/WeightedVisibility.lean",
+      "module": "Kakeya4.Hard.MultilinearKakeya.WeightedVisibility",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultilinearKakeya/WeightedVisibility.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/AllScaleSmoothing.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.AllScaleSmoothing",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/AllScaleSmoothing.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/Audit.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.Audit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/Audit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/CappedEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.CappedEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/CappedEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ClosedNeighborhoodCover.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ClosedNeighborhoodCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ClosedNeighborhoodCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/CoarseCapEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.CoarseCapEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/CoarseCapEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/Complete.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.Complete",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/Complete.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ConditionalNoisePruning.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ConditionalNoisePruning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ConditionalNoisePruning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/DensityL2.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.DensityL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/DensityL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/DensityLaw.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.DensityLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/DensityLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/DifferenceLaw.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.DifferenceLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/DifferenceLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/EndpointStatement.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.EndpointStatement",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/EndpointStatement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/EnergyNonconcentration.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.EnergyNonconcentration",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/EnergyNonconcentration.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/EnergyTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.EnergyTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/EnergyTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ExactFrostmanExtraction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ExactFrostmanExtraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ExactFrostmanExtraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedConditionalPruning.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ExtractedConditionalPruning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedConditionalPruning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedGoodWitness.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ExtractedGoodWitness",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedGoodWitness.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedSetTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ExtractedSetTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ExtractedSetTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/FixedKernel.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.FixedKernel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/FixedKernel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/FourierJensen.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.FourierJensen",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/FourierJensen.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/FrostmanExtraction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.FrostmanExtraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/FrostmanExtraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianBilinear.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianBilinear",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianBilinear.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianCentral.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianCentral",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianCentral.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnergyCaps.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianEnergyCaps",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnergyCaps.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnergyKernel.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianEnergyKernel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnergyKernel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnvelopeEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianEnvelopeEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnvelopeEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnvelopeL2.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianEnvelopeL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianEnvelopeL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianFourierMoment.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianFourierMoment",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianFourierMoment.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianOverlap.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianOverlap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianOverlap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianPowerBound.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianPowerBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianPowerBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianReproduction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianReproduction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianReproduction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianSplit.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianSplit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianSplit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianTail.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianTail",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianTail.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GaussianTilt.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GaussianTilt",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GaussianTilt.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedCapFlatness.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedCapFlatness",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedCapFlatness.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedDecay.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedDecay",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedDecay.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedFlatness.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedFlatness",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedFlatness.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedLaw.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedMajorant.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedMajorant",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedMajorant.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedSpectral.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.GeneratedSpectral",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/GeneratedSpectral.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/JointExtractedTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.JointExtractedTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/JointExtractedTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/JointFrostmanExtraction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.JointFrostmanExtraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/JointFrostmanExtraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/LowFrequencyEndpoint.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.LowFrequencyEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/LowFrequencyEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/LowFrequencyMass.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.LowFrequencyMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/LowFrequencyMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/NoiseEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.NoiseEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/NoiseEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/NoisyGoodWitness.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.NoisyGoodWitness",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/NoisyGoodWitness.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/NormalizedRestriction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.NormalizedRestriction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/NormalizedRestriction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PlanarFrostmanExtraction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PlanarFrostmanExtraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PlanarFrostmanExtraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PlanarFrostmanTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PlanarFrostmanTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PlanarFrostmanTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PlanarProductLaw.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PlanarProductLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PlanarProductLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PlanarProjectionNeighborhood.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PlanarProjectionNeighborhood",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PlanarProjectionNeighborhood.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PlanarSetTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PlanarSetTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PlanarSetTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/PotentialRestriction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.PotentialRestriction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/PotentialRestriction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProductLaw.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProductLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProductLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProductRestriction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProductRestriction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProductRestriction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProductSlabBound.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProductSlabBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProductSlabBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProductSlabExtraction.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProductSlabExtraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProductSlabExtraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProductSmoothingCoupling.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProductSmoothingCoupling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProductSmoothingCoupling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProjectionCoverTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProjectionCoverTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProjectionCoverTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/ProjectionPerturbation.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.ProjectionPerturbation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/ProjectionPerturbation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/RatioLawNormalization.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.RatioLawNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/RatioLawNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/RealDensity.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.RealDensity",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/RealDensity.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/RescaledSmoothing.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.RescaledSmoothing",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/RescaledSmoothing.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/RieszEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.RieszEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/RieszEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmallBallEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmallBallEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmallBallEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmallScalePowers.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmallScalePowers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmallScalePowers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmoothEnergyL2.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmoothEnergyL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmoothEnergyL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingBallTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmoothingBallTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingBallTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingDensityBound.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmoothingDensityBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingDensityBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingProfile.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmoothingProfile",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingProfile.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingSetTransport.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.SmoothingSetTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/SmoothingSetTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorConsumer.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.TwoFactorConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorDecay.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.TwoFactorDecay",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorDecay.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorQuantitative.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.TwoFactorQuantitative",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/TwoFactorQuantitative.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/TwoScaleL2.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.TwoScaleL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/TwoScaleL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/MultiplicativeConvolution/WeightedEnergy.lean",
+      "module": "Kakeya4.Hard.MultiplicativeConvolution.WeightedEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/MultiplicativeConvolution/WeightedEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BilinearDifferenceLargeImage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.BilinearDifferenceLargeImage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BilinearDifferenceLargeImage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledAngularExtension.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.BundledAngularExtension",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledAngularExtension.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledIncidence.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.BundledIncidence",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledIncidence.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledWindowSupport.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.BundledWindowSupport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/BundledWindowSupport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CellZoomUniformBudget.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.CellZoomUniformBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CellZoomUniformBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CompactGainUniformization.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.CompactGainUniformization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CompactGainUniformization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalCellRecombination.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ConditionalCellRecombination",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalCellRecombination.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalRadialTransport.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ConditionalRadialTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalRadialTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalSupportCore.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ConditionalSupportCore",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConditionalSupportCore.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConvolutionLargeImageTransport.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ConvolutionLargeImageTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ConvolutionLargeImageTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CrossedParameterLaw.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.CrossedParameterLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/CrossedParameterLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DifferenceConvolutionEightLaw.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DifferenceConvolutionEightLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DifferenceConvolutionEightLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DirectionCollisionAverage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DirectionCollisionAverage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DirectionCollisionAverage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DirectionProjectionSublevel.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DirectionProjectionSublevel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DirectionProjectionSublevel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicOSSFrostmanProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DyadicOSSFrostmanProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicOSSFrostmanProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicProjectionScaleTransfer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DyadicProjectionScaleTransfer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicProjectionScaleTransfer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicSeparationScaleCosts.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.DyadicSeparationScaleCosts",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/DyadicSeparationScaleCosts.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightValueMassTransport.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EightValueMassTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightValueMassTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableBilinearLaw.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EightVariableBilinearLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableBilinearLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableFrostmanLargeImage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EightVariableFrostmanLargeImage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableFrostmanLargeImage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableNoise.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EightVariableNoise",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EightVariableNoise.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyDifferenceConvolutionPowers.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyDifferenceConvolutionPowers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyDifferenceConvolutionPowers.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyDifferenceConvolutionSquare.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyDifferenceConvolutionSquare",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyDifferenceConvolutionSquare.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyEightVariableLargeImage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyEightVariableLargeImage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyEightVariableLargeImage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyExtractedOSSProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyExtractedOSSProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyExtractedOSSProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyLargeImageBudgets.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyLargeImageBudgets",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyLargeImageBudgets.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyParameterBootstrap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.EnergyParameterBootstrap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/EnergyParameterBootstrap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FarCellBootstrapConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FarCellBootstrapConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FarCellBootstrapConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FineDyadicPruning.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FineDyadicPruning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FineDyadicPruning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FineDyadicSeparation.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FineDyadicSeparation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FineDyadicSeparation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FiniteScaleKaufmanAverage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FiniteScaleKaufmanAverage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FiniteScaleKaufmanAverage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FiniteUniformRadialBootstrap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FiniteUniformRadialBootstrap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FiniteUniformRadialBootstrap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningAllScalePairMass.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningAllScalePairMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningAllScalePairMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningBoxComparison.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningBoxComparison",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningBoxComparison.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellCover.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningCellCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellEnvelope.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningCellEnvelope",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellEnvelope.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellSupremum.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningCellSupremum",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCellSupremum.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCoarseL2.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningCoarseL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCoarseL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCorrelation.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningCorrelation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningCorrelation.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDeficitEnergy.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningDeficitEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDeficitEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDensityL2.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningDensityL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDensityL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDensityLevels.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningDensityLevels",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDensityLevels.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDoubleSmoothing.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningDoubleSmoothing",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDoubleSmoothing.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDyadicEnergy.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningDyadicEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningDyadicEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningEnergyContraction.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningEnergyContraction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningEnergyContraction.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningEnergyScale.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningEnergyScale",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningEnergyScale.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningExponentGrid.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningExponentGrid",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningExponentGrid.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFinePairMass.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningFinePairMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFinePairMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFiniteL2.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningFiniteL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFiniteL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFiniteSelection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningFiniteSelection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningFiniteSelection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIndicatorEstimate.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningIndicatorEstimate",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIndicatorEstimate.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningInteriorEnergy.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningInteriorEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningInteriorEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIntermediateEnergyCap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningIntermediateEnergyCap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIntermediateEnergyCap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIntermediateL2.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningIntermediateL2",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningIntermediateL2.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningJointLayerConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningJointLayerConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningJointLayerConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningKernelComparison.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningKernelComparison",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningKernelComparison.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLargeImageLayer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLargeImageLayer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLargeImageLayer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerConvolution.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLayerConvolution",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerConvolution.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerEnvelope.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLayerEnvelope",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerEnvelope.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerLoss.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLayerLoss",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerLoss.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerProduct.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLayerProduct",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerProduct.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerSelection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLayerSelection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLayerSelection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLocalL2Bound.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLocalL2Bound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLocalL2Bound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLocalPower.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLocalPower",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLocalPower.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLowerExponent.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningLowerExponent",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningLowerExponent.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningMassThreshold.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningMassThreshold",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningMassThreshold.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningNeighborhoodMass.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningNeighborhoodMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningNeighborhoodMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningOriginalEnergyLayer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningOriginalEnergyLayer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningOriginalEnergyLayer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPaidLayerConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningPaidLayerConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPaidLayerConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPairEnergyBound.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningPairEnergyBound",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPairEnergyBound.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPairMass.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningPairMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPairMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPowerDoubling.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningPowerDoubling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningPowerDoubling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningSeparatedEnergy.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningSeparatedEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningSeparatedEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningSlowLayerMass.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningSlowLayerMass",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningSlowLayerMass.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningThreeRanges.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningThreeRanges",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningThreeRanges.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningUniformInterior.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FlatteningUniformInterior",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FlatteningUniformInterior.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierAllFactors.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierAllFactors",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierAllFactors.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFineScaleEnergy.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierFineScaleEnergy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFineScaleEnergy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFlattenedMerge.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierFlattenedMerge",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFlattenedMerge.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFlatteningTransfer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierFlatteningTransfer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierFlatteningTransfer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierInductionParameters.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierInductionParameters",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierInductionParameters.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierPowerSupport.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierPowerSupport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierPowerSupport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierProductSplit.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierProductSplit",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierProductSplit.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierScaledCaps.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierScaledCaps",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierScaledCaps.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierScaling.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.FourierScaling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/FourierScaling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/GoodParameterLargeFiber.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.GoodParameterLargeFiber",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/GoodParameterLargeFiber.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/KaufmanPowerBudget.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.KaufmanPowerBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/KaufmanPowerBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/KaufmanRobustOuterConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.KaufmanRobustOuterConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/KaufmanRobustOuterConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/NonunitProjectionCollision.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.NonunitProjectionCollision",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/NonunitProjectionCollision.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OSSEnergyLargeImage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.OSSEnergyLargeImage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OSSEnergyLargeImage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OSSFrostmanProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.OSSFrostmanProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OSSFrostmanProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OuterMassCollisionCover.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.OuterMassCollisionCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/OuterMassCollisionCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterBootstrap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ProductParameterBootstrap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterBootstrap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterNormalization.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ProductParameterNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterSeed.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ProductParameterSeed",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ProductParameterSeed.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RetainedDirectionLaw.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.RetainedDirectionLaw",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RetainedDirectionLaw.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RieszCoefficientBudget.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.RieszCoefficientBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RieszCoefficientBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RobustOuterProjectionCover.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.RobustOuterProjectionCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/RobustOuterProjectionCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ScaledKaufmanBudget.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ScaledKaufmanBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ScaledKaufmanBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ScaleSeparationBudgets.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ScaleSeparationBudgets",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ScaleSeparationBudgets.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/SeparatedCellNormalization.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.SeparatedCellNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/SeparatedCellNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ShortPairDirectionConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.ShortPairDirectionConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/ShortPairDirectionConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformBilinearDifferenceLargeImage.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformBilinearDifferenceLargeImage",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformBilinearDifferenceLargeImage.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralOneScale.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformGeneralOneScale",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralOneScale.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralRadialGain.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformGeneralRadialGain",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralRadialGain.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralScaleWindow.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformGeneralScaleWindow",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralScaleWindow.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralTwoSidedScale.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformGeneralTwoSidedScale",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGeneralTwoSidedScale.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGridBootstrap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformGridBootstrap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformGridBootstrap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformKaufmanRobustCover.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformKaufmanRobustCover",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformKaufmanRobustCover.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformProductNonunitProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformProductNonunitProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformProductNonunitProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformProductNormalizedProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformProductNormalizedProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformProductNormalizedProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRadialBootstrapEndpoint.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformRadialBootstrapEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRadialBootstrapEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRetainedNonunitProjection.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformRetainedNonunitProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRetainedNonunitProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRetainedProjectionConsumer.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformRetainedProjectionConsumer",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformRetainedProjectionConsumer.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformScaledKaufmanBadSet.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformScaledKaufmanBadSet",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformScaledKaufmanBadSet.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformUnseparatedRadialBootstrap.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UniformUnseparatedRadialBootstrap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UniformUnseparatedRadialBootstrap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UnitCircleSublevel.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.UnitCircleSublevel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/UnitCircleSublevel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/WeightedCellRecombination.lean",
+      "module": "Kakeya4.Hard.OSSCompat.MeasureTheory.Falconer.WeightedCellRecombination",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/OSSCompat/MeasureTheory/Falconer/WeightedCellRecombination.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ActiveNormalization.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ActiveNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ActiveNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CellGeometry.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CellGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CellGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CellSelection.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CellSelection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CellSelection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CoordinateRefinement.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CoordinateRefinement",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CoordinateRefinement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CoordinateTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CoordinateTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CoordinateTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Covering.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Covering",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Covering.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CubeScaling.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CubeScaling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CubeScaling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/DensePrunedInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.DensePrunedInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/DensePrunedInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/DiscreteInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.DiscreteInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/DiscreteInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/EndpointNormalization.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.EndpointNormalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/EndpointNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Exclusion.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Exclusion",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Exclusion.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ExpansionReadyInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ExpansionReadyInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ExpansionReadyInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ExpansionTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ExpansionTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ExpansionTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/FiberCleaning.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FiberCleaning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FiberCleaning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/FiberDensityPayment.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FiberDensityPayment",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FiberDensityPayment.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/FiniteModel.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FiniteModel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FiniteModel.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/FrostmanInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FrostmanInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FrostmanInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/GeometricPayment.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.GeometricPayment",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/GeometricPayment.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/GeometricPruning.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.GeometricPruning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/GeometricPruning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ImageTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ImageTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ImageTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/IntervalMesh.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.IntervalMesh",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/IntervalMesh.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/IntervalTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.IntervalTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/IntervalTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/MarginalCardinality.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.MarginalCardinality",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/MarginalCardinality.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/MarginalFrostman.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.MarginalFrostman",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/MarginalFrostman.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/MetricAdapters.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.MetricAdapters",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/MetricAdapters.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Normalization.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Normalization",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Normalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/NormalizedExpansionTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.NormalizedExpansionTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/NormalizedExpansionTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/NormalizedInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.NormalizedInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/NormalizedInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/PrunedInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.PrunedInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/PrunedInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Rounding.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Rounding",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Rounding.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SelectedClassPayment.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SelectedClassPayment",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SelectedClassPayment.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SelectedFrostman.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SelectedFrostman",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SelectedFrostman.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Similarity.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Similarity",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Similarity.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StandardCells.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StandardCells",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StandardCells.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StandardDenseInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StandardDenseInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StandardDenseInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StandardInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StandardInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StandardInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/Statement.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.Statement",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/Statement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ThreeClassRefinement.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ThreeClassRefinement",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ThreeClassRefinement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TripartiteRefinement.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TripartiteRefinement",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TripartiteRefinement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/VariableExpansion.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.VariableExpansion",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/VariableExpansion.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SlopeVolume.lean",
+      "module": "Kakeya4.Hard.SlopeVolume",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SlopeVolume.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincBoxConvolution.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincBoxConvolution",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincBoxConvolution.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincBoxFourier.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincBoxFourier",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincBoxFourier.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincFourthFourier.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincFourthFourier",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincFourthFourier.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincFourthFubini.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincFourthFubini",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincFourthFubini.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredFourier.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincSquaredFourier",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredFourier.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredInversion.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincSquaredInversion",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredInversion.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredPrereqs.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincSquaredPrereqs",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincSquaredPrereqs.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincTriangleConvolution.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SincTriangleConvolution",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SincTriangleConvolution.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SmoothingKernel.lean",
+      "module": "Kakeya4.Hard.SpectralCompat.Causalean.Stat.CLT.BerryEsseen.SmoothingKernel",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/SpectralCompat/Causalean/Stat/CLT/BerryEsseen/SmoothingKernel.lean"
+    },
+    {
+      "path": "Kakeya4/Sec01.lean",
+      "module": "Kakeya4.Sec01",
+      "zone": "index",
+      "target": "Kakeya4/Sec01.lean"
+    },
+    {
+      "path": "Kakeya4/Sec02.lean",
+      "module": "Kakeya4.Sec02",
+      "zone": "index",
+      "target": "Kakeya4/Sec02.lean"
+    },
+    {
+      "path": "Kakeya4/Sec03.lean",
+      "module": "Kakeya4.Sec03",
+      "zone": "index",
+      "target": "Kakeya4/Sec03.lean"
+    },
+    {
+      "path": "Kakeya4/Sec04.lean",
+      "module": "Kakeya4.Sec04",
+      "zone": "index",
+      "target": "Kakeya4/Sec04.lean"
+    },
+    {
+      "path": "Kakeya4/Sec05.lean",
+      "module": "Kakeya4.Sec05",
+      "zone": "index",
+      "target": "Kakeya4/Sec05.lean"
+    },
+    {
+      "path": "Kakeya4/Sec06.lean",
+      "module": "Kakeya4.Sec06",
+      "zone": "index",
+      "target": "Kakeya4/Sec06.lean"
+    },
+    {
+      "path": "Kakeya4/Sec06a.lean",
+      "module": "Kakeya4.Sec06a",
+      "zone": "index",
+      "target": "Kakeya4/Sec06a.lean"
+    },
+    {
+      "path": "Kakeya4/Sec07.lean",
+      "module": "Kakeya4.Sec07",
+      "zone": "index",
+      "target": "Kakeya4/Sec07.lean"
+    },
+    {
+      "path": "Kakeya4/Sec08.lean",
+      "module": "Kakeya4.Sec08",
+      "zone": "index",
+      "target": "Kakeya4/Sec08.lean"
+    },
+    {
+      "path": "Kakeya4/Sec09.lean",
+      "module": "Kakeya4.Sec09",
+      "zone": "index",
+      "target": "Kakeya4/Sec09.lean"
+    },
+    {
+      "path": "Kakeya4/Sec10.lean",
+      "module": "Kakeya4.Sec10",
+      "zone": "index",
+      "target": "Kakeya4/Sec10.lean"
+    },
+    {
+      "path": "Kakeya4/Sections.lean",
+      "module": "Kakeya4.Sections",
+      "zone": "index",
+      "target": "Kakeya4/Sections.lean"
+    },
+    {
+      "path": "Kakeya4.lean",
+      "module": "Kakeya4",
+      "zone": "root",
+      "target": "Kakeya4.lean"
+    }
+  ],
+  "foundation_workitems": [
+    {
+      "id": "F-001",
+      "title": "subpower 演算层（N₀^{o(1)}：IsSubpower、单调、传递、吸收、对角化）",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "def:exact-problem",
+        "a01:tempered",
+        "def:true-chart"
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "有限熵 / KL 截断 API",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "lem:two-color-matching",
+        "a03:finite-state-conditioning",
+        "a04:dense-entropy"
+      ]
+    },
+    {
+      "id": "F-003",
+      "title": "Ruzsa/Plünnecke 覆盖数形式（Finset + 网格计数）",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "re:common-sets"
+      ]
+    },
+    {
+      "id": "F-004",
+      "title": "Frostman 球形式 / 能量积分最小 API",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": []
+    },
+    {
+      "id": "F-005",
+      "title": "OAI FixedScale.lean 适配（tube/maximal/WeightedConvex，Apache-2.0）",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "H-001"
+      ]
+    },
+    {
+      "id": "F-006",
+      "title": "lem:algebraic-norm（STD；Cauchy 估计 + 结式高度，尝试绕过 BPR）",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "a02:algebraic-path",
+        "a02:local-graph-matching"
+      ]
+    },
+    {
+      "id": "F-007",
+      "title": "Numina kakeya-3d 落盘与可复用模块清单（Apache-2.0）",
+      "owner": "ai",
+      "status": "pending",
+      "zone": "foundation",
+      "blocks": [
+        "H-001"
+      ]
+    }
+  ],
+  "construction_workitems": [
+    {
+      "id": "C-001",
+      "title": "3D 资产对接与 WeightedPlanks 派生（复用 Numina kakeya-3d 的 plank/weighted 机制）",
+      "kind": "port-derive",
+      "owner": "ai",
+      "status": "active",
+      "blocks": [
+        "lem:weighted-planks"
+      ],
+      "external_inputs": [
+        "X-WP"
+      ]
+    }
+  ]
+}

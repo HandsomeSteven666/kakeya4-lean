@@ -1,0 +1,692 @@
+import Kakeya4.Hard.Externals.Statements
+import Kakeya4.Hard.DeterminantKakeya
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureConsumers
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureScaling
+import Kakeya4.Hard.MultilinearKakeya.LineMeasurePushforward
+import Kakeya4.Hard.MultilinearKakeya.ContinuousLineMeasureEndpoint
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureLocalization
+import Kakeya4.Hard.MultilinearKakeya.DiscreteLineMeasureEndpoint
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureHolder
+import Kakeya4.Hard.MultilinearKakeya.IntegratedFactorMajorant
+import Kakeya4.Hard.MultilinearKakeya.FiniteMeasureFactorBudget
+import Kakeya4.Hard.MultilinearKakeya.MeasurableBallTubeFactors
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureKernel
+import Kakeya4.Hard.MultilinearKakeya.LineMeasureGeometry
+import Kakeya4.Hard.MultilinearKakeya.ContinuousEndpoint
+import Kakeya4.Hard.MultilinearKakeya.SpatialBallCover
+import Kakeya4.Hard.MultilinearKakeya.Imported.NuminaBoundedOverlap.BoundedOverlap
+import Kakeya4.Hard.MultilinearKakeya.BallTubeFactors
+import Kakeya4.Hard.MultilinearKakeya.TubeFactorBudget
+import Kakeya4.Hard.MultilinearKakeya.DirectionalFactors
+import Kakeya4.Hard.MultilinearKakeya.FinalNormalization
+import Kakeya4.Hard.MultilinearKakeya.VisibilityAmplification
+import Kakeya4.Hard.MultilinearKakeya.WeightedVisibility
+import Kakeya4.Hard.MultilinearKakeya.SimultaneousVisibility
+import Kakeya4.Hard.MultilinearKakeya.ThresholdVisibility
+import Kakeya4.Hard.MultilinearKakeya.SpatialTestVolume
+import Kakeya4.Hard.MultilinearKakeya.SpatialSignCover
+import Kakeya4.Hard.MultilinearKakeya.SpatialTestPadding
+import Kakeya4.Hard.MultilinearKakeya.SignedSpatialClasses
+import Kakeya4.Hard.MultilinearKakeya.FiniteSignedClasses
+import Kakeya4.Hard.MultilinearKakeya.PolynomialSignMass
+import Kakeya4.Hard.MultilinearKakeya.SpatialVisibilityTests
+import Kakeya4.Hard.MultilinearKakeya.SpatialBisectionEnergy
+import Kakeya4.Hard.MultilinearKakeya.BoundedSpatialPacking
+import Kakeya4.Hard.MultilinearKakeya.SpatialTestCoordinates
+import Kakeya4.Hard.MultilinearKakeya.SpatialPacking
+import Kakeya4.Hard.MultilinearKakeya.SpatialTestGeometry
+import Kakeya4.Hard.MultilinearKakeya.ShapeClasses
+import Kakeya4.Hard.MultilinearKakeya.OperatorShapeNet
+import Kakeya4.Hard.MultilinearKakeya.FiniteNeighbourColouring
+import Kakeya4.Hard.MultilinearKakeya.OperatorPacking
+import Kakeya4.Hard.MultilinearKakeya.OperatorCandidates
+import Kakeya4.Hard.MultilinearKakeya.RelativeOperatorGeometry
+import Kakeya4.Hard.MultilinearKakeya.CoefficientEnergyContinuity
+import Kakeya4.Hard.MultilinearKakeya.EuclideanBisectionEnergy
+import Kakeya4.Hard.MultilinearKakeya.AffineBisectionEnergy
+import Kakeya4.Hard.MultilinearKakeya.BisectionEnergy
+import Kakeya4.Hard.MultilinearKakeya.UniformSmoothing
+import Kakeya4.Hard.MultilinearKakeya.DirectionalLowerBound
+import Kakeya4.Hard.MultilinearKakeya.LocalEnergyBound
+import Kakeya4.Hard.MultilinearKakeya.JohnEllipsoid
+import Kakeya4.Hard.MultilinearKakeya.Imported.CKN.Poincare.LpOne
+import Kakeya4.Hard.MultilinearKakeya.VisibilityBody
+import Kakeya4.Hard.MultilinearKakeya.CylinderBudget
+import Kakeya4.Hard.MultilinearKakeya.LineVariation
+import Kakeya4.Hard.MultilinearKakeya.CriticalVariation
+import Kakeya4.Hard.MultilinearKakeya.SmoothEnergy
+import Kakeya4.Hard.MultilinearKakeya.AntipodalCover
+import Kakeya4.Hard.MultilinearKakeya.Basic
+import Kakeya4.Hard.MultilinearKakeya.ConvexDeterminant
+import Kakeya4.Hard.MultilinearKakeya.FiniteFactors
+import Kakeya4.Hard.MultilinearKakeya.MonomialBisection
+import Kakeya4.Hard.MultilinearKakeya.PlanarEndpoint
+import Kakeya4.Hard.MultilinearKakeya.PlanarGeometry
+import Kakeya4.Hard.MultilinearKakeya.PolynomialBisection
+import Kakeya4.Hard.MultilinearKakeya.Scaling
+import Kakeya4.Hard.MultilinearKakeya.TopologicalInput
+
+/-! H-002 audit: n=3/4 endpoint and geometric visibility remain unproved. -/
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.signedCoverDistance_neg
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_signedCoverDistance
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_antipodal_pair_of_closed_cover
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_uncovered_of_antipodal_free
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.carrier_nonempty
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.isClosed_tube
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.measurableSet_tube
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurableSet_tupleRegion
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_kernel
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_kernel
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_endpointKernel
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_kernel_le_of_tuple_bound
+#print axioms Kakeya4.Hard.MultilinearKakeya.smul_mem_of_convex_symmetric
+#print axioms Kakeya4.Hard.MultilinearKakeya.matrix_box_image_subset_convex_symmetric
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinant_volume_le_of_convex_symmetric
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinant_volume_le_of_scaled_vectors
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_geometricMean_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.weighted_factor_budget
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_local_majorant_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.totalDegree_box_monomial_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_of_card_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_nthRoot
+#print axioms Kakeya4.Hard.MultilinearKakeya.cast_nthRoot_le_rpow
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_quantitative
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_regions
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_bounded_regions
+#print axioms Kakeya4.Hard.MultilinearKakeya.det_normalMatrix
+#print axioms Kakeya4.Hard.MultilinearKakeya.normalMatrix_mulVec
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinantWeight_mul_volume_tupleRegion_two
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpointBound_two
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_perpendicular
+#print axioms Kakeya4.Hard.MultilinearKakeya.inner_perpendicular_self
+#print axioms Kakeya4.Hard.MultilinearKakeya.inner_perpendicular_line_displacement
+#print axioms Kakeya4.Hard.MultilinearKakeya.abs_normal_le_infDist
+#print axioms Kakeya4.Hard.MultilinearKakeya.tube_subset_normalStrip
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinant_mul_volume_le_rectangle
+#print axioms Kakeya4.Hard.MultilinearKakeya.coefficientPolynomial_neg
+#print axioms Kakeya4.Hard.MultilinearKakeya.coefficientPolynomial_ne_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.eval_coefficientPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_eval_coefficientPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuousAt_polynomial_sublevel_measure
+#print axioms Kakeya4.Hard.MultilinearKakeya.coefficientPolynomial_sphere_ne_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_polynomialBisectionMap
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection
+#print axioms Kakeya4.Hard.MultilinearKakeya.totalDegree_coefficientPolynomial_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_bisection_degree_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.carrier_dilate
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.infDist_carrier_dilate
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.mem_tube_dilate
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_tupleRegion_dilate
+#print axioms Kakeya4.Hard.MultilinearKakeya.kernel_dilate
+#print axioms Kakeya4.Hard.MultilinearKakeya.map_inverse_dilation_volume
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_inverse_dilation
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpointIntegral_radius_reduction
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpointBound_iff_unitRadiusBound
+#print axioms Kakeya4.Hard.MultilinearKakeya.odd_sphere_map_has_zero
+#print axioms MathlibExt.Topology.Homotopy.BorsukUlamWanted.borsukUlam
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_antipodally_uncovered_of_closure_separation
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_antipodally_uncovered_of_disjoint_closure_neg
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_antipodally_uncovered_of_card_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.contDiff_smoothPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_fderiv_smoothPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrableOn_smoothPolynomial_direction
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_nonneg
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_smul
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_add_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.smoothDirectionalSeminorm_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_le_gradient_integral
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_smoothDirectionalSeminorm
+#print axioms Kakeya4.Hard.MultilinearKakeya.hasDerivAt_smoothPolynomial_line
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_sign_on_interval
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_norm_derivative_le_of_no_critical
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_norm_derivative_le_of_finite_critical
+#print axioms Kakeya4.Hard.MultilinearKakeya.hasDerivAt_arctanPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_arctanPolynomialDerivative
+#print axioms Kakeya4.Hard.MultilinearKakeya.arctanPolynomialDerivative_ne_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_arctanPolynomialDerivative_le_pi_of_no_critical
+#print axioms Kakeya4.Hard.MultilinearKakeya.intervalIntegral_arctanPolynomialDerivative_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrable_arctanPolynomialDerivative
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_arctanPolynomialDerivative_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.natDegree_eval_affine_le_totalDegree
+#print axioms Kakeya4.Hard.MultilinearKakeya.natDegree_linePolynomial_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.eval_linePolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.fderiv_smoothPolynomial_line_eq
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrable_smoothPolynomial_line
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_smoothPolynomial_line_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_smoothPolynomial_line_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_smoothPolynomial_parallel_family_le_degree
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.axialMeasurableEquiv_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurePreserving_axialMeasurableEquiv
+#print axioms Kakeya4.Hard.MultilinearKakeya.axialMeasurableEquiv_symm_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.transverse_norm_le_infDist
+#print axioms Kakeya4.Hard.MultilinearKakeya.tube_subset_transverse_ball
+#print axioms Kakeya4.Hard.MultilinearKakeya.tubeParameterization_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurePreserving_tubeParameterization
+#print axioms Kakeya4.Hard.MultilinearKakeya.tubeParameterization_preimage_tube_subset
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_tube_le_of_line_budget
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_smoothPolynomial_tube_le_crossSection
+#print axioms Kakeya4.Hard.MultilinearKakeya.finrank_transverseSpace
+#print axioms Kakeya4.Hard.MultilinearKakeya.transverseUnitVolume_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.transverseUnitVolume_ne_top
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_transverse_closedBall
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_smoothPolynomial_tube_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrableOn_smoothPolynomial_tube
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_smoothPolynomial_unitTube_le_degree
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.convex_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.neg_mem_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.isCompact_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.zero_mem_interior_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_visibilityBody_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_visibilityBody_lt_top
+#print axioms Kakeya4.Hard.MultilinearKakeya.visibilityBody_antitone
+#print axioms Kakeya4.Hard.MultilinearKakeya.normalized_mem_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinant_visibilityBody_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.determinant_visibilityBody_le_of_lower_bound
+
+#print axioms CKN.integral_norm_sub_integralAverage_le_bound_of_isOpenBoundedConvexDomain
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.bodySeminorm_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_bodySeminorm
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_visibilityBody_iff_bodySeminorm
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_le_sqrt_mul_of_john_position
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_visibilityBody_johnEllipsoid_of_bound
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_smoothVisibility_johnEllipsoid
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_image_closedBall_scaled
+#print axioms Kakeya4.Hard.MultilinearKakeya.johnEllipsoid_volume_comparison
+#print axioms Kakeya4.Hard.MultilinearKakeya.localDegreeBudget_ne_top
+#print axioms Kakeya4.Hard.MultilinearKakeya.closedBall_subset_origin_tube
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_unit_le_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_le_degree_mul_norm
+#print axioms Kakeya4.Hard.MultilinearKakeya.axialCylinder_subset_visibilityBody_of_direction_le_one
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_visibilityBody_lower_of_direction_le_one
+#print axioms Kakeya4.Hard.MultilinearKakeya.one_lt_directional_of_small_visibilityBody
+#print axioms Kakeya4.Hard.MultilinearKakeya.one_lt_smoothDirectionalEnergy_of_small_body
+#print axioms John.exists_maxVolume
+#print axioms John.john_decomposition
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.closedBall_subset_centered_tube
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_arctanGap
+#print axioms Kakeya4.Hard.MultilinearKakeya.arctanGap_nonneg
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_arctanGap_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.antitone_arctanGap
+#print axioms Kakeya4.Hard.MultilinearKakeya.tendsto_arctanGap_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrable_arctanGap
+#print axioms Kakeya4.Hard.MultilinearKakeya.antitone_integral_arctanGap
+#print axioms Kakeya4.Hard.MultilinearKakeya.tendsto_integral_arctanGap_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_integral_arctanGap
+#print axioms Kakeya4.Hard.MultilinearKakeya.tendstoUniformlyOn_integral_arctanGap_zero
+#print axioms Kakeya4.Hard.MultilinearKakeya.polynomialSmoothingError_nonneg
+#print axioms Kakeya4.Hard.MultilinearKakeya.tendstoUniformlyOn_polynomialSmoothingError
+#print axioms Kakeya4.Hard.MultilinearKakeya.eventually_polynomialSmoothingError_lt
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_polynomialSmoothing_index
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_polynomialSmoothing_index_sphere
+#print axioms Kakeya4.Hard.MultilinearKakeya.smoothingScale_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.arctan_abs_eq_abs
+#print axioms Kakeya4.Hard.MultilinearKakeya.arctanGap_eq_smoothing_error
+#print axioms Kakeya4.Hard.MultilinearKakeya.pi_div_four_le_arctanGap_of_small
+#print axioms Kakeya4.Hard.MultilinearKakeya.measure_small_polynomial_values_le_error
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_smoothingScale_small_values
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_smoothingScale_regions
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_smoothingScale_regions_sphere
+#print axioms Kakeya4.Hard.MultilinearKakeya.negative_half_mass_le_smoothed_mass_add_error
+#print axioms Kakeya4.Hard.MultilinearKakeya.positive_half_mass_le_smoothed_mass_add_error
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_smoothing_bisection_stability
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.opposite_masses_force_oscillation
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_mass_lower_of_half_le_add_error
+#print axioms Kakeya4.Hard.MultilinearKakeya.smoothed_bisection_oscillation_lower
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceDomain_regular
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceDomain_volume_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.referencePoincareConstant_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.reference_poincare
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_clm_pi_le_sum
+#print axioms Kakeya4.Hard.MultilinearKakeya.reference_poincare_directions
+#print axioms Kakeya4.Hard.MultilinearKakeya.reference_opposite_masses_energy_lower
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.contDiff_nativeSmoothPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_referenceAffineChart
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineMeasure_finite
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineMeasure_absolutelyContinuous
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineMeasure_univ
+#print axioms Kakeya4.Hard.MultilinearKakeya.contDiff_nativeSmoothPolynomial_affine
+#print axioms Kakeya4.Hard.MultilinearKakeya.fderiv_nativeSmoothPolynomial_affine
+#print axioms Kakeya4.Hard.MultilinearKakeya.affine_bisection_energy_lower
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_affine_bisection_energy_lower
+#print axioms Kakeya4.Hard.MultilinearKakeya.inverseAffineJacobian_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.map_referenceAffineChart_volume
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineMeasure_eq_scaled_volume
+#print axioms Kakeya4.Hard.MultilinearKakeya.integral_referenceAffineChart
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineRegion_volume_lt_top
+#print axioms Kakeya4.Hard.MultilinearKakeya.affine_poincare_directions
+#print axioms Kakeya4.Hard.MultilinearKakeya.affine_spatial_bisection_energy_lower
+#print axioms Kakeya4.Hard.MultilinearKakeya.referenceAffineRegion_volume_pos
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_affine_spatial_bisection_energy_lower
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_affine_spatial_bisection_energy_fraction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurableSet_referenceAffineRegion
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurableSet_euclideanAffineRegion
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_euclideanAffineRegion
+#print axioms Kakeya4.Hard.MultilinearKakeya.euclideanAffineRegion_restrict_preimage
+#print axioms Kakeya4.Hard.MultilinearKakeya.fderiv_nativeSmoothPolynomial_eq_euclidean
+#print axioms Kakeya4.Hard.MultilinearKakeya.native_direction_integral_eq_euclidean
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_euclidean_bisection_energy_fraction
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_directionalEnergy_disjoint_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_disjoint_bisection_energy_budget
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_euclideanAffineRegion_toReal_eq
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_directionalEnergy_finset_disjoint_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_selected_bisection_count_budget
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_bisection_obstruction
+#print axioms Kakeya4.Hard.MultilinearKakeya.contDiff_coefficientSmoothPolynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_coefficient_spatial_fderiv
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_coefficient_spatial_direction
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_coefficient_directionalEnergy
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_directionalEnergy_coefficients
+#print axioms Kakeya4.Hard.MultilinearKakeya.isOpen_coefficient_directionalEnergy_lt
+#print axioms Kakeya4.Hard.MultilinearKakeya.smoothPolynomial_neg
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_neg_polynomial
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_neg_coefficients
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.isClosed_coefficient_directionalEnergy_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.operatorLeftEquiv_apply
+#print axioms Kakeya4.Hard.MultilinearKakeya.isOpen_relativeOperatorBall
+#print axioms Kakeya4.Hard.MultilinearKakeya.center_mem_relativeOperatorBall
+#print axioms Kakeya4.Hard.MultilinearKakeya.normalize_relativeOperatorBall_iff
+#print axioms Kakeya4.Hard.MultilinearKakeya.ordinary_ball_subset_relativeOperatorBall
+#print axioms Kakeya4.Hard.MultilinearKakeya.relativeOperatorBall_subset_ordinary_ball
+#print axioms Kakeya4.Hard.MultilinearKakeya.relativeOperatorBall_intersection_norm_bound
+#print axioms Kakeya4.Hard.MultilinearKakeya.relativeOperatorBall_intersection_bounds
+#print axioms Kakeya4.Hard.MultilinearKakeya.relativeOperator_disjoint_refinement
+#print axioms Kakeya4.Hard.MultilinearKakeya.isCompact_operatorCandidateSet
+#print axioms Kakeya4.Hard.MultilinearKakeya.operatorCandidate_injective
+#print axioms Kakeya4.Hard.MultilinearKakeya.operatorCandidate_eq_equiv
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_finite_relativeOperator_cover
+#print axioms Kakeya4.Hard.MultilinearKakeya.bodySeminorm_comp_le_norm_of_ellipsoid_subset
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_johnOperator_le_one
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_inverse_le_radius_mul_bodySeminorm
+#print axioms Kakeya4.Hard.MultilinearKakeya.johnOperator_mem_uniform_candidates
+#print axioms Kakeya4.Hard.MultilinearKakeya.localDegreeBudget_monotone_degree
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_smoothVisibility_johnOperator_in_candidates
+#print axioms Kakeya4.Hard.MultilinearKakeya.finite_disjoint_ball_card_mul_pow_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.finite_disjoint_ball_card_le
+#print axioms Kakeya4.Hard.MultilinearKakeya.finrank_operator
+#print axioms Kakeya4.Hard.MultilinearKakeya.relativeOperator_neighbour_card_bound
+#print axioms Kakeya4.Hard.MultilinearKakeya.finite_neighbour_colouring
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_relativeOperator_colouring
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_disjoint_relativeOperator_cover
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_coloured_operator_shape_net
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_uniform_smoothVisibility_shape_net
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_coefficientShapeClass_iff
+#print axioms Kakeya4.Hard.MultilinearKakeya.isClosed_coefficientShapeClass
+#print axioms Kakeya4.Hard.MultilinearKakeya.neg_mem_coefficientShapeClass_iff
+#print axioms Kakeya4.Hard.MultilinearKakeya.bodyShapeComparison_of_near_john
+#print axioms Kakeya4.Hard.MultilinearKakeya.relative_norm_le_of_bodyShapeComparison
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_uniform_closed_shape_classes
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_transformed_le_of_shapeClass
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalEnergy_scaled_axis_le_of_shapeClass
+#print axioms Kakeya4.Hard.MultilinearKakeya.inner_ellipsoid_subset_of_bodyShapeComparison
+#print axioms Kakeya4.Hard.MultilinearKakeya.visibilityBody_subset_outer_ellipsoid_of_bodyShapeComparison
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_bounds_of_bodyShapeComparison
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.isOpen_spatialTestCell
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.center_mem_spatialTestCell
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestCell_eq_image
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestCell_subset_triple_of_inter
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestCell_subset_closedBall
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_translation
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_scaled
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_ne_top
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_toReal_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_finite_spatialTest_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_disjoint_spatialTest_cover_triple
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_volume_le_of_disjoint
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_volume_lower_of_triple_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_realVolume_le_of_disjoint
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_realVolume_lower_of_triple_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_spatialTest_packing
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialReferenceChart_apply
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialReferenceRadius_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.norm_chartOfShape_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.nativeDilation_apply
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.nativeSpatialShape_toEuclidean
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestCell_eq_euclideanAffineRegion
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.nativeSpatialShape_axis
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestMass_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_spatialTest_scale
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestScale_spec
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_unitBall_spatialTest_packing
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_spatialTest_bisection_energy_fraction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_energy_budget_of_local_bounds
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_common_shapeClass_bisection_obstruction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_finite_shapeClass_test_obstruction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_coloured_spatial_visibility_tests
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.polynomialSignImbalance_neg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.euclidean_polynomial_zero_volume
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuousAt_euclidean_polynomial_sublevel_mass
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_polynomialSignImbalance_sphere
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.polynomialSignImbalance_eq_zero_iff_bisects
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.closure_positiveClassUnion_subset
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.disjoint_positiveClassUnion_closure_neg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.isClosed_sphereShapeClass
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.neg_mem_sphereShapeClass_iff
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.disjoint_colouredSignBadSet_closure_neg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_colouredSignBadSet_or_neg_of_unbisected
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.paddedSpatialTest_eq_empty
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_paddedSpatialTest_ne_top
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_paddedSpatialTest_eq
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.polynomialSignImbalance_empty
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.card_le_spatialTestIndexBound
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestIndexBound_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_fin_paddedSpatialTest_eq
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.disjoint_spatialSignBadSet_closure_neg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialSignBadSets_cover_of_unbisected_tests
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_actual_coloured_spatial_sign_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestCell_shape_eq_image
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_unitClosedBall_toReal_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTestVolumeFactor_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_shape_toReal
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.volume_spatialTestCell_shape_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_le_of_ellipsoid_volume_lower
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.visibilityBody_realVolume_le_of_bodyShapeComparison
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialTest_card_volume_layer_payment
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_small_visibilityBody_of_actual_tests
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_small_visibilityBodies_of_actual_tests
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_simultaneous_small_visibilityBody
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_simultaneous_small_visibilityBody_nthRoot
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_simultaneous_small_visibilityBody_quantitative
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.visibilityWeightCost_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.visibilityIndexBudget_inv_weights_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_polynomial_weighted_small_visibilityBody
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.weightedVisibilityDegreeBound_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.weightedVisibilityDegreeBound_amplification
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_amplified_weighted_small_visibilityBody
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.div_pow_lt_inverse_power_of_payment
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.unitDegreeCoefficient_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.unit_localDegreeBudget_toReal
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.one_lt_directional_of_small_real_body
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_directional_normalization_scale
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_direction_normalized_weighted_polynomial
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalFactor_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.directionalDeterminantConstant_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.weighted_determinant_le_normalized_directional_product
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_weighted_directional_factor_polynomial
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_directionalEnergy_le_boundedOverlap_tube
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_directionalFactor_le_of_degree_bound
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.closedBall_subset_tube_of_center_mem
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ballTubeFactor_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_ballTubeFactor_le_of_degree_bound
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_geometric_ballTube_factors
+
+#print axioms MeasureTheory.sum_measure_le_mul_measure_biUnion_of_card_filter_le
+
+#print axioms MeasureTheory.measurable_card_filter_mem
+
+#print axioms MeasureTheory.sum_measure_inter_eq_setLIntegral_card_filter
+
+#print axioms MeasureTheory.sum_volume_le_mul_volume_biUnion
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.center_mem_tube_of_mem_closedBall
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialCoverCellRadius_pos
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.spatialCoverCellRadius_payment
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_finite_halfBall_cover_with_uniform_unit_overlap
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.card_filter_subtype_centres_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_sum_geometricMean_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_sum_local_product_majorant_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_prod_uniform_budget_rpow
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.realTupleCoefficient_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ofReal_realTupleCoefficient
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.realKernel_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ofReal_realKernel
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.kernel_ne_top
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.kernel_toReal
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ballTubeBudgetCost_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.realKernel_le_product_of_line_factors
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.actual_ballTube_kernel_holder_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.actual_ballTube_kernel_uniform_holder_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_positive_finite_rescaling
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpoint_dual_power_identity
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.weighted_endpoint_dual_power_identity
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.cancel_endpoint_duality
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.discreteEndpointConstant_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_discrete_ballTube_endpoint_of_positive_kernel
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.realKernel_le_at_center
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpointKernel_le_at_center
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.setLIntegral_endpointKernel_le_ball_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ofReal_totalWeight_product_rpow
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuousEndpointConstant_nonneg
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.setLIntegral_endpointKernel_le_compact
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_endpointKernel_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.unitRadiusBound_of_two_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.endpointBound_of_two_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.manuscriptBound
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_discrete_ballTube_endpoint
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.Line.toParameter_toLine
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.LineParameter.toLine_toParameter
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.parameterLineDistance_eq_infDist
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_parameterLineDistance
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.mem_parameterTubeIncidence
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.isClosed_parameterTubeIncidence
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurableSet_parameterTubeIncidence
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.continuous_parameter_determinant
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.isClosed_parameterTupleIncidence
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_lineMeasureIntegrand
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureIntegrand_eq_tupleRegion
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_lineMeasureKernel
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_lineMeasureEndpointKernel
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_ballTubeFactor_parameter
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.exists_measurable_geometric_ballTube_factors
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.factor_le_finite_sum_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.integrable_factor_of_finite_sum_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.sum_integral_factor_le_of_finite_sum_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_ofReal_coordinate_product
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureIntegrand_le_product_factors
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_le_integrated_product
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.kernel_ne_top_of_positive_integrated_majorant
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_lineMeasureKernel_le_integrated_product
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.actual_lineMeasure_kernel_holder_budget
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_ne_top
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_discrete_lineMeasure_endpoint_of_positive_kernel
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.real_discrete_lineMeasure_endpoint
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_le_at_center
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureEndpointKernel_le_at_center
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.setLIntegral_lineMeasureEndpointKernel_le_ball_cover
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.ofReal_totalMass_product_rpow
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.setLIntegral_lineMeasureEndpointKernel_le_compact
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lintegral_lineMeasureEndpointKernel_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureUnitRadiusBound_of_two_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_lineParameter_of_anchor_direction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineLaw_map_univ
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_map_parameters
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.measurable_lineParameter_dilate
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.LineParameter.toLine_dilate
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureIntegrand_dilate
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_dilate
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureEndpointIntegral_radius_reduction
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureEndpointBound_of_two_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureManuscriptBound
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.parameterizedLineMeasureEndpointBound_of_two_le
+
+#print axioms Kakeya4.Hard.MultilinearKakeya.lineMeasureKernel_map_ge_success_mass
+
+#print axioms Kakeya4.Hard.finite_and_measure_determinantKakeya
+
+#print axioms Kakeya4.DeterminantMultilinearKakeya
+
+#print axioms Kakeya4.determinantMultilinearKakeya_eq_finite_and_measure
+
+#print axioms Kakeya4.determinantMultilinearKakeya_proof

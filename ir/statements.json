@@ -1,0 +1,943 @@
+{
+ "source": "openai/math",
+ "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+ "total": 80,
+ "statements": [
+  {
+   "label": "thm:main",
+   "env": "theorem",
+   "section": "01",
+   "tex_file": "sections/01-introduction.tex",
+   "line_start": 8,
+   "line_end": 15,
+   "title": null,
+   "statement_tex": "Let \\(K\\subset\\R^4\\). Suppose that for every \\(e\\in S^3\\) there is a point\n\\(a_e\\in\\R^4\\) such that\n\\[\n  \\{a_e+te:0\\leq t\\leq1\\}\\subset K.\n\\]\nThen \\(\\dim_H K=4\\).",
+   "refs": []
+  },
+  {
+   "label": "def:exact-problem",
+   "env": "definition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 29,
+   "line_end": 86,
+   "title": "Exact problems",
+   "statement_tex": "[Exact problems]\nAn exact problem is a sequence indexed by a real parameter\n\\(N_0\\to\\infty\\), with a fixed length \\(0<L<\\infty\\).\nFor \\(0\\le r\\le L\\), write \\(a_r=N_0^{-r}\\).\nA subpower factor \\(K_0\\ge1\\) satisfies\n\\(\\log K_0/\\log N_0\\to0\\); its value may be increased from one occurrence\nto the next.  We write \\(A\\sim_{\\log}B\\) when\n\\(K_0^{-1}B\\le A\\le K_0B\\) for such a factor.\nSubsequences are permitted.\n\nThere are finitely many auxiliary worlds \\(\\gamma\\), of weights\n\\(\\omega_\\gamma\\ge0\\) satisfying \\(\\sum_\\gamma\\omega_\\gamma=1\\).\nIn world \\(\\gamma\\), a trajectory has prior probability law\n\\(\\nu_\\gamma\\), independently of uniform time \\(t\\in[0,1]\\).\nIts base coordinate is\n\\[\n y(t)=y_0+tV\\in\\R^j,\\qquad |y(t)|+|V|\\le K_0.\n\\]\nWe use the following two versions.\n\\begin{enumerate}\n\\item In version \\(1\\), \\(j=1\\), and\n\\(w(t)=w_0+w_1t+w_2t^2\\), with\n\\(\\sup_{[0,1]}|w|\\le K_0\\).\nTests are \\(P(t,y,w)=w-F(t,y)\\), where \\(F\\) is a polynomial of\ntotal degree at most two.  The derivative scale is \\(B=1\\), and \\(X=w\\).\n\\item In version \\(2\\), \\(j=2\\), and \\(w(t)=w_0+tW\\) is affine.\nThe coefficients of \\(w\\) need not be independent of those of \\(y\\).\nEach world has a derivative scale \\(B>0\\) and a polynomial\n\\(P_*(t,y,w)\\) of total degree at most two.  Writing\n\\(X(t)=P_*(t,y(t),w(t))\\), the native bounds are\n\\begin{align}\n \\sup_{[0,1]}|X|&\\le K_0,&\n \\sup_{[0,1]}|\\partial_wP_*|&\\le K_0B,\n \\\\\n |\\partial_wP_*|&\\ge B/K_0\n       \\quad\\hbox{at selected incidences},&\n |\\partial_{ww}P_*|&\\le K_0B^2.\n \\notag\n\\end{align}\nTests in this version are arbitrary polynomials \\(P(t,y,w)\\) of\ntotal degree at most two.\n\\end{enumerate}\nIn both versions \\(X\\) is a quadratic polynomial along each trajectory;\nits coefficients are subpower bounded by interpolation on \\([0,1]\\).\n\nAn incidence selection is an event \\(E_\\gamma\\) in trajectory--time\nspace, and\n\\begin{equation}\n d\\mu_\\gamma(l,t)=\\1_{E_\\gamma}(l,t)\\,d\\nu_\\gamma(l)\\,dt,\n \\qquad\n \\mu=\\sum_\\gamma\\omega_\\gamma\\mu_\\gamma,\\qquad\n \\mu(\\mathrm{all})\\ge K_0^{-1}.\n\\end{equation}\nThus \\(\\mu_\\gamma\\) is not normalized to probability.\nA further selection restricts this event and must retain total mass\nat least an inverse subpower.",
+   "refs": []
+  },
+  {
+   "label": "a01:tempered",
+   "env": "definition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 93,
+   "line_end": 116,
+   "title": "Tempered data",
+   "statement_tex": "[Tempered data]\nThe numbers of worlds, specified parameter ranges and coefficients,\nand \\(B,B^{-1}\\), are polynomially bounded.  In the full trajectory\ncoefficient coordinates, each prior has piecewise constant Lebesgue\ndensity, polynomially bounded on polynomially many semialgebraic\npieces.  Trajectory and incidence predicates use polynomially many\npolynomial conditions of bounded individual degree, with arbitrary\nBoolean combinations.  The number of variables in each geometric\ntest is bounded.  Real constants in these conditions have no height\nrestriction.\n\nExact-level selections, labels, cells, and frames obey such uniform\nbounds.  Chart widths and time lengths have polynomially bounded\nreciprocals.  Changes of trajectory coordinates are invertible and\nhave polynomially controlled constant Jacobian.  We permit\npolynomially many copies of coefficient space, with an internal\ndiscrete trajectory index.  This index is not a world or an observed\npoint feature; all assignments concern indexed trajectories.\n\nMeasurable arguments may be used to locate a finite family of boxes\nor polynomial tests.  The output is encoded by those constants and\ngeometric tests, not by a description of the intermediate measurable\nsearch.",
+   "refs": []
+  },
+  {
+   "label": "a01:density-operations",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 155,
+   "line_end": 176,
+   "title": "Restriction, refinement, and caps",
+   "statement_tex": "[Restriction, refinement, and caps]\nLet \\(g\\) be the unnormalized density of an observation and \\(g'\\)\nthe density after restriction.  For \\(0<\\epsilon<1\\),\n\\begin{equation}\n \\int_{\\{g'<\\epsilon g\\}}g'\\le\n \\epsilon\\int g.\n\\end{equation}\nIf an observation is refined by a discrete label with at most \\(D\\)\npossible values on the retained events, the total refined mass at\nentries whose density is less than \\(\\epsilon g\\) is at most\n\\(\\epsilon D\\int g\\).\nThese statements apply within conditional worlds and may be\nsummed with the original world weights.\n\nConsequently further inverse-subpower restrictions, and refinements\nby subpower lists, preserve typical logarithmic densities.\nUpper density bounds may be integrated over arbitrary base regions\nand summed over discrete entries after the exceptional observations\nhave been removed.",
+   "refs": []
+  },
+  {
+   "label": "a01:flattening",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 208,
+   "line_end": 216,
+   "title": "Joint base flattening",
+   "statement_tex": "[Joint base flattening]\nFix tempered discrete labels and predicates of polynomial total\ncount.  Given a fixed \\(T>0\\), there is a fixed finite \\(D\\) such that\nuniformly redistributing the base \\((t,y)\\) inside its mesh cells\nof width \\(\\rho\\sim N_0^{-D}\\), while retaining the discrete entries,\nchanges the joint measure in total variation by \\(O(N_0^{-T})\\).\nThus a posterior list selector for these entries can be replaced,\nwith that error in success, by a cell-constant tempered list table.",
+   "refs": []
+  },
+  {
+   "label": "a01:homogenization",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 256,
+   "line_end": 265,
+   "title": "Homogenization",
+   "statement_tex": "[Homogenization]\nAfter a tempered further selection of inverse-subpower mass and a\nsubsequence, an exact problem has a homogeneous profile \\(f(r)\\)\non every prescribed compact depth interval.  It is nondecreasing\nand \\(1\\)-Lipschitz.  Jointly, one may homogenize the observation\n\\((p_r,[V]_{a_u})\\) on compact nonnegative \\((r,u)\\)-ranges, obtaining\na function \\(f(r,u)\\) that is nondecreasing in each variable and\nhas Lipschitz constants \\(1\\) in \\(r\\) and \\(j\\) in \\(u\\).\nMoreover \\(f(r,0)=f(r)\\).",
+   "refs": []
+  },
+  {
+   "label": "a01:cap-class",
+   "env": "definition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 333,
+   "line_end": 348,
+   "title": "The cap class",
+   "statement_tex": "[The cap class]\nFix \\(S,\\eta>0\\).  A homogeneous exact problem belongs to \\(C(d)\\),\n\\(d<1\\), if\n\\begin{equation}\n f(L)-f(r)\\le d(L-r)\\qquad(0\\le r\\le L),\n\\end{equation}\nand, for \\(0<u\\le\\eta L\\), the joint density of\n\\((p_L,[V]_{a_u})\\) has typical upper bound\n\\begin{equation}\n n(L)N_0^{-Su+o(1)}.\n\\end{equation}\nThe \\(o(1)\\) is interpreted by the fixed-tolerance convention above.\nThe parameters \\(S,\\eta\\) are held fixed when the class is used.",
+   "refs": []
+  },
+  {
+   "label": "a01:angular-coarsening",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 350,
+   "line_end": 364,
+   "title": "Angular caps under coarsening",
+   "statement_tex": "[Angular caps under coarsening]\nSuppose \\Cref{a01:angular-cap} holds. For \\(0\\le b<L\\) and\n\\(0<u\\le\\eta L\\), the conditional probability\n\\[\n \\Pp\\{[V]_{a_u}=v\\mid p_b\\},\n \\qquad v=[V]_{a_u},\n\\]\nunder the selected incidence law has typical upper bound\n\\(N_0^{-Su+o(1)}\\), evaluated at the sampled angular entry.\nNormalizing the total incidence mass does not change this\nconditional distribution. Good restricted measures with subpower\nslack can be prepared simultaneously on slowly increasing finite\ndepth grids, losing negligibly relative to a specified\ninverse-subpower selection.",
+   "refs": []
+  },
+  {
+   "label": "def:true-chart",
+   "env": "definition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 397,
+   "line_end": 454,
+   "title": "Charts, true packets, and known atlases",
+   "statement_tex": "[Charts, true packets, and known atlases]\nAt depth \\(r\\in(0,L]\\), a chart system has a common dyadic\ntime partition into intervals \\(I\\) of length\n\\(q=N_0^{-h+o(1)}\\), \\(h\\ge0\\).\nWithin each world and each interval, it assigns disjoint\ntrajectory sets \\(A_c\\) to chart labels \\(c\\), and selects\nincidences from the given event on these assignments.\nThe total selected mass is at least \\(K_0^{-1}\\).\n\nA chart has an affine spatial center \\(y_c(t)\\) and an\ninvertible matrix \\(D_c\\), with\n\\begin{equation}\n \\|D_c\\|\\le qK_0,\\qquad J_c=|\\det D_c|,\\qquad\n \\sup_{t\\in I}|D_c^{-1}(y(t)-y_c(t))|\\le K_0\n       \\quad(l\\in A_c).\n\\end{equation}\nIt has a test of the appropriate model class satisfying\n\\begin{align}\n \\sup_{t\\in I}|P(t,y(t),w(t))|&\\le K_0a_r,\n &\n \\sup_{t\\in I}|\\partial_wP(t,y(t),w(t))|&\\le K_0B,\n \\\\\n |\\partial_wP|&\\ge B/K_0\n       \\quad\\hbox{on its selected incidences},\n &\n |\\partial_{ww}P|&\\le K_0B^2/a_r.\n \\notag\n\\end{align}\nAll chart data, assignments, selections, inverse coordinate\nchanges, and reciprocal widths are tempered.\n\nWrite\n\\[\n \\nu_c=\\nu_{\\gamma(c)}(A_c),\\qquad\n m_c=\\mu_{\\gamma(c)}(\\hbox{selected incidences assigned to }c).\n\\]\nA \\emph{packet} is an individual chart together with its label,\ntime interval, geometric and test data, full trajectory assignment\n\\(A_c\\), and current incidence selection. It carries the assigned\ntrajectory measure \\(\\nu_{\\gamma(c)}|_{A_c}\\), of mass \\(\\nu_c\\),\nand the unnormalized selected incidence measure, of mass \\(m_c\\).\nAn incidence-only restriction shrinks the latter without\nconditioning the assigned trajectory measure on success.\nA packet is \\emph{true} when\n\\begin{equation}\n \\frac{m_c}{q}\\ge K_0^{-1}n(r)J_c.\n\\end{equation}\nA system is \\emph{true} if every used packet is true.\nA \\emph{known atlas} at depth \\(r\\) is a chart system whose\nlabel is known by \\(p_L\\). It has all the assignment, coverage,\ngeometric, test, and temperedness properties above, but need not\nsatisfy \\Cref{a01:true-floor}.\nWe also allow known atlases at \\(r=0\\), with \\(a_0=1\\),\nwhen the same displayed bounds hold.",
+   "refs": []
+  },
+  {
+   "label": "lem:quadratic-sublevel",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 470,
+   "line_end": 480,
+   "title": "Quadratic sublevel sets",
+   "statement_tex": "[Quadratic sublevel sets]\nLet \\(Q\\) be a real polynomial of degree at most two, and let\n\\(\\varepsilon,b,\\delta>0\\). The set\n\\[\n \\{w\\in\\R:|Q(w)|\\le\\varepsilon,\n                  \\ |Q'(w)|\\ge b\\}\n\\]\nhas total length at most \\(4\\varepsilon/b\\) and meets at most\n\\(C(1+\\varepsilon/(b\\delta))\\) bins of any grid of width\n\\(\\delta\\), for an absolute constant \\(C\\).",
+   "refs": []
+  },
+  {
+   "label": "a01:saturation",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 497,
+   "line_end": 507,
+   "title": "Saturation and label knowledge",
+   "statement_tex": "[Saturation and label knowledge]\nA true system may be restricted, retaining inverse-subpower\ntotal mass and enlarging subpower slacks, so that every used\nchart satisfies\n\\begin{equation}\n \\frac{m_c}{q}\\sim_{\\log}\\nu_c\\sim_{\\log}n(r)J_c,\n\\end{equation}\nand its label is known by \\(p_r\\).\nThe true floor persists on the resulting selected incidences.",
+   "refs": []
+  },
+  {
+   "label": "a01:witness-budgets",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 560,
+   "line_end": 591,
+   "title": "Restoring current floors and charging witnesses",
+   "statement_tex": "[Restoring current floors and charging witnesses]\nFix a chart layer with the assignment budget\n\\Cref{a01:assignment-budget}.  Suppose a later selected measure\nhas inverse-subpower mass in the same normalization.\nFor each chart let at most \\(D\\le K_0\\) additional entries be\nused, and let \\(\\widetilde m_{c,e}\\) be their current masses.\nFor any \\(0<\\epsilon<1\\), deleting entries with\n\\begin{equation}\n \\widetilde m_{c,e}<\\frac{\\epsilon q\\nu_c}{D}\n\\end{equation}\nloses at most \\(\\epsilon\\) total weighted mass.\nIn particular, \\(\\epsilon\\) may be an inverse-subpower\nnegligible relative to the current total mass, giving\ncurrent floors against the full assignment budget.\nFor finitely many prescribed layers, allocate positive tolerances\n\\(\\epsilon_i\\) with \\(\\sum_i\\epsilon_i\\le\\epsilon\\). Their\ncorresponding floors can be achieved on one final retained measure,\nwith total weighted loss at most \\(\\epsilon\\).\n\nIf time is further partitioned, the corresponding threshold\nuses \\(|I'|\\nu_c\\) for a subinterval \\(I'\\subset I\\);\nsumming these budgets over the subintervals gives \\(q\\nu_c\\).\n\nFor a collection of disjoint witness submeasures of a fixed\nmeasure \\(\\lambda\\), all supported in a domain \\(U\\), the total\nwitness mass is at most \\(\\lambda(U)\\). With multiplicity at\nmost \\(D\\), the bound is \\(D\\lambda(U)\\). Any cap used in this\ncount must hold for that same fixed measure \\(\\lambda\\).\nNo floor on an arbitrary later restriction is thereby asserted.",
+   "refs": []
+  },
+  {
+   "label": "a01:largest-axis",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 628,
+   "line_end": 637,
+   "title": "Fullness of the largest spatial scale",
+   "statement_tex": "[Fullness of the largest spatial scale]\nIn a cap-class problem, a chart system known by \\(p_L\\),\nwhether true or not, has\n\\[\n \\|D_c\\|\\sim_{\\log}q\n\\]\non an inverse-subpower selection, after homogenizing the\nratio if necessary.",
+   "refs": []
+  },
+  {
+   "label": "lem:normalization",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 666,
+   "line_end": 692,
+   "title": "Chart normalization and lifting",
+   "statement_tex": "[Chart normalization and lifting]\nLet a homogeneous exact problem of length \\(L\\) have a\nterminal-known atlas at depth \\(0\\le r<L\\).\nAfter discarding extremely light charts and homogenizing\ntheir Jacobians and prior masses, it defines a new\nhomogeneous exact problem of length \\(L'=L-r\\).\nFor its typical densities,\n\\begin{align}\n n'(L')&\\sim_{\\log}\n       n(L)\\frac{J_c}{\\nu_c},\n \\\\\n n'(s)&\\le N_0^{o(1)}\n       n(r+s)\\frac{J_c}{\\nu_c}\n       \\qquad(0\\le s<L').\n\\end{align}\nIf the parent label is already known by \\(p_r\\), there is\nequality up to subpower factors in\n\\Cref{a01:intermediate-normalization}.\nThe class \\(C(d)\\), with the same \\(S,\\eta\\), is preserved.\n\nA true terminal system in the new problem lifts to a true\nterminal system in the old problem.  Intermediate true\nsystems also lift through a parent with the stated\nintermediate density equality, in particular through a\nprepared true parent.",
+   "refs": []
+  },
+  {
+   "label": "def:horizon",
+   "env": "definition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 860,
+   "line_end": 868,
+   "title": "Minimum horizon",
+   "statement_tex": "[Minimum horizon]\nFor a homogeneous exact problem \\(E\\) of length \\(L\\), let\n\\(H(E)\\) be the infimum of the exponents \\(h\\ge0\\) for which\na true system at terminal depth \\(L\\) exists.\nThe infimum includes systems on arbitrary subsequences\nand further permitted incidence selections, in the\ncoordinates of \\(E\\).  Such selections do not change\nthe terminal density exponent.",
+   "refs": []
+  },
+  {
+   "label": "lem:weighted-planks",
+   "env": "lemma",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 885,
+   "line_end": 926,
+   "title": "Weighted full-time plank estimate",
+   "statement_tex": "[Weighted full-time plank estimate]\nFix a bounded affine-line chart in \\(\\R^2\\), and a fixed\npermitted enlargement of mesh cells.\nFor every \\(\\eps>0\\), there are \\(\\eta_\\eps>0\\) and\n\\(C_\\eps<\\infty\\) with the following property.\nLet\n\\[\n M_i(t)=b_i+tu_i,\\qquad 0\\le t\\le1,\n\\]\nbe finitely many indexed traces, with \\(b_i,u_i\\) in the\nfixed bounded chart, and arbitrary positive weights\n\\(\\omega_i\\).  Repeated traces are allowed.\nLet \\(D\\ge1\\), \\(\\rho=D^{-1}\\), and suppose that every\nfull-time plank\n\\[\n \\mathcal P=\\left\\{(t,x):\n \\begin{array}{l}\n 0\\le t\\le1,\\\\\n |\\langle x-c-tv,e_1\\rangle|\\le a\\rho,\\\\\n |\\langle x-c-tv,e_2\\rangle|\\le b\\rho\n \\end{array}\\right\\},\n \\qquad 1\\le a\\le b\\le D,\n\\]\nwhere \\((e_1,e_2)\\) is an arbitrary orthonormal spatial\nframe and \\(c,v\\in\\R^2\\), satisfies\n\\begin{equation}\n \\sum_{i:\\,M_i\\subset\\mathcal P}\\omega_i\\le Aab.\n\\end{equation}\nFixed dilations of these plank tests are permitted.\nMark time bins \\(J_i\\), each of length \\(\\rho\\), with\n\\(\\#J_i\\ge D^{1-\\eta_\\eps}\\).\nIf \\(E_{\\mathrm{vis}}\\) is the union of the spatial--time\nmesh cells visited at their bin centers, or fixed\nenlargements of those cells, then\n\\begin{equation}\n \\sum_i\\omega_i\\#J_i\n \\le C_\\eps A D^\\eps\\,\\#E_{\\mathrm{vis}}.\n\\end{equation}",
+   "refs": []
+  },
+  {
+   "label": "a01:horizon-bound",
+   "env": "proposition",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 968,
+   "line_end": 970,
+   "title": "Initial horizon bound",
+   "statement_tex": "[Initial horizon bound]\nEvery homogeneous exact problem satisfies \\(H(E)\\le L\\).",
+   "refs": []
+  },
+  {
+   "label": "thm:model-reduction",
+   "env": "theorem",
+   "section": "02",
+   "tex_file": "sections/02-framework.tex",
+   "line_start": 1160,
+   "line_end": 1168,
+   "title": "Reduction to a bad weighted problem",
+   "statement_tex": "[Reduction to a bad weighted problem]\nIf a set \\(K\\subset\\R^4\\), with no measurability or\ncompactness assumption, contains a unit segment in every\ndirection and satisfies \\(\\dim_{\\mathrm H}K<4\\), then\nthere are \\(0<d<1\\), \\(S,\\eta>0\\), and a tempered\nhomogeneous exact problem \\(E\\) of version \\(2\\) in\n\\(C(d)\\) such that \\(H(E)>0\\).",
+   "refs": []
+  },
+  {
+   "label": "lem:algebraic-norm",
+   "env": "lemma",
+   "section": "03",
+   "tex_file": "sections/03-comparison.tex",
+   "line_start": 43,
+   "line_end": 71,
+   "title": "Algebraic analytic norm comparison",
+   "statement_tex": "[Algebraic analytic norm comparison]\nLet \\(\\Omega\\subset\\C^n\\) be a fixed ball or polydisc, and let\n\\(B\\subset\\Omega\\cap\\R^n\\) be a fixed closed ball with nonempty interior.\nFix a compact set \\(K\\Subset\\Omega\\).  For algebraic sheets of degree at most\n\\(D\\), normalized by \\(\\|f\\|_B=1\\), the following bounds are uniform:\n\\begin{enumerate}\n\\item for every fixed integer \\(q\\),\n\\(\\max_{|\\alpha|\\le q}\\|\\partial^\\alpha f\\|_K\\le C_q\\);\n\\item at every \\(z\\in K\\),\n\\[\n \\max_{|\\alpha|\\le D}|\\partial^\\alpha f(z)|\\ge c_K>0.\n\\]\n\\end{enumerate}\nConsequently, let \\(B_1\\subset\\Omega\\cap\\R^n\\) be another fixed\nclosed real ball with nonempty interior.  For every measurable\n\\(E\\subset B\\) with \\(\\theta=|E|/|B|>0\\),\n\\begin{equation}\n \\|f\\|_{B_1}\n +\\max_{|\\alpha|\\le q}\\|\\partial^\\alpha f\\|_{B_1}\n \\le C_q\\theta^{-C}\\|f\\|_E,\n\\end{equation}\nThe statements are homogeneous without normalization.  They are unchanged,\nwith the corresponding scaled derivatives, by affine translation and\nrescaling of the base, including translation to a parallel real slice\nthrough a complex point.  A sufficiently long finite jet at the center of\nan interior ball controls the norm on that ball.",
+   "refs": []
+  },
+  {
+   "label": "a02:algebraic-path",
+   "env": "lemma",
+   "section": "03",
+   "tex_file": "sections/03-comparison.tex",
+   "line_start": 183,
+   "line_end": 202,
+   "title": "Polynomial cost of continuation",
+   "statement_tex": "[Polynomial cost of continuation]\nFix the base dimension, polynomial degrees, number of sheets, and a\nbound on the number of pieces of a broken straight path.  Work in a\nfixed bounded complex base region.  The sheets may be affine functions,\nroots of linear equations, or simple roots of quadratic equations in\nthe function variable whose quadratic coefficient is constant.\nDifferences and fixed-degree polynomial evaluations of these sheets\nare allowed.\n\nSuppose the linear coefficients needed for linear roots and the\ndiscriminants needed for quadratic roots are nonzero throughout an\n\\(A^{-1}\\)-neighborhood of the path, where \\(A\\ge2\\).  On endpoint\ncomparison balls of radius \\(c/A\\), with fixed margins inside that\nneighborhood, the norms of a continued function compare in both\ndirections with loss \\(A^C\\).  Fixed derivatives are controlled by\nthese norms, and sufficiently many endpoint jets control the norms,\nwith losses of the same form.  The exponent \\(C\\) is independent of\nthe values of the equation coefficients.",
+   "refs": []
+  },
+  {
+   "label": "lem:two-color-matching",
+   "env": "lemma",
+   "section": "03",
+   "tex_file": "sections/03-comparison.tex",
+   "line_start": 278,
+   "line_end": 304,
+   "title": "Two-color matching",
+   "statement_tex": "[Two-color matching]\nFix \\(D\\ge1\\), an integer \\(J>D\\), and \\(d_0<1\\).\nThere is no sequence \\(N\\to\\infty\\) with the following properties.\nThere are two indexed lists of real \\(C^{J+1}\\) functions on a unit\ninterval, each of cardinality at most \\(N^{d+o(1)}\\), where \\(d\\le d_0\\),\nand all derivatives through order \\(J+1\\) are bounded by\n\\(K=N^{o(1)}\\).  There is a probability law on events \\((i_1,i_2,t)\\)\nsuch that, for each color \\(\\kappa=1,2\\), its \\((i_\\kappa,t)\\)-marginal\nis bounded by\n\\begin{equation}\n K\\,\\pi_{\\kappa,i_\\kappa}\\,dt,\n \\qquad\n \\sum_i\\pi_{\\kappa,i}=1,\n\\end{equation}\nand every retained event satisfies\n\\begin{align}\n |f_{1,i_1}(t)-f_{2,i_2}(t)|&\\le K N^{-1},\\\\\n \\max_{1\\le j\\le D}\n |f_{1,i_1}^{(j)}(t)-f_{2,i_2}^{(j)}(t)|&\\ge K^{-1}.\n\\end{align}\nThe impossibility is uniform with sufficiently small fixed power\nlosses in place of all displayed subpower losses, for these fixed\norders and \\(d\\le d_0\\).",
+   "refs": []
+  },
+  {
+   "label": "a02:local-graph-matching",
+   "env": "corollary",
+   "section": "03",
+   "tex_file": "sections/03-comparison.tex",
+   "line_start": 779,
+   "line_end": 803,
+   "title": "Local matching of scalar graphs",
+   "statement_tex": "[Local matching of scalar graphs]\nFix the base dimension, algebraic degrees, real comparison balls\nwith fixed holomorphic margins, and \\(d_0<1\\).  There is\n\\(\\eps_*>0\\) with the following property.  Let \\(M,\\Delta>0\\), and put\n\\(R=M/\\Delta\\).\nFor sufficiently large \\(R\\), two lists of real-on-real algebraic\nsheets cannot satisfy all of the following, with\n\\(0<\\eps\\le\\eps_*\\) and \\(d\\le d_0\\):\n\\begin{enumerate}\n\\item each list has at most \\(R^{d+\\eps}\\) members, and each member\nis within \\(M R^\\eps\\) in norm of one common algebraic reference\nsheet;\n\\item a subprobability law on pairs of indices and a common real\nbase point in the comparison domain has total mass at least\n\\(R^{-\\eps}\\), with each index-base marginal bounded by\n\\(R^\\eps\\pi_{\\kappa,i}\\,dz\\), where the \\(\\pi_{\\kappa,i}\\) are\nprobability weights, separately in each color;\n\\item on its events, the two values differ by at most\n\\(\\Delta R^\\eps\\), whereas the norm of their difference on the\ncomparison ball is at least \\(M R^{-\\eps}\\).\n\\end{enumerate}\nFixed multiplicative constants may be absorbed by decreasing\n\\(\\eps_*\\) or taking \\(R\\) larger.",
+   "refs": []
+  },
+  {
+   "label": "lem:terminal-extension",
+   "env": "lemma",
+   "section": "03",
+   "tex_file": "sections/03-comparison.tex",
+   "line_start": 846,
+   "line_end": 867,
+   "title": "Terminal time extension",
+   "statement_tex": "[Terminal time extension]\nFix \\(d_0<1\\) and angular parameters \\(S,\\eta>0\\).\nThere are constants \\(C<\\infty\\) and \\(c>0\\), depending only on\nthese fixed parameters and the fixed model dimensions and test\ndegrees, with the following property. Suppose an exact problem in\n\\(C(d)\\), \\(d\\le d_0\\), of length \\(L\\) has a true terminal system\nat horizon exponent \\(h>0\\). For every\n\\[\n 0<e<\\min(h,cL)\n\\]\nthere is, on a retained subsequence, a known atlas at horizon\nexponent \\(h-e\\), whose labels are known at the old observation\n\\(p_L\\), and whose fitting thickness is \\(a_{L'}\\), where\n\\[\n 0<L'<L,\\qquad L-L'\\le Ce.\n\\]\nThe resulting charts, trajectory assignments, tests, and selected\nincidences are tempered in the original exact sequence. The\nconstant \\(C\\) is independent of the particular exact problem,\nits length, and its tempered complexity exponent.",
+   "refs": []
+  },
+  {
+   "label": "a03:composition",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 32,
+   "line_end": 48,
+   "title": "Composition of horizon costs",
+   "statement_tex": "[Composition of horizon costs]\nLet \\(E\\in C(d)\\) have length \\(L\\).  If a known atlas at depth \\(r<L\\)\nhas horizon exponent \\(h\\), and \\(F\\) is a homogeneous remaining problem\nin the original exponent units, then\n\\begin{equation}\nH(E)\\le h+H(F).\n\\end{equation}\nIf \\(H_{\\mathrm{out}}\\) is the horizon infimum for the coarsening of \\(E\\)\nto endpoint \\(r>0\\), then\n\\begin{equation}\nH(E)\\le H_{\\mathrm{out}}+k(d)(L-r).\n\\end{equation}\nThese statements allow all the subsequences and incidence restrictions\nin the definition of the respective infima.",
+   "refs": []
+  },
+  {
+   "label": "a03:positive-rate",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 76,
+   "line_end": 78,
+   "title": "A positive critical time rate",
+   "statement_tex": "[A positive critical time rate]\nThe rates in \\Cref{a03:extremal-rates} satisfy \\(0<k\\le1\\).",
+   "refs": []
+  },
+  {
+   "label": "prop:critical-path",
+   "env": "proposition",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 121,
+   "line_end": 152,
+   "title": "Critical paths",
+   "statement_tex": "[Critical paths]\nFix the model version and its parameters \\(j,S,\\eta\\), and suppose bad\nproblems exist.  With \\(d_*,k,\\ell\\) as above, the following conclusions\nhold.\n\\begin{enumerate}\n\\item Every maximizing sequence of length-one exact problems satisfies\n\\begin{equation}\n\\sup_{0\\le r\\le1}\n \\big|f_i(r)-f_i(0)-d_*r\\big|\\longrightarrow0 .\n\\end{equation}\nOnly the relative profiles occur; no bound on \\(f_i(0)\\) is required.\n\\item For every fixed finite ordered grid of target depths ending at one,\nthere are nested true systems at actual depths tending to those targets.\nTheir cumulative horizons tend to \\(kr\\), and their segment horizons,\nin their own length units, tend to \\(k\\).  Both the coarsened and remaining\nproblems used at each step are maximizing after their individual length\nnormalizations.  Full layer assignments, priors and incidence witnesses\ncan be retained in addition to the final path incidences.\n\\item In version 2 with \\(\\ell<\\infty\\), for every \\(\\zeta>0\\) one may\nchoose the base maximizing sequence and these paths so that cumulative\nnarrowness at a target \\(r\\), and narrowness increments between targets,\nequal the corresponding linear values with slope \\(\\ell\\), up to\n\\(O(\\zeta)+o_i(1)\\).  The base sequence has terminal optimal narrowness\nsupremum at most \\(\\ell+\\zeta\\).\n\\item If \\(\\ell=\\infty\\), every newly obtained maximizing sequence admits,\non subsequences, true terminal systems with relative horizons tending\nto \\(k\\) and relative narrowness tending to infinity.  Thus arbitrarily\nlarge narrowness increments can be required on each of finitely many\nsuccessive positive-length segments.\n\\end{enumerate}",
+   "refs": []
+  },
+  {
+   "label": "a03:zero-depth",
+   "env": "corollary",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 294,
+   "line_end": 306,
+   "title": "Depth-zero normalization and vanishing-depth nodes",
+   "statement_tex": "[Depth-zero normalization and vanishing-depth nodes]\nA sequence of depth-zero, horizon-zero known normalizations of a\nmaximizing sequence is again maximizing, provided the normalizations\nhave the actual subpower success and terminal knowledge required in\n\\Cref{lem:normalization}.  This assertion does not require bounded\nabsolute density exponents.\n\nOn any maximizing sequence one may choose true nodes at positive depths\n\\(b_i\\to0\\) whose horizon exponents tend to zero, retaining the\nrelative-profile estimates at those nodes in the slowly diagonalized\nsense.",
+   "refs": [
+    "lem:normalization"
+   ]
+  },
+  {
+   "label": "a03:excluded-improvements",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 331,
+   "line_end": 341,
+   "title": "Excluded improvements",
+   "statement_tex": "[Excluded improvements]\nThere are two forbidden outputs of known atlases at an interior path node (including the parent where a short piece starts) as \\(i\\to\\infty\\) on the chosen sequence and fixed grid. Exponents refer cumulatively to the original problem; one can homogenize within exact problems. Write \\(r_i,h_i\\) for that node's depth and horizon exponent. Knowledge is required by the original \\(p_L\\).  Path incidences alone\nmay be used, with subpower coverage and slacks in each exact problem.\nThe gains \\(\\Delta_i>0\\) have a uniform positive lower bound along\nthe outer sequence.\n\\begin{enumerate}\n\\item A thickness-depth improvement by \\(\\Delta_i>0\\) beyond \\(r_i\\), still leaving positive length, with cumulative time exponent at most \\(h_i+k\\Delta_i/2\\).\n\\item In the finite-\\(\\ell\\) width optimization, extra narrowness by \\(\\Delta_i\\gg\\zeta>0\\) over the node's, keeping exactly the node depth and horizon.\n\n\\end{enumerate}",
+   "refs": []
+  },
+  {
+   "label": "a03:finite-guard",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 383,
+   "line_end": 400,
+   "title": "The finite-sample exclusion",
+   "statement_tex": "[The finite-sample exclusion]\nFix this \\(n,i\\), exact path subsequence, and any finite original-coordinate\ncomplexity exponent \\(M^\\#\\).  For all sufficiently late \\(N_0\\) there\nis no output known atlas satisfying all of the following:\n\\begin{enumerate}\n\\item One of the improvements in \\Cref{a03:excluded-improvements},\nwith its buffered gain at least \\(\\gamma_n\\epsilon_n\\), with thickness\ndepth bounded away from the terminal endpoint.  A width improvement\nkeeps the actual node depth and time length and holds uniformly on its\noutput labels.\n\\item Counts, coefficient magnitudes, reciprocal widths and lengths,\npiece and condition counts are at most \\(N_0^{M^\\#}\\), with degree per\ncondition at most \\(M^\\#\\).\n\\item All geometric slacks and original \\(p_L\\)-list sizes are at most\n\\((K_{\\mathrm{path}}\\log N_0)^n\\), and the original incidence mass is\nat least \\(\\mathfrak p_{\\mathrm{path}}/\\log N_0\\).\n\\end{enumerate}",
+   "refs": [
+    "a03:excluded-improvements"
+   ]
+  },
+  {
+   "label": "prop:tangent-palette",
+   "env": "proposition",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 485,
+   "line_end": 535,
+   "title": "Prepared tangent data",
+   "statement_tex": "[Prepared tangent data]\nAssume \\(\\ell<\\infty\\), and use the guarded diagonal constructed above.\nOne can retain all but \\(o(1)\\) of the relative mass of the original final\npath and choose an interior parent window with the following properties.\nWrite \\(d=d_*\\), \\(N=N_0^{\\epsilon_n}\\), and use \\(K=N^{o(1)}\\) for\nanalytical estimates.\nThere is one prepared path probability\n\\(\\mu_{\\mathrm{prep}}=\\sum_Ap_A\\lambda_A^0\\), where\n\\(p_A=\\mu_{\\mathrm{prep}}\\{A\\}\\) and \\(\\lambda_A^0\\) is its\nconditional probability in parent \\(A\\).  On the retained parents,\n\\(\\lambda_A^0\\le K\\nu_A\\times dt\\), where \\(\\nu_A\\) is the prior\nconditioned on the full parent trajectory assignment and \\(dt\\) is\nuniform parent time.  Subsequent omissions restrict this mixture and\nleave its reference weights and probabilities fixed.\n\\begin{enumerate}\n\\item At every required bounded tangent depth \\(s\\), the true label\n\\(Q_s\\) has thickness \\(a_s=N^{-s}\\), time length\n\\(q_s\\sim_{\\log,N}N^{-ks}\\), and spatial determinant\n\\(J_s\\sim_{\\log,N}q_s^jN^{-\\ell s}\\) in version~2; omit the last\nfactor in version~1.  Its largest width is comparable to \\(q_s\\) in\nlogarithmic order, and its full assigned trajectory mass satisfies\n\\(\\nu_Q\\sim_{\\log,N}a_s^dJ_s\\).\n\\item For the restricted incidence laws, pure hidden and native-signal\nbins of width \\(p\\) have the instantaneous joint base-density ceiling \\(Kp^d\\) on the required\nfinite grids.  In unit coordinates of a \\(Q_s\\)-box, the base marginal\nhas density at most \\(Kq_s\\nu_Q\\), with masses still measured in\nparent time.\n\\item Let \\(v=V\\) in version~1 and in the case \\(\\ell=0\\).  For\n\\(0<\\ell<\\infty\\), let \\(Z,Y\\) be the major and minor parent\ncoordinates and put \\(v=Z'\\).  The fixed conditional parent palette\n\\(\\pi_A\\), the velocity marginal of \\(\\lambda_A^0\\), satisfies\n\\(\\pi_A(B_p)\\le Kp^S\\).  If \\(E\\) denotes the end history,\nthen before likelihood deletion the required velocity bin satisfies\n\\[\n \\sum_Ap_A I_{\\lambda_A^0}([v];E)=o(\\log N).\n\\]\nThus the information bound is averaged with the fixed parent weights.\n\\item Required finite-mesh point states and path labels have lists\nat the original \\(p_L\\) bounded by fixed powers of actual path factors\nand logarithms.  Sufficiently deep histories leave only \\(K\\) options\nfor these point states.  Each fitted test has at most \\(K\\) local graph choices approximating\n\\(w\\) to \\(Ka_s\\) on retained incidences in their cores.  After composition with the native test, their\nfixed-order derivatives are bounded by \\(K\\) on the used normalized\ninteriors.  These graph bounds and capped full-layer incidence witnesses\ncan be prepared before arbitrary later inverse-subpower selections.\n\\end{enumerate}\nWhen \\(0<\\ell<\\infty\\), major-coordinate fullness and the coefficients\nof the tilted-box rows can be prepared with actual \\(N_0\\)-subpower\nbounds.  The joint and conditional consequences of these fixed laws are\nstated in \\Cref{a03:finite-state-conditioning} below.",
+   "refs": [
+    "a03:finite-state-conditioning"
+   ]
+  },
+  {
+   "label": "a03:finite-state-conditioning",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 858,
+   "line_end": 899,
+   "title": "Likelihood truncation and finite-state conditioning",
+   "statement_tex": "[Likelihood truncation and finite-state conditioning]\nAs \\(N\\to\\infty\\), let \\(p_A\\ge0\\), \\(\\sum_Ap_A=1\\), be mixture weights and let\n\\(\\lambda_A^0\\) be probability laws carrying two finite labels\n\\(E,b\\).  Write\n\\[\n R_A^0(E,b)=\\lambda_A^0\\{E,b\\},\\qquad\n \\lambda_{A,\\mathrm{pre}}(E)=\\sum_bR_A^0(E,b),\\qquad\n \\pi_A(b)=\\sum_E R_A^0(E,b).\n\\]\nSuppose\n\\[\n \\sum_Ap_A\\sum_{E,b}R_A^0(E,b)\n \\log\\frac{R_A^0(E,b)}\n {\\lambda_{A,\\mathrm{pre}}(E)\\pi_A(b)}=o(\\log N).\n\\]\nThen deleting \\(o(1)\\) mass from the whole mixture gives joint\nsubmeasures with\n\\begin{equation}\n R_{A,\\mathrm{good}}(E,b)\n \\le K\\lambda_{A,\\mathrm{pre}}(E)\\pi_A(b),\n \\qquad K=N^{o(1)}.\n\\end{equation}\n\nLet \\(R_{A,2}\\) be any later submeasure, extended by a label \\(d'\\)\nwith at most \\(D\\le K\\) possibilities per \\(E\\), whose \\((E,b)\\)\nmarginal is dominated by \\(R_{A,\\mathrm{good}}\\).  For a subpower\n\\(K_1\\), deleting at most \\(D/K_1\\) mixture mass gives joint ceilings\nagainst the predeletion \\((E,d')\\)-masses with multiplier \\(KK_1\\).\nThese ceilings sum to any coarser state \\(C=C(E,d')\\), with the\npredeletion \\(C\\)-marginal as reference weight \\(w_A(C)\\).\nFor a further restriction \\(T_A\\) of the retained measure, deleting\nstates whose current\nmass is below \\(w_A(C)/K_2\\) costs at most \\(1/K_2\\) mixture mass\nand gives, on surviving states of positive mass,\n\\[\n T_A(b\\mid C)\\le KK_1K_2\\pi_A(b).\n\\]\nThe subpowers \\(K_1,K_2\\) may be chosen so each deletion is negligible\nrelative to a specified current inverse-subpower mixture mass.",
+   "refs": []
+  },
+  {
+   "label": "a03:time-slice",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 994,
+   "line_end": 1016,
+   "title": "Retained duration and fixed-time prior caps",
+   "statement_tex": "[Retained duration and fixed-time prior caps]\nLet \\(\\nu\\) be a trajectory probability and\n\\(d\\lambda(l,t)=G(l,t)\\,d\\nu(l)\\,dt\\), where \\(0\\le G\\le K\\)\non \\([0,1]\\).  Fix \\(K_2\\ge1\\), partition time into dyadic intervals\n\\(I\\), and set\n\\[\n L_I=\\left\\{l:\\int_I G(l,\\tau)\\,d\\tau\\ge |I|/K_2\\right\\}.\n\\]\nDeleting the complementary line--interval pairs costs at most\n\\(1/K_2\\) incidence mass.  Fix \\(t\\in I\\).  If trajectory\nconstraints \\(C_t\\) and \\(C^+_\\tau\\) satisfy\n\\(C_t(l)\\Rightarrow C^+_\\tau(l)\\) for every \\(\\tau\\in I\\), then\n\\begin{equation}\n \\nu(L_I\\cap C_t)\n \\le\\frac{K_2}{|I|}\n       \\int_I\\int\\mathbf1_{C^+_\\tau}(l)G(l,\\tau)\n                         \\,d\\nu(l)\\,d\\tau.\n\\end{equation}\nFor almost every \\(t\\), the instantaneous restricted incidence mass\non \\(C_t\\) is at most \\(K\\nu(L_I\\cap C_t)\\).",
+   "refs": []
+  },
+  {
+   "label": "a03:candidates",
+   "env": "definition",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 1058,
+   "line_end": 1091,
+   "title": "Improvement candidates",
+   "statement_tex": "[Improvement candidates]\nWork in a prepared tangent parent and write \\(d=d_*\\).  Fix a path\npacket \\(Q=Q_s\\), with actual time length \\(q_s\\), thickness\n\\(a=N^{-s}\\), and assigned trajectory mass \\(\\nu_Q\\).  The tangent\ndepth \\(s\\) remains bounded.  In both definitions below, incidence\nmass means residual path mass in the parent, divided by \\(q_s\\).\n\nA \\emph{time-improvement candidate of gain \\(c>0\\)} is a test of the\nproper quadratic model class, at width \\(a'=aN^{-c}\\), on trajectory\npieces assigned to \\(Q\\).  Its value and hidden-derivative upper\nbounds hold throughout the \\(Q\\)-block:\n\\[\n |P|\\le Ka',\\qquad |P_w|\\le K,\\qquad |P_{ww}|\\le K/a'.\n\\]\nOn counted incidences it also satisfies \\(|P_w|\\ge K^{-1}\\), and\nthese incidences have mass at least\n\\[\n K^{-1}N^{-dc}\\nu_Q.\n\\]\n\nWhen \\(0<\\ell<\\infty\\), put \\(g=N^{-\\ell s}\\).  A\n\\emph{strip candidate of gain \\(c>0\\)} is a fixed row \\(R\\) such that\n\\[\n |Y'-R\\cdot(1,v)|\\le KgN^{-c}\n\\]\non trajectory pieces carrying incidence mass at least\n\\(K^{-1}\\nu_Q\\), in the same convention.  Actual rounded path nodes are\nunderstood in both definitions.\n\nThese mass tests may use restrictions of \\(\\lambda_A^0\\) without\nrenormalization, or the parent trajectory-times-uniform-time prior\nrestricted to the incidences.  On each used parent the two measures\ndiffer by the fixed factor \\(s_A^{-1}\\le K\\).",
+   "refs": []
+  },
+  {
+   "label": "prop:candidate-upgrade",
+   "env": "proposition",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 1104,
+   "line_end": 1122,
+   "title": "Conversion of candidates to actual improvements",
+   "statement_tex": "[Conversion of candidates to actual improvements]\nConsider the guarded tangent diagonal of\n\\Cref{prop:tangent-palette}.  Suppose that, on a further subsequence\nof every subsequence carrying any substantial residual of the reference\npath, that residual supplies a time-improvement or strip candidate\nin the sense of \\Cref{a03:candidates}.  Its depth remains in a bounded\ntangent range and its gain has a fixed positive finite limit, or is\na fixed positive number.\n\nThen one of the original-resolution outputs excluded by\n\\Cref{a03:finite-guard} exists.  Its original success is at least\n\\(\\mathfrak p_{\\mathrm{path}}/\\log N_0\\), and its lists and geometric\nslacks are bounded by a fixed scenario-dependent power of\n\\(K_{\\mathrm{path}}\\log N_0\\).  Its complete original-coordinate\ncomplexity, including list tables, is bounded by a polynomial in\n\\(M_{\\mathrm{path}}\\) depending only on that fixed scenario.\nConsequently the candidate hypothesis is impossible on this diagonal.",
+   "refs": [
+    "a03:candidates",
+    "a03:finite-guard",
+    "prop:tangent-palette"
+   ]
+  },
+  {
+   "label": "a03:actual-lists",
+   "env": "lemma",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 1132,
+   "line_end": 1166,
+   "title": "Original-law recovery of finite lists",
+   "statement_tex": "[Original-law recovery of finite lists]\nLet \\(\\mu\\) be an original unnormalized tempered path measure, and let\n\\(\\nu\\le\\mu\\) be an arbitrary measurable submeasure.  Fix a finite\ngeometric output-label map \\(A\\), defined on the original law and\nagreeing on \\(\\nu\\) with the labels used in the analytical construction.\nA failure label may be used off the eligible pieces and is never\nincluded in a list.  Write the original observation as\n\\(O=(x,o)\\), where \\(x=(t,y)\\) is exact base and \\(o\\) contains its\noriginal observed discrete entries, including the hidden-coordinate\nbin and world.\n\nSuppose a measurable rule \\(L(x,o)\\), with\n\\(|L(x,o)|\\le D_{\\mathrm{list}}\\), satisfies\n\\begin{equation}\n\\nu\\{A\\in L(O)\\}\\ge m.\n\\end{equation}\nRetain all original observation tags, path tags and output labels in\nthe joint pushforward law \\(\\lambda\\) of \\(\\mu\\), without making\nunobserved tags available to the list rule.  If \\(F_\\rho\\lambda\\) is\nuniform base-cell averaging at mesh \\(\\rho\\) and\n\\(\\|\\lambda-F_\\rho\\lambda\\|_{\\mathrm{TV}}\\le e\\), there is a list table\n\\(L_C(o)\\), indexed only by the base cell and original observed\nentries, with the same list size and\n\\begin{equation}\n\\mu\\{A\\in L_{C(x)}(o)\\}\\ge m-2e.\n\\end{equation}\nIf the density, ranges, copies and geometric predicates of this\noriginal joint law have complexity bounded by a fixed polynomial in\n\\(M_{\\mathrm{path}}\\) and fixed construction constants, the mesh for\n\\(e=O(N_0^{-1})\\) and the resulting table have complexity bounded by\nanother such polynomial.  Neither bound depends on the analytical\ncomplexity of \\(\\nu\\) or of \\(L\\).",
+   "refs": []
+  },
+  {
+   "label": "a03:breadth",
+   "env": "corollary",
+   "section": "04",
+   "tex_file": "sections/04-critical-paths.tex",
+   "line_start": 1741,
+   "line_end": 1757,
+   "title": "Breadth before sparse selections",
+   "statement_tex": "[Breadth before sparse selections]\nIn version 2 with \\(\\ell=0\\), let a substantial path residual carry a\nmeasurable discrete state, including its tangent parent.  Suppose the\nstate is known on these events at the original \\(p_L\\) with list size\nbounded by a fixed power of actual path factors and logarithms, and has\nat most \\(K\\) possible values given the used deep end histories.\nFor every fixed \\(\\kappa,u>0\\), the total residual probability of states\nwhose conditional velocity law puts mass at least \\(\\kappa\\) within\ndistance \\(N^{-u}\\) of an affine line tends to zero.\n\nIn version 1 the corresponding assertion for intervals follows from\nthe angular cap.  These statements can be prepared at reciprocal-subpower\nseparation thresholds before arbitrary sparse selections.  They persist\nunder selections of whole conditioning states, or controlled\nfixed-fraction selections within them; no version-2 breadth assertion\nis made for every velocity-dependent inverse-subpower subfamily.",
+   "refs": []
+  },
+  {
+   "label": "lem:scalar-clustering",
+   "env": "lemma",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 38,
+   "line_end": 57,
+   "title": "Scalar coefficient clustering",
+   "statement_tex": "[Scalar coefficient clustering]\nLet\n\\[\n x_l(t)=x_{0,l}+t x_{1,l}+t^2x_{2,l},\n\\]\nand let the trajectory prior \\(\\nu\\) have total mass at most \\(K\\).\nFix \\(0\\le d<1\\) and a resolution \\(p=N^{-c+o(1)}\\), where \\(c>0\\)\nis fixed.  Suppose that a dense labeled incidence measure, dominated\nby \\(K\\,d\\nu\\,dt\\), occupies at most \\(Kp^{-1-d}\\) squares of side \\(p\\)\nin the \\((t,x)\\)-plane.  Suppose also that\n\\begin{equation}\n \\nu\\{l:(x_{0,l},x_{1,l},x_{2,l})\\in B\\}\\le K r^d\n\\end{equation}\nfor every coefficient ball \\(B\\) of radius \\(r\\ge p\\) in the bounded\ncoefficient range.  Then some coefficient bin of side \\(p\\) has\ntrajectory mass at least \\(p^d/K\\).\nThe conclusion can be obtained using only trajectories with labeled\nlength at least \\(K^{-1}\\), and it applies anew to every dense residual\nsatisfying the same upper bounds.",
+   "refs": []
+  },
+  {
+   "label": "a04:scalar-data",
+   "env": "definition",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 133,
+   "line_end": 178,
+   "title": "Scalar-normal data",
+   "statement_tex": "[Scalar-normal data]\nFix \\(j\\in\\{1,2\\}\\), \\(0\\le d<1\\), and a floor \\(\\zeta\\).\nLet \\(\\nu\\) be a trajectory probability, let \\(x_l\\) be quadratic and\n\\(y_l:[0,1]\\to\\R^j\\) affine, and suppose their coefficients are bounded\nby \\(K\\).  Let \\(E_l\\) have dense mass under \\(\\nu\\otimes dt\\), and let\n\\(F(t)\\in(\\R^j)^*\\) be a measurable, time-only row of norm at most \\(K\\).\nWrite\n\\[\n S_l(t)=x_l(t)-F(t)y_l(t).\n\\]\nFor a bounded set \\(A\\), let \\(N_q(A)\\) count the cells of a fixed\nhalf-open mesh of side \\(q\\) that meet \\(A\\), with the usual dyadic\nrounding. The following bounds are required at the available resolutions:\n\\begin{enumerate}\n\\item For every active time, every interval \\(J\\) of length \\(r\\), and\n\\(\\zeta\\le q\\le r\\le1\\),\n\\begin{equation}\n N_q\\bigl(J\\cap\\{S_l(t):l\\text{ with }t\\in E_l\\}\\bigr)\\le K(r/q)^d.\n\\end{equation}\nFor every spatial cube \\(Q\\subset\\R^{1+j}\\) of side \\(q\\),\n\\begin{equation}\n \\nu\\{l:t\\in E_l,\\ (x_l(t),y_l(t))\\in Q\\}\\le Kq^{j+d}.\n\\end{equation}\n\\item At active times,\n\\begin{equation}\n |F(t)-F(u)|\\le K(|t-u|+\\zeta).\n\\end{equation}\nWriting \\(R_l(t)=x_l'(t)-F(t)y_l'\\), labeled spacetime points satisfy\n\\begin{equation}\n |R_l(t)-R_{\\tilde l}(u)|\n \\le K\\bigl(\\dist((t,x_l(t),y_l(t)),\n                  (u,x_{\\tilde l}(u),y_{\\tilde l}(u)))+\\zeta\\bigr).\n\\end{equation}\n\\item Let \\(l_r\\) bin all the displayed polynomial coefficients at side\n\\(r\\), and let \\(B\\) be a participating bin of positive prior mass.\nFor every spatial \\(q\\)-cube, \\(\\zeta\\le q\\le r\\),\n\\begin{equation}\n \\frac{\\nu\\{l\\in B:t\\in E_l,\\ (x_l(t),y_l(t))\\in Q\\}}{\\nu(B)}\n \\le K(q/r)^{j+d}.\n\\end{equation}\n\\end{enumerate}\nThese are absolute labeled masses relative to the stated prior.\nA common null set of times may be removed.  A finite world parameter\nis permitted, with the hypotheses holding in each retained conditional\nworld; every conditioning variable below then includes that world.",
+   "refs": []
+  },
+  {
+   "label": "a04:dense-entropy",
+   "env": "lemma",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 203,
+   "line_end": 225,
+   "title": "Entropy on a dense tested event",
+   "statement_tex": "[Entropy on a dense tested event]\nPresample a finite time tuple independently of the trajectory in its\nworld, with absolutely continuous marginal laws for its tested times.\nLet \\(T\\) contain the world and the entire tuple.\nLet \\(\\mathcal A\\) be any dense event on which all tested labels hold,\nand normalize its restriction to a probability \\(Q\\).\nAt every tested time \\(t\\) and available dyadic scales,\n\\begin{align}\n \\mathsf H_Q(S(t)_r\\mid T)\n   &=d\\log(1/r)+o_*,\\\\\n \\mathsf H_Q(y(t)_r\\mid T,S(t)_r)\n   &=j\\log(1/r)+o_*,\\\\\n \\mathsf I_Q(l_r;S(t)_q\\mid T,S(t)_r)\n   &=o_*,\\qquad q<r.\n\\end{align}\nMoreover, for every \\(T\\)-measurable unit row \\(e\\) and \\(r\\ge q\\),\n\\begin{equation}\n \\mathsf H_Q((e\\,y(t))_r\\mid T,S(t)_q)\n       \\ge\\log(1/r)-o_*.\n\\end{equation}\nThe same assertions hold anew on every further dense event; the event\nmay depend on all the times and on the trajectory.",
+   "refs": []
+  },
+  {
+   "label": "prop:scalar-normal",
+   "env": "proposition",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 324,
+   "line_end": 348,
+   "title": "Scalar-normal first jet",
+   "statement_tex": "[Scalar-normal first jet]\nAssume \\Cref{a04:scalar-data}.  Fix a finite nested hierarchy of dyadic\ntime lengths of fixed positive power, with finest length \\(H_*\\).\nIf the available floor is sufficiently fine---\\(\\zeta\\le H_*^3/K\\)\nsuffices after enlarging \\(K\\)---then a dense restriction of the\nsingle-time labels admits a time-only row \\(A(t)\\), bounded by \\(K\\),\nsuch that\n\\begin{equation}\n |F(v)-F(u)-(v-u)A(u)|\\le K H^{11/10}\n\\end{equation}\nwhenever the retained active times \\(u,v\\) lie in the same designated\ninterval of length \\(H\\).  Put\n\\[\n J_1(l,t)=x_l'(t)-F(t)y_l'-A(t)y_l(t).\n\\]\nFor every finite presampled tuple and every dense tested event as in\n\\Cref{a04:dense-entropy}, on which all tested times carry the retained\nlabels,\n\\begin{equation}\n \\mathsf H(J_1(l,t)_r\\mid T,S_l(t)_r)=o_*\n \\qquad\\text{if }r\\ge H_*^{(1-d)/64}\n\\end{equation}\nat the available resolutions.  The row \\(A\\) and the single-time\nrestriction are fixed before the tuple and the later event are chosen.",
+   "refs": [
+    "a04:dense-entropy",
+    "a04:scalar-data"
+   ]
+  },
+  {
+   "label": "a04:planar-input",
+   "env": "theorem",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 367,
+   "line_end": 394,
+   "title": "Planar dot-product alternative",
+   "statement_tex": "[Planar dot-product alternative]\nFor every \\(\\varepsilon>0\\) there are \\(\\eta,\\delta_0>0\\) such that the\nfollowing holds for \\(0<p\\le\\delta_0\\).\nLet \\(\\mathcal A,\\mathcal B\\subset[0,1]^2\\), and suppose that\n\\begin{equation}\n N_s(E\\cap B(z,w))\\le p^{-\\eta}w/s\n \\quad\\text{for }E\\in\\{\\mathcal A,\\mathcal B\\},\\quad p\\le s\\le w.\n\\end{equation}\nAt least one of the following alternatives holds:\n\\begin{enumerate}\n\\item There are affine lines \\(\\ell,\\ell^\\perp\\) with perpendicular\ndirections such that both\n\\[\n N_p(\\mathcal A\\cap\\{z:\\dist(z,\\ell)\\le p\\}),\\qquad\n N_p(\\mathcal B\\cap\\{z:\\dist(z,\\ell^\\perp)\\le p\\})\n\\]\nare at least \\(p^{\\varepsilon-1}\\).\n\\item Every restricted triple set\n\\(\\mathcal H\\subset\\mathcal A\\times\\mathcal B\\times\\mathcal B\\)\nwith \\(N_p(\\mathcal H)\\ge p^{\\eta-3}\\) admits a scale \\(s\\ge p\\) and\nan interval \\(J\\), \\(|J|\\ge p^{-\\eta}s\\), for which\n\\[\n N_s\\bigl(J\\cap\n       \\{a\\cdot(b-b'):(a,b,b')\\in\\mathcal H\\}\\bigr)\n       \\ge(|J|/s)^{1-\\varepsilon}.\n\\]\n\\end{enumerate}",
+   "refs": []
+  },
+  {
+   "label": "prop:higher-jets",
+   "env": "proposition",
+   "section": "05",
+   "tex_file": "sections/05-scalar-tools.tex",
+   "line_start": 828,
+   "line_end": 843,
+   "title": "Higher-jet polynomial fitting",
+   "statement_tex": "[Higher-jet polynomial fitting]\nFor the parameters \\(M,d,h\\) and hierarchy just defined, assume\n\\Cref{a04:scalar-data}, including the parameter-bin cap, and the floor\ncondition \\Cref{a04:jet-floor}.  Then a dense set of labeled incidences\n\\((l,t)\\) has the following property.\nThere is a row-valued polynomial \\(P\\) of degree at most \\(M\\), with\ncoefficients bounded by \\(K\\), such that in the \\(h\\)-block containing\n\\(t\\),\n\\[\n |F(v)-P(v)|\\le Kh^{M+1/4}\n\\]\non labeled times \\(v\\in E_l\\) of length at least \\(h/K\\), including \\(v=t\\).\nThe polynomial may depend on the incidence.\nThe conclusion applies anew to any dense restriction of the input\nlabels with the same upper hypotheses.",
+   "refs": [
+    "a04:scalar-data"
+   ]
+  },
+  {
+   "label": "thm:isotropic-improvement",
+   "env": "theorem",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 15,
+   "line_end": 39,
+   "title": "Isotropic improvement",
+   "statement_tex": "[Isotropic improvement]\nConsider the tangent data of \\Cref{prop:tangent-palette}, with\n\\(0<k\\leq1\\) and \\(0\\leq d<1\\), either in version~1, where \\(j=1\\), or\nin version~2 with \\(j=2\\) and optimized narrowness \\(\\ell=0\\).\nIn every substantial residual of the reference path one can, after\npassing to a subsequence, find a packet \\(Q=Q_s\\), of thickness\n\\(a=N^{-s}\\) and time length \\(h\\sim_{\\log,N}a^k\\), and a\ntime-improvement candidate of thickness\n\\[\n a_2=ah^{e_2},\\qquad e_2>0.\n\\]\nThe candidate has incidence mass at least\n\\[\n \\frac{h\\nu_Q}{K}\\left(\\frac{a_2}{a}\\right)^d,\n \\qquad K=N^{o(1)}.\n\\]\nWriting the candidate as \\(P_{\\rm new}\\), its bounds\n\\(|P_{\\rm new}|\\leq Ka_2\\) and\n\\(|\\partial_wP_{\\rm new}|\\leq K\\) hold on its assigned\ntrajectories throughout the same \\(h\\)-length block. The hidden\nderivative is bounded below by \\(K^{-1}\\) on the counted incidences,\nand its hidden curvature is at most \\(K/a_2\\). In version~1 the test\nhas the special form \\(w-F(t,y)\\), with \\(F\\) quadratic. In version~2\nit is a quadratic in \\((t,y,w)\\).",
+   "refs": [
+    "prop:tangent-palette"
+   ]
+  },
+  {
+   "label": "a05:velocity-graph",
+   "env": "proposition",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 355,
+   "line_end": 366,
+   "title": "Physical velocity graph",
+   "statement_tex": "[Physical velocity graph]\nFor a sufficiently fine fixed power \\(b\\), there is a row\n\\(G=(G_0,G_y)\\), constant on each \\(W_b\\) and bounded by \\(K\\), such\nthat on a substantial reference family\n\\begin{equation}\n |X'(t)-G(W_b)\\cdot{\\bf v}|\\leq b^\\kappa,\n\\end{equation}\nwhere \\(\\kappa>0\\) depends only on \\(m\\) and \\(1-d\\).\nFor every required dyadic \\(s_0\\geq b^\\kappa\\), the values of \\(G\\)\nto width \\(s_0\\) have at most \\(K\\) possibilities in a fixed\ncoarse physical cell \\(W_{s_0}\\).",
+   "refs": []
+  },
+  {
+   "label": "a05:qualification",
+   "env": "proposition",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 464,
+   "line_end": 477,
+   "title": "Polynomial qualification",
+   "statement_tex": "[Polynomial qualification]\nThere are a subpower \\(K_{\\rm qual}=N^{o(1)}\\) and sets \\(U_N\\) of\ngraph-reference incidences such that\n\\begin{equation}\n e_N:=\\frac{\\Lambda_{\\rm ref}(U_N)}{L_{\\rm ref}}\n       \\longrightarrow0.\n\\end{equation}\nEvery reference incidence outside \\(U_N\\) admits a row-valued\npolynomial in \\(t\\), of degree at most \\(M\\) and coefficients\nbounded by \\(K_{\\rm qual}\\), which approximates \\(G\\) within\n\\(h^M\\) on reference-labeled times of its indexed trajectory of\nordinary duration at least \\(h/K_{\\rm qual}\\) in the same\n\\(Q_s\\)-block, including that incidence.",
+   "refs": []
+  },
+  {
+   "label": "a05:common-local-choice",
+   "env": "lemma",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 486,
+   "line_end": 514,
+   "title": "A common choice from local lists",
+   "statement_tex": "[A common choice from local lists]\nLet \\(\\mu\\) be an unnormalized finite measure on a finite collection of\nworlds \\(\\omega\\). In each world let \\(Z(e)\\in\\mathbb R^D\\) and\n\\(Y(e)\\in\\mathbb R^q\\) be measurable functions of an incidence \\(e\\),\nwith \\(|Y(e)|\\leq B\\). Fix an integer \\(L\\geq2\\), bounds\n\\(K_1,\\ldots,K_L\\geq1\\), and tested widths\n\\[\n 1=s_1>s_2>\\cdots>s_L=r_*,\\qquad\n A=\\max_{i<L}s_i/s_{i+1}.\n\\]\nAt width \\(s_i\\), suppose that in every half-open \\(s_i\\)-cell of\n\\(Z\\) in each world, the occurring values of \\(Y\\) meet at most \\(K_i\\)\nhalf-open \\(s_i\\)-cells. There is a restriction \\(\\mu'\\leq\\mu\\) such\nthat, in every world,\n\\[\n \\mu'(\\omega)\\geq\n \\mu(\\omega)\\prod_{i=1}^L(4^DK_i)^{-1},\n\\]\nand any two retained incidences in the same world satisfy\n\\[\n |Y(e)-Y(\\widehat e)|\n \\leq C_{D,q}(A+B)\n       \\bigl(|Z(e)-Z(\\widehat e)|+r_*\\bigr).\n\\]\nIf, within each world, both \\(Z\\) and \\(Y\\) are determined by a\ndiscrete state, the restriction keeps or removes each whole state\nof that world. No measure is renormalized.",
+   "refs": []
+  },
+  {
+   "label": "a05:conservativity",
+   "env": "proposition",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 1113,
+   "line_end": 1120,
+   "title": "Conservativity of the interpolated field",
+   "statement_tex": "[Conservativity of the interpolated field]\nIn coefficient norm, or equivalently in sup norm on the required\nenlarged box up to \\(K\\),\n\\[\n \\|\\operatorname{skew}DT\\|\\leq K h^{p_*-1+c_0}.\n\\]",
+   "refs": []
+  },
+  {
+   "label": "lem:tensor-kernels",
+   "env": "lemma",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 1384,
+   "line_end": 1415,
+   "title": "Seven-direction tensor tests",
+   "statement_tex": "[Seven-direction tensor tests]\nLet \\(p_i=(1,v_i)\\in\\R^3\\), \\(1\\leq i\\leq7\\), with every triple\nlinearly independent.\n\\begin{enumerate}\n\\item The space of homogeneous quadratics vanishing at all \\(p_i\\)\nhas dimension at most one; every nonzero member is nonsingular.\n\\item The map on symmetric cubic tensors\n\\[\n T\\longmapsto\\bigl(T(p_i,p_i,\\cdot)\\bigr)_{i=1}^7\n\\]\nis injective.\n\\item If a nonzero quadratic \\(q\\) vanishes at all seven points,\nthe kernels of the three-copy tests at ranks \\(3,4,5\\) are,\nunder the homogeneous-form correspondence,\n\\[\n q\\,(\\R^3)^*,\\qquad \\R q^2,\\qquad \\{0\\},\n\\]\nrespectively.\n\\end{enumerate}\nThese assertions have polynomial conditioning. More precisely, if\n\\[\n |p_i|\\leq A,\\qquad\n |\\det(p_i,p_j,p_k)|\\geq A^{-1},\\qquad A\\geq2,\n\\]\nthe inverse of the injective map in part~2 costs at most \\(CA^C\\).\nOn the exact-conic family, with the norm, inverse norm and inverse\ndeterminant of \\(q\\) also bounded by fixed powers of \\(A\\),\ndistance to each kernel in part~3 is at most \\(CA^C\\) times\nthe norm of the corresponding tests. The constants depend only\non these fixed finite-dimensional spaces and on the fixed\nconditioning powers.",
+   "refs": []
+  },
+  {
+   "label": "a05:real-conic",
+   "env": "lemma",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 1512,
+   "line_end": 1529,
+   "title": "Restoration of an approximate real conic",
+   "statement_tex": "[Restoration of an approximate real conic]\nSuppose the points satisfy the conditioning bounds of\n\\Cref{lem:tensor-kernels}, and a real quadratic \\(q(x)=x^{\\rm T}\n\\mathsf Qx\\) has\n\\(A^{-1}\\leq\\|q\\|\\leq A\\) and \\(|q(p_i)|\\leq\\epsilon\\).\nIf \\(\\epsilon\\) is smaller than a sufficiently large fixed\nreciprocal power of \\(A\\), then\n\\[\n |\\det\\mathsf Q|\\geq cA^{-C},\n\\]\nand there are exact real zeros \\(p'_i=(1,v'_i)\\) of \\(q\\) with\n\\[\n |p'_i-p_i|\\leq CA^C\\epsilon.\n\\]\nFor sufficiently small \\(\\epsilon\\), every triple determinant\nof the shifted points has absolute value at least \\((2A)^{-1}\\).",
+   "refs": [
+    "lem:tensor-kernels"
+   ]
+  },
+  {
+   "label": "prop:degree-restoration",
+   "env": "proposition",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 1570,
+   "line_end": 1575,
+   "title": "Degree restoration",
+   "statement_tex": "[Degree restoration]\nThe potential fits and heavy intercept groups constructed above\nyield a candidate with all the properties in\n\\Cref{thm:isotropic-improvement}, without reducing the\npositive exponent \\(e_2\\) in \\(a_2/a=h^{e_2}\\).",
+   "refs": [
+    "thm:isotropic-improvement"
+   ]
+  },
+  {
+   "label": "a05:scalar-zero-horizon",
+   "env": "corollary",
+   "section": "06",
+   "tex_file": "sections/06-isotropic.tex",
+   "line_start": 1916,
+   "line_end": 1921,
+   "title": "Zero horizon in the scalar model",
+   "statement_tex": "[Zero horizon in the scalar model]\nFor every fixed admissible choice of angular parameters and every\n\\(d<1\\), a version~1 exact problem in \\(C(d)\\) has\n\\(H(E)=0\\). In particular there is no bad problem in version~1.",
+   "refs": []
+  },
+  {
+   "label": "re:graph-bsg",
+   "env": "lemma",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 35,
+   "line_end": 47,
+   "title": "Three paths retain graph edges",
+   "statement_tex": "[Three paths retain graph edges]\nLet \\(A,B\\) be nonempty finite subsets of an abelian group, with\n\\(a_0=|A|\\), \\(b_0=|B|\\), and let \\(G\\subset A\\times B\\) have at least\n\\(\\theta a_0b_0\\) edges, \\(0<\\theta\\le1\\).  Put\n\\(C=\\{x+y:(x,y)\\in G\\}\\).  There are \\(A'\\subset A\\), \\(B'\\subset B\\)\nsuch that\n\\begin{align*}\n |A'|&\\ge c\\theta a_0,\\qquad |B'|\\ge c\\theta b_0,\\\\\n |G\\cap(A'\\times B')|&\\ge c\\theta^2a_0b_0,\\qquad\n |A'+B'|\\le C_0\\theta^{-5}\\frac{|C|^3}{a_0b_0},\n\\end{align*}\nwhere \\(c,C_0>0\\) are absolute constants.",
+   "refs": []
+  },
+  {
+   "label": "re:common-sets",
+   "env": "lemma",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 170,
+   "line_end": 186,
+   "title": "A common pair and scalar closure",
+   "statement_tex": "[A common pair and scalar closure]\nAfter restricting \\(\\nu\\) to a subpower fraction of its mass, there\nare a represented \\(\\kappa_0\\), fixed \\(A_*\\subset A\\), \\(B_*\\subset B\\),\nand \\(\\mathcal R=\\{\\kappa/\\kappa_0\\}\\) with the following properties.\nAt least \\(L^2/K\\) original edges of \\(G_{\\kappa_0}\\) lie in\n\\(A_*\\times B_*\\).  Put \\(E=A_*\\), \\(F=-\\kappa_0B_*\\).\nFor every fixed \\(m,H\\), the set\n\\begin{equation}\n c_1E+\\cdots+c_mE+d_1F+\\cdots+d_mF\n\\end{equation}\nhas at most \\(K_{m,H}L\\) \\(h\\)-cells whenever each coefficient is a\nsum of at most \\(H\\) signed products of at most \\(H\\) elements of\n\\(\\mathcal R\\).  A common subpower dilation of all coefficients is\npermitted.  The restricted probability law on \\(\\mathcal R\\) still\nsatisfies a bound of the form \\eqref{re:ratio-cap}, with a new\nsubpower constant and the same fixed exponent \\(S\\).",
+   "refs": []
+  },
+  {
+   "label": "re:flat-coefficients",
+   "env": "lemma",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 330,
+   "line_end": 346,
+   "title": "Flat generated coefficients",
+   "statement_tex": "[Flat generated coefficients]\nLet \\(\\nu_{\\mathcal R}\\) be the restricted ratio law in\n\\Cref{re:common-sets}.  For every fixed \\(e>0\\), there are fixed\npositive integers \\(n,k\\) and a subpower \\(R\\ge1\\) such that, with\nindependent \\(T_{ij}\\sim\\nu_{\\mathcal R}\\),\n\\begin{equation}\n C=\\sum_{i=1}^k\\prod_{j=1}^n(T_{ij}/R)\n\\end{equation}\nsatisfies\n\\begin{equation}\n \\sup_x\\Pp(C\\in[x-h,x+h])\\le C_eh^{1-e}.\n\\end{equation}\nEvery value in its support is an expression allowed in\n\\eqref{re:scalar-support}, with the common subpower dilation\n\\(R^{-n}\\).  Independent copies of \\(C\\) may therefore be used\nsimultaneously as coefficients in that cover bound.",
+   "refs": [
+    "re:common-sets"
+   ]
+  },
+  {
+   "label": "re:parallel-strips",
+   "env": "lemma",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 394,
+   "line_end": 404,
+   "title": "Weighted parallel strips",
+   "statement_tex": "[Weighted parallel strips]\nLet \\(E,F\\) be the fixed sets in \\Cref{re:common-sets} and let\n\\(\\mu\\) be the uniform law on a subset of at least \\(h^{-2}/K\\)\noriginal edges of \\(G_{\\kappa_0}\\cap(A_*\\times B_*)\\), after\nthe change \\(y\\mapsto-\\kappa_0y\\).  Suppose the first-coordinate\nrectangle cap \\eqref{re:first-coordinate-cap} holds for \\(\\mu\\),\nwith a possibly enlarged subpower \\(K\\).  There are two parallel\nstrips, one in each endpoint plane, of width \\(h^{1-o(1)}\\),\ncontaining \\(h^{o(1)}\\) of the \\(\\mu\\)-mass.  Their common slope is\n\\(h^{-o(1)}\\)-bounded.",
+   "refs": [
+    "re:common-sets"
+   ]
+  },
+  {
+   "label": "re:retained-edge-rigidity",
+   "env": "proposition",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 505,
+   "line_end": 516,
+   "title": "Retained-edge planar rigidity",
+   "statement_tex": "[Retained-edge planar rigidity]\nUnder \\Cref{re:graph-data}, after increasing to a new subpower\n\\(K_*\\), there are a represented \\(\\kappa_0\\), at least\n\\(h^{-2}/K_*\\) \\emph{original} edges of \\(G_{\\kappa_0}\\), and\n\\(|\\lambda|+|c_A|+|c_B|\\le K_*\\) such that on those edges\n\\[\n |x_2-\\lambda x_1-c_A|+\n |y_2-\\lambda y_1-c_B|\\le K_*h.\n\\]\nNo fixed-power dependence of \\(K_*\\) on the initial subpower\n\\(K\\) is asserted.",
+   "refs": []
+  },
+  {
+   "label": "a06:row-fit",
+   "env": "lemma",
+   "section": "06a",
+   "tex_file": "sections/06a-retained-edge.tex",
+   "line_start": 545,
+   "line_end": 568,
+   "title": "Affine--skew row fit",
+   "statement_tex": "[Affine--skew row fit]\nLet \\(z(t)=(t,Z(t))\\), \\(0\\le t\\le1\\), be affine trajectories\nwith velocity \\((1,v)\\), and suppose positions and velocities are\nbounded by a subpower factor \\(K\\).  Let \\(\\mu\\) be an incidence\nmeasure of mass at least \\(1/K\\), dominated by \\(K\\) times a\ntrajectory prior times Lebesgue measure in time.  At a fine fixed-power\nmesh \\(\\xi\\), suppose a probability law \\(\\pi\\) on velocities\nsatisfies \\(\\pi(I)\\le K|I|^S\\) for some fixed \\(S>0\\) and all\nintervals with \\(\\xi\\le|I|\\le1\\).  Suppose also that every pair\nof position and velocity cells obeys\n\\[\n \\mu(z_\\xi,v_\\xi)\\le K\\xi^2\\pi(v_\\xi).\n\\]\nLet \\(T\\in[-K,K]^2\\) be a row on the incidences.  Suppose it has\nat most \\(K\\) bins of width \\(E\\ge\\xi\\) per position cell\n\\(z_\\xi\\), and \\(T(1,v)\\) lies within \\(KE\\) of a constant\ndepending only on the trajectory.  Then a restriction of mass at\nleast \\(1/K\\) satisfies\n\\[\n T=B+\\lambda Jz+O(KE),\\qquad\n J(t,Z)=(-Z,t),\\qquad |B|+|\\lambda|\\le K.\n\\]\nThe subpower factor \\(K\\) may increase in the conclusion.",
+   "refs": []
+  },
+  {
+   "label": "thm:scalar-mesh-projection",
+   "env": "theorem",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 45,
+   "line_end": 86,
+   "title": "Scalar mesh projection",
+   "statement_tex": "[Scalar mesh projection]\nLet \\(\\nu\\) be a probability law on trajectories\n\\((t,y(t),x(t))\\), where \\(y\\) is scalar affine, \\(x\\) is\nscalar quadratic, and all coefficients are bounded by \\(K=N^{o(1)}\\).\nAdditional trajectory coordinates are permitted.  Let\n\\(\\mu_{\\rm act}\\le K\\nu\\otimes dt\\) have mass at least \\(1/K\\).\nFix \\(a=N^{-s}\\), \\(s>0\\), and a dyadic mesh\n\\(\\sigma\\sim_{\\log,N}N^{-M}\\) in \\((t,y)\\), with fixed \\(M>s\\).\nSuppose \\(c>0\\) and its reciprocal are polynomially bounded and,\nfor some \\(d<1\\),\n\\begin{itemize}\n\\item each \\((t,y)\\)-mesh cell and \\(x\\)-bin of width\n\\(p=N^{-r}\\), \\(0\\le r\\le s\\), have active mass at most\n\\(K\\sigma^2cp^d\\);\n\\item the number of occupied \\((\\sigma,\\sigma,a)\\)-cells,\nmultiplied by \\(\\sigma^2\\), is at most \\(Kc^{-1}a^{-d}\\).\n\\end{itemize}\nThe depth hypotheses use fixed powers, with the rounding and\ninterpolation conventions of \\Cref{sec:framework}.  They imply\n\\(d\\ge0\\): otherwise summing the unit-width cap over terminal\nsupport contradicts the dense total mass.\n\nAfter a dense restriction and passage to a subsequence, there are\nlabels with disjoint trajectory assignments and a common scale\n\\(\\sigma/K\\le\\beta\\le K\\), up to subpower factors, such that\neach label has\n\\begin{itemize}\n\\item a moving affine interval of width \\(K\\beta\\) containing\nits assigned \\(y\\)-trajectories throughout unit time;\n\\item a quadratic \\(F(t,y)\\) with \\(|x-F(t,y)|\\le Ka\\)\nthroughout unit time on its assigned trajectories;\n\\item assigned active mass at least \\(ca^d\\beta/K\\).\n\\end{itemize}\nThe quadratic norm is at most \\(K\\) in coordinates adapted to the\nmoving interval of scale \\(\\beta\\).\n\nIf, at \\(r=s\\), appending a \\(y'\\)-bin of width \\(N^{-u}\\)\ngives the mass ceiling a further factor \\(KN^{-S_1u}\\) for\n\\(0<u\\le u_1\\), with fixed \\(S_1,u_1>0\\), then\n\\(\\beta\\sim_{\\log,N}1\\).",
+   "refs": []
+  },
+  {
+   "label": "a06:projected-comparison",
+   "env": "lemma",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 427,
+   "line_end": 436,
+   "title": "Comparison on common stable domains",
+   "statement_tex": "[Comparison on common stable domains]\nFor the true labels \\(Q_s\\) and projected labels \\(\\Phi_s\\)\njust constructed, use the domains \\(D\\) above.\nAfter a dense restriction their graph predictions agree to \\(K a_s\\)\non every retained common comparison ball.  Given \\((\\alpha,D,Q_s)\\)\nthere are at most \\(K\\) retained \\(\\Phi_s\\), and conversely at most\n\\(K\\) true labels occur given \\((\\alpha,D,\\Phi_s)\\).\nList counts use stored marginal witnesses on the common domain;\nno floor is asserted for every index in the current pair law.",
+   "refs": []
+  },
+  {
+   "label": "prop:wide-interval",
+   "env": "proposition",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 553,
+   "line_end": 589,
+   "title": "Wide-interval improvement",
+   "statement_tex": "[Wide-interval improvement]\nUse the finite-narrowness parent data of\n\\Cref{a06:projected-parent}: the joint caps, conditional palette\ndomination at fine point and path states, and the true \\(Q_s\\)\ngraph lists.  The observable \\(X\\) may be the native signal or\nany other bounded quadratic-along-lines signal with these data.\nAt scales \\(s,s+u,s+c_2\\), put\n\\[\n a=a_s,\\qquad a_1=aN^{-u},\\qquad a_2=aN^{-c_2}.\n\\]\nSuppose that simultaneous projected labels\n\\(\\Phi,\\Phi_1,\\Phi_2\\) of the type constructed above, including\ntheir mass bounds, occur on dense mass and use the same\n\\(\\alpha\\)'s.  Let \\(\\beta_{\\min},\\beta_{\\max}\\) be their\nsmallest and largest interval scales.  Assume\n\\(0<c_2<(1-d)u/4\\) and\n\\[\n \\beta_{\\max}\\le Kg_s,\\qquad\n b_s/\\beta_{\\min}+h_s\\beta_{\\max}/\\beta_{\\min}\n       \\le N^{-(C_d+3)u},\\qquad C_d=10/(1-d),\n\\]\nup to subpower factors, with common scale exponents.  Take all\ncomparison meshes, including the intercept mesh \\(\\chi\\),\nsufficiently fine in fixed powers relative to these widths and\n\\(h_s,b_s,a_1\\), so the transverse evaluation errors are\nnegligible even at width \\(a_1\\).\n\nThen some true \\(Q=Q_s\\) admits a quadratic predictor in the\nfull base \\((t,Z,Y)\\) for \\(X\\), of error \\(Ka_2\\) throughout\nits block on assigned trajectories, carrying original active mass\nat least\n\\[\n q_s\\nu_Q(a_2/a)^d/K.\n\\]\nHere \\(\\nu_Q\\) is the full trajectory assignment weight.",
+   "refs": []
+  },
+  {
+   "label": "prop:horizontal-model",
+   "env": "proposition",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 927,
+   "line_end": 937,
+   "title": "Reduction to the horizontal model",
+   "statement_tex": "[Reduction to the horizontal model]\nSuppose \\(\\beta_s=N^{-B_0+o(1)}\\) with\n\\(\\ell s<B_0\\leq\\ell s+M\\).  On every substantial residual either\nthere is a strip-improvement candidate, or a true-parent normalization\ngives \\(k=\\ell\\) and \\Cref{a06:horizontal-equation}, with fixed\n\\(e_0>0\\).  At sufficiently small prescribed relative depths the\nwhole true boxes have horizontal scale \\(H\\) and transverse scale\n\\(H^2\\) in \\Cref{a06:centered-horizontal-box}.\nMass is normalized by the chosen parent's full assignment times\nits time length.",
+   "refs": []
+  },
+  {
+   "label": "a06:horizontal-affine-approximation",
+   "env": "lemma",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 1085,
+   "line_end": 1092,
+   "title": "Affine approximation of the hidden sheets",
+   "statement_tex": "[Affine approximation of the hidden sheets]\nIn \\Cref{prop:horizontal-model}, for finitely many sufficiently small\nrelative depths \\(s'\\), there are \\(K\\) affine entries per true label\nfitting the hidden signal to width \\(Ka_ra_{s'}\\) throughout the\ncorresponding block, including \\(s'=0\\).  No bound on a sheet's affine\npart in the initial tangent coordinates is required.",
+   "refs": [
+    "prop:horizontal-model"
+   ]
+  },
+  {
+   "label": "lem:horizontal-affine",
+   "env": "lemma",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 1240,
+   "line_end": 1270,
+   "title": "Residual normalization and fine-state bounds",
+   "statement_tex": "[Residual normalization and fine-state bounds]\nChoose one successful parent affine fit \\(L\\) from\n\\Cref{a06:horizontal-affine-approximation} and set\n\\(x=(w-L)/a_r\\).  On the resulting dense restriction, \\(x\\) is\naffine along trajectories and \\(|x|+|x'|\\le K\\).\n\nLet \\(\\mu\\) be the restricted incidence measure in normalized\n\\(Q_r\\) coordinates, with mass divided by \\(q_r\\nu_{Q_r}\\), without\nfurther normalization by its retained mass.  For any prescribed\nfinite family of fixed-power base, scalar and velocity meshes,\nthe preparations give\n\\begin{align}\n \\mu\\{(t,Z,Y)\\in C,\\ x\\in J_p\\}\n     &\\le K|C|p^d,\\notag\\\\\n \\mu\\{(t,Z,Y)\\in C,\\ x\\in J_p,\\ v\\in b_\\chi\\}\n     &\\le K|C|p^d\\pi(b_\\chi).\n\\end{align}\nHere \\(C\\) is a cell in the normalized three-dimensional base,\n\\(|C|\\) is its volume, \\(J_p\\) is a scalar bin of fixed-power\nwidth \\(0<p\\le1\\), and \\(b_\\chi\\) is a velocity bin at the\nprescribed fixed-power width \\(\\chi\\).  The palette \\(\\pi\\) is\nthe earlier parent palette.  The bounds persist under restriction;\n\\(K\\) may depend on the finite mesh preparation, with increasing\nfamilies handled by slow diagonalization.\n\nSufficiently deep true labels determine these base and residual\nbins with \\(K\\) choices, also beyond the accuracy range of the\napproximate horizontal equation.",
+   "refs": [
+    "a06:horizontal-affine-approximation"
+   ]
+  },
+  {
+   "label": "a06:nested-affine-slopes",
+   "env": "lemma",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 1346,
+   "line_end": 1361,
+   "title": "Slopes of nested affine fits",
+   "statement_tex": "[Slopes of nested affine fits]\nUse the residual \\(x\\) from \\Cref{lem:horizontal-affine}, and let\n\\(s\\) denote depth relative to \\(Q_r\\).  At the required small\ndepths, the affine predictions \\(L_s(t,Z,Y)\\) for \\(x\\) may be\nprepared on a dense restriction so that, on active boxes,\n\\begin{equation}\n |\\nabla_z L_s+(\\partial_Y L_s)Jz|\n       \\le K(1+a_s/h_s),\\qquad\n |\\partial_Y L_s|\\le K(1+a_s/h_s^2).\n\\end{equation}\nThe predictions have error \\(Ka_s\\) throughout their assigned\nblocks, with \\(K\\) subentries per true label.  The coordinates\n\\((t,Z,Y)\\) in this statement are those of the normalized parent\n\\(Q_r\\).",
+   "refs": [
+    "lem:horizontal-affine"
+   ]
+  },
+  {
+   "label": "a06:horizontal-coefficient-count",
+   "env": "lemma",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 1428,
+   "line_end": 1443,
+   "title": "Horizontal coefficient count",
+   "statement_tex": "[Horizontal coefficient count]\nSuppose \\(k=\\ell\\leq1/2\\), with the bounded residual\n\\(x\\) of \\Cref{lem:horizontal-affine}.  Fix sufficiently small\n\\(s>0\\) and \\(D=a_s^u\\), with bounded \\(u\\geq1\\).\nGroup by a sufficiently fine velocity bin \\(d_0\\) and a\n\\(D\\)-bin of \\(P=(Z(0),Y(0))\\), and put \\(W_G=\\pi(d_0)D^2\\).\nOn a dense restriction, typical groups have active and prior mass\ncomparable to \\(W_G\\) up to \\(K\\), and their \\((t,x)\\)-support\nrequires at most \\(K a_s^{-1-d}\\) squares of side \\(a_s\\).\nTheir full-time affine coefficient bins can be restricted to\nat most \\(K a_s^{-d}\\) bins of width \\(a_s\\), each of active\nmass at least \\(W_Ga_s^d/K\\).\nAfter subdividing time at a fixed-power length \\(\\eta\\ll a_s\\)\nand summably pruning, the group, time subbin and \\(x_{a_s}\\)\ndetermine a list of at most \\(K\\) retained coefficient bins.",
+   "refs": [
+    "lem:horizontal-affine"
+   ]
+  },
+  {
+   "label": "a07:simultaneous-floors",
+   "env": "lemma",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 50,
+   "line_end": 60,
+   "title": "Simultaneous marginal floors",
+   "statement_tex": "[Simultaneous marginal floors]\nLet a finite measure of mass \\(M\\ge K^{-1}\\) carry finitely many finite\nlabel families.  Suppose that each family partitions its incidences, up\nto a subpower multiplicity, and that its proposed positive floor\nnumerators \\(T_j\\) have total at most \\(K\\), summed over all families.\nFor a sufficiently large subpower \\(K_1\\), one may retain at least\n\\(9M/10\\) so that every remaining label has current mass at least\n\\(T_j/K_1\\).  Earlier label witnesses and trajectory priors may be kept\nwithout restriction as reference objects.",
+   "refs": []
+  },
+  {
+   "label": "prop:critical-rate",
+   "env": "proposition",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 76,
+   "line_end": 90,
+   "title": "Critical-rate improvement",
+   "statement_tex": "[Critical-rate improvement]\nIf \\(2k=1\\), every substantial residual of the prepared horizontal\nproblem yields a time-improvement candidate in the sense of\n\\Cref{prop:candidate-upgrade}.  More precisely, for a sufficiently small\nfixed \\(s>0\\) and any fixed \\(0<c<ks/2\\), one can choose a true\n\\(Q_s\\) and an affine base predictor whose hidden-variable test has\nwidth \\(K a_r a_{s+c}\\), hidden derivative one, and counted mass at\nleast\n\\[\n K^{-1}q_r\\nu(Q_r)m_{Q_s}N^{-dc}\n\\]\nin the initial tangent parent.  Its fit holds throughout the selected\nblock on the assigned trajectories.",
+   "refs": [
+    "prop:candidate-upgrade"
+   ]
+  },
+  {
+   "label": "a07:bootstrap-property",
+   "env": "definition",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 338,
+   "line_end": 365,
+   "title": "Full-time parameter estimates",
+   "statement_tex": "[Full-time parameter estimates]\nSuppose \\(2k<1\\). Choose \\(s_{\\max}>0\\) sufficiently small\ncompared with \\(e_0\\), allowing true-chart preparations up to the\nrequired fixed multiples of \\(s_{\\max}\\). Fix a common velocity\ngrid \\(d_0\\) of width \\(\\chi\\le N^{-e_0}\\), a fixed power\nup to dyadic rounding.\n\nFor \\(2k\\le u\\le1\\), property \\(\\mathcal G(u)\\) means the\nfollowing. For every fixed \\(0<s<s_{\\max}\\) and every dense\ninput, a further dense restriction and subsequence have full-time\nlabels in the groups \\((d_0,P_D)\\), where \\(D=a_s^u\\).\nTheir trajectory assignments are disjoint, their individual active\nmasses are at least\n\\[\n K^{-1}\\pi(d_0)D^2a_s^d,\n\\]\nand each label has a predictor\n\\[\n x=H(t,P)+O(Ka_s)\n\\]\nthroughout unit time on its assigned trajectories. The function\n\\(H\\) is affine in \\(P\\), with coefficients affine in time,\nand is bounded by \\(K\\) on the group's scaled parameter box\nover unit time. The counted incidences may be restricted in time.\nAll masses and depths use the fixed horizontal-model conventions;\ndyadic rounding and subpower factors are allowed as before.",
+   "refs": []
+  },
+  {
+   "label": "a07:full-time-comparison",
+   "env": "lemma",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 367,
+   "line_end": 396,
+   "title": "Comparison with full-time predictors",
+   "statement_tex": "[Comparison with full-time predictors]\nSuppose \\(2k<1\\), \\(2k\\le u\\le1\\), and\n\\(\\mathcal G(u)\\) holds. Fix a sufficiently small depth \\(s_0\\), and put\n\\(a_0=a_{s_0}\\), \\(D_0=a_0^u\\), and \\(G=(d_0,P_{D_0})\\).\nFirst prepare true labels and affine entries at \\(s_0\\) and at\nany prescribed finite set of nearby deeper depths. Then apply\n\\(\\mathcal G(u)\\) to the resulting dense input, obtaining\nfull-time labels \\(H_0\\) at \\(s_0\\). On a further dense\nrestriction, the following conclusions hold.\n\nFor each \\(Q_{s_0}\\) time block \\(I\\), write\n\\[\n {\\cal L}_{s_0}(t,P)\n   =L_{s_0}(t,p+t v_{d_0},q_0-tp).\n\\]\nEvery retained pairing of \\(H_0\\) with \\((Q_{s_0},L_{s_0})\\)\nsatisfies\n\\[\n \\|{\\cal L}_{s_0}-H_0\\|\\le Ka_0\n\\]\non the whole product of \\(I\\) and its parameter box. Given\n\\(H_0,I\\), at most \\(K\\) such true-label entries occur.\nFor each prescribed deeper depth \\(s\\), the paired true affine\nentries also have stored full-domain witnesses of mass at least\n\\(m_{Q_s}/K\\), and\n\\(\\|L_s-L_{s_0}\\|\\le Ka_0\\) on the whole child box.\nThe witnesses and full trajectory assignment priors are kept when\nthe current incidence law is further restricted.",
+   "refs": []
+  },
+  {
+   "label": "prop:bootstrap",
+   "env": "proposition",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 442,
+   "line_end": 450,
+   "title": "Parameter bootstrap below the critical rate",
+   "statement_tex": "[Parameter bootstrap below the critical rate]\nIf \\(2k<1\\), there is a fixed \\(s_{\\max}>0\\) for which\n\\(\\mathcal G(2k)\\) holds.  It can be applied anew to any dense input\nsequence and any subsequence.  Any prescribed finite set of depths\nbelow \\(s_{\\max}\\) can be used simultaneously on a further dense\nrestriction, with current individual floors, unchanged earlier\nfull-domain witnesses, and the original true assignment priors.",
+   "refs": []
+  },
+  {
+   "label": "prop:offcritical-wide",
+   "env": "proposition",
+   "section": "08",
+   "tex_file": "sections/08-critical-rates.tex",
+   "line_start": 810,
+   "line_end": 819,
+   "title": "Return to wide intervals",
+   "statement_tex": "[Return to wide intervals]\nIf \\(2k\\ne1\\), every substantial residual of the horizontal\nproblem supplies the hypotheses of \\Cref{prop:wide-interval} at\nthree fixed nearby depths.  Consequently it yields a\ntime-improvement candidate with a fixed positive depth gain, full\nblock fit, hidden derivative one, and the required original\ntrue-descendant mass.  The assertion holds both for \\(2k<1\\)\nand for \\(2k>1\\).",
+   "refs": [
+    "prop:wide-interval"
+   ]
+  },
+  {
+   "label": "prop:unbounded-improvement",
+   "env": "proposition",
+   "section": "09",
+   "tex_file": "sections/09-unbounded-narrowness.tex",
+   "line_start": 9,
+   "line_end": 13,
+   "title": "Exclusion of unbounded optimized narrowness",
+   "statement_tex": "[Exclusion of unbounded optimized narrowness]\n In the second model's extremal setup of \\Cref{prop:critical-path},\n the global optimized narrowness \\(\\ell\\) is finite.",
+   "refs": [
+    "prop:critical-path"
+   ]
+  },
+  {
+   "label": "prop:full-time-localization",
+   "env": "proposition",
+   "section": "09",
+   "tex_file": "sections/09-unbounded-narrowness.tex",
+   "line_start": 142,
+   "line_end": 162,
+   "title": "Full-time localization",
+   "statement_tex": "[Full-time localization]\n In the setting of \\Cref{a08:depth-choice,a08:two-node-scales}, a permitted\n further selection admits full-time charts \\(C\\) with tangential width\n one and normal width\n \\begin{equation}\n  g_C=g_2N_0^{2u}.\n \\end{equation}\n Their labels are known by the original \\(p_1\\) with actual subpower\n lists.  The native test remains \\(P_*\\).  If \\(n_C\\) and \\(y_C(t)\\)\n are the normal and affine center of \\(C\\), then every retained\n \\(Q_1\\)-incidence satisfies, after a consistent choice of signs,\n \\begin{equation}\n  |n_1-n_C|\\le K_0g_1,\\qquad\n  |n_C\\cdot(y_1'-y_C')|\\le K_0g_1 .\n \\end{equation}\n All assignments, geometric tests and coordinate changes have tempered\n bounds within each fixed \\(E_i\\).",
+   "refs": []
+  },
+  {
+   "label": "a08:balanced-packets",
+   "env": "lemma",
+   "section": "09",
+   "tex_file": "sections/09-unbounded-narrowness.tex",
+   "line_start": 275,
+   "line_end": 304,
+   "title": "Normalization and relative density cancellation",
+   "statement_tex": "[Normalization and relative density cancellation]\n After a further permitted selection and passage to subsequences, the\n charts \\(C\\) of \\Cref{prop:full-time-localization} contain a system of\n charts \\(A\\), known by original \\(p_1\\), with common time length\n \\[\n q_A=N_0^{-h_{A,i}+o(1)},\\qquad h_{A,i}\\longrightarrow0.\n \\]\n Write \\(D_A\\) for their original spatial matrices and\n \\(J_A=|\\det D_A|\\).  Their original assigned trajectory masses satisfy\n \\begin{equation}\n  \\frac{\\nu_\\gamma(A)}{J_A}\n   =N_0^{-db_i+\\eps_i+o_{N_0}(1)}\n   =N_0^{o_{i\\to\\infty}(1)+o_{N_0\\to\\infty}(1)},\n  \\qquad b_i\\longrightarrow0,\\quad \\eps_i\\longrightarrow0.\n \\end{equation}\n The second equality is a two-limit statement.  It does not assert an\n actual subpower bound for fixed \\(i\\).\n\n If \\(e_Z\\) is a unit tangent to \\(C\\), then the systems may also be\n prepared so that\n \\begin{equation}\n  \\|D_A^{\\mathsf T}e_Z\\|\\ge q_A/K_0,\\qquad\n  \\|D_A^{\\mathsf T}n_C\\|\\le K_0g_Cq_A.\n \\end{equation}\n Actual lists, native derivative bounds and geometric slacks remain\n subpower within each fixed exact problem.",
+   "refs": [
+    "prop:full-time-localization"
+   ]
+  },
+  {
+   "label": "a08:earlier-graphs",
+   "env": "lemma",
+   "section": "09",
+   "tex_file": "sections/09-unbounded-narrowness.tex",
+   "line_start": 548,
+   "line_end": 577,
+   "title": "Graph descriptions on the earlier charts",
+   "statement_tex": "[Graph descriptions on the earlier charts]\nAfter analytical deletions of mass \\(o(\\mathfrak p_{\\mathrm{path}})\\),\neach \\(Q_1\\)-label still meeting \\(\\mu_{\\mathrm{prep}}\\) has the\nfollowing properties.\n\\begin{enumerate}\n\\item It has a frozen earlier witness \\(W_{\\gamma,I,Q_1}\\), supported\nin its original time block and full spatial domain, with mass at least\n\\(q_1\\nu_\\gamma(Q_1)/K\\).  These witnesses are disjoint within each\noriginal block and satisfy the prepared zero-depth cap.\n\\item In its normalized base coordinates\n\\(\\widehat u=((t-t_1)/q_1,D_1^{-1}(y-y_1(t)))\\), where \\(t_1\\)\nis the block's left endpoint, its retained incidences are assigned\nto at most \\(K\\) pairs \\((U,G)\\).  Here \\(U\\) is a real box, called\nthe core, and \\(G\\) is a bounded-degree algebraic function,\nholomorphic on a fixed-factor complex enlargement of \\(U\\).\nEvery assigned incidence has \\(\\widehat u\\in U\\) and satisfies\n\\[\n |X-G(\\widehat u)|\\le Ka,\\qquad\n |G|+|\\nabla G|\\le K,\n \\qquad a=N^{-s_1},\n\\]\nwhere the value and derivative bounds for \\(G\\) hold on a\nneighborhood of \\(U\\).\n\\end{enumerate}\nThe final prepared measure has mass\n\\(\\|\\mu_{\\mathrm{prep}}\\|=(1-o(1))\\mathfrak p_{\\mathrm{path}}\\).\nThe first witnesses need not be submeasures of this final measure:\nthey are kept before the later core/graph deletions.",
+   "refs": []
+  },
+  {
+   "label": "a08:projected-bounds",
+   "env": "lemma",
+   "section": "09",
+   "tex_file": "sections/09-unbounded-narrowness.tex",
+   "line_start": 733,
+   "line_end": 750,
+   "title": "Projected cap and support bounds",
+   "statement_tex": "[Projected cap and support bounds]\n Put \\(a=N^{-s_1}\\).  The projection of the fixed-budget law\n \\(\\lambda_A\\) in every used \\(A\\) has the following properties.\n \\begin{enumerate}\n  \\item An \\(X\\)-bin of width \\(p=N^{-r}\\), \\(0\\le r\\le s_1\\), has\n  density at most \\(Kp^d\\) per unit Lebesgue area in \\((\\tau,\\zeta)\\).\n  At \\(p=a\\), adjoining a \\(\\zeta'\\)-bin of width \\(N^{-v}\\),\n  \\(0<v\\le u_1\\), gains a factor \\(KN^{-Sv}\\), for some fixed\n  \\(0<u_1<u\\).\n  \\item For a fixed sufficiently large \\(M\\), choose dyadic\n  \\(\\sigma\\asymp N^{-M}\\).  Each \\((\\tau,\\zeta)\\)-mesh cell of width\n  \\(\\sigma\\) meets at most \\(Ka^{-d}\\) occupied \\(X\\)-bins of width\n  \\(a\\).  In particular the total number of occupied\n  \\((\\sigma,\\sigma,a)\\)-cells is at most\n  \\(Ka^{-d}\\sigma^{-2}\\).\n \\end{enumerate}",
+   "refs": []
+  },
+  {
+   "label": "cor:general-directions-four",
+   "env": "corollary",
+   "section": "10",
+   "tex_file": "sections/10-consequences.tex",
+   "line_start": 43,
+   "line_end": 51,
+   "title": "General direction-set bound",
+   "statement_tex": "[General direction-set bound]\nLet \\(D\\subset\\mathbb{RP}^3\\) be nonempty and let \\(E\\subset\\R^4\\).\nIf \\(E\\) contains a nondegenerate line segment in every direction\nin \\(D\\), then\n\\[\n \\dim_H E\\ge1+\\dim_H D.\n\\]",
+   "refs": []
+  },
+  {
+   "label": "cor:nikodym-four",
+   "env": "corollary",
+   "section": "10",
+   "tex_file": "sections/10-consequences.tex",
+   "line_start": 105,
+   "line_end": 110,
+   "title": "Four-dimensional Nikodym dimension",
+   "statement_tex": "[Four-dimensional Nikodym dimension]\nLet \\((M^4,g)\\) be a Riemannian manifold of constant sectional\ncurvature in the preceding normalized setting. Every Nikodym set\n\\(\\Omega\\subset M\\) has \\(\\dim_H\\Omega=4\\).",
+   "refs": []
+  },
+  {
+   "label": "cor:curved-kakeya-four",
+   "env": "corollary",
+   "section": "10",
+   "tex_file": "sections/10-consequences.tex",
+   "line_start": 184,
+   "line_end": 193,
+   "title": "Fixed-chart curved Kakeya dimension",
+   "statement_tex": "[Fixed-chart curved Kakeya dimension]\nUnder the preceding fixed-chart phase hypotheses, let\n\\(E\\subset\\R^4\\). Suppose that for every \\(y\\in Y\\) there exists\n\\(\\omega_y\\in B_\\rho^3\\) such that\n\\[\n \\Gamma_y^\\phi((\\omega_y,0))\\subset E.\n\\]\nThen \\(\\dim_H E=4\\).",
+   "refs": []
+  },
+  {
+   "label": "cor:quadratic-curved-three",
+   "env": "corollary",
+   "section": "10",
+   "tex_file": "sections/10-consequences.tex",
+   "line_start": 280,
+   "line_end": 290,
+   "title": "Rank-one quadratic curved Kakeya sets",
+   "statement_tex": "[Rank-one quadratic curved Kakeya sets]\nLet \\(B\\) be a real \\(2\\times2\\) matrix with\n\\(\\rank B=\\rank(B^2)=1\\), and use the fixed domains just specified.\nSuppose that a compact set \\(K\\subset\\R^3\\) contains, for every\n\\(y\\in[-1,1]^2\\), the full curve\n\\[\n \\{(w_y+(tI_2+t^2B)y,t):t\\in I_B\\}\n\\]\nfor some \\(w_y\\in W_B\\). Then \\(\\dim_H K=3\\).",
+   "refs": []
+  }
+ ],
+ "extras": [
+  {
+   "label": "a06:summable-pruning",
+   "env": "remark",
+   "section": "07",
+   "tex_file": "sections/07-finite-narrowness.tex",
+   "line_start": 15,
+   "line_end": 40,
+   "title": "Reference weights and current masses",
+   "statement_tex": "[Reference weights and current masses]\nWe use the reference-weight pruning of\n\\Cref{a03:finite-state-conditioning} in the following scaled form.\nSuppose reference weights \\(R_e\\) satisfy\n\\(\\sum_eR_e\\leq K^{(0)} M\\), while a current restricted law has\nmass at least \\(M/K^{(2)}\\).  If an appended datum has at most\n\\(K^{(3)}\\) possibilities for each \\(e\\), deleting entries of\ncurrent mass less than \\(R_e/K^{(1)}\\) loses at most\n\\[\n \\frac{K^{(3)}}{K^{(1)}}\\sum_eR_e\n \\leq \\frac{K^{(0)}K^{(3)}}{K^{(1)}}M .\n\\]\nChoose the subpower \\(K^{(1)}\\) after \\(K^{(0)},K^{(2)},K^{(3)}\\) to make this\nnegligible.  If, before normalization, the numerator at such an\nentry and a velocity bin \\(b\\) is at most \\(K\\pi(b)R_e\\), the\nretained entry's conditional velocity probability is at most\n\\(KK^{(1)}\\pi(b)\\).  Summing over entries gives the same type of\nbound at their common appended state.\nThese are current floors obtained at a specified pruning stage.\nOlder witnesses may separately be stored for geometric counts.\nFurther restriction preserves an unnormalized upper bound, but\ndoes not by itself preserve a normalized conditional bound or a\ncurrent lower floor.  A new use of either is justified by the\ndisplayed summable calculation.",
+   "refs": [
+    "a03:finite-state-conditioning"
+   ]
+  }
+ ]
+}

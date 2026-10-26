@@ -1,0 +1,73 @@
+{
+  "repo": "openai/math",
+  "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "source_mirror": "cdn.jsdelivr.net/gh",
+  "paper_dir": "preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026",
+  "files": {
+    "paper.tex": {
+      "sha256": "46d26e3b757e77d451498ceeaaf73de14b5053acc4e66e6570f852be3d4f45fd",
+      "size": 2820,
+      "lines": 79
+    },
+    "references.bib": {
+      "sha256": "ef7b9c66056e29ad99ee163353f52df44f9c38e732938c74ac43c72cea85880b",
+      "size": 14059,
+      "lines": 441
+    },
+    "sections/01-introduction.tex": {
+      "sha256": "0fd938e2ce50cf4f76ceee333bf4158805c77dc4dcae2972f2249dbc218b57bb",
+      "size": 16670,
+      "lines": 329
+    },
+    "sections/02-framework.tex": {
+      "sha256": "53e11aade386a455e99202bb8fad6421789ee40644b80c0971c9b4b1daf648cc",
+      "size": 65440,
+      "lines": 1653
+    },
+    "sections/03-comparison.tex": {
+      "sha256": "e795427deccaf52ae2fd3d3ab979c470b8e7938c30dd9bb7f38554619e04b9c1",
+      "size": 79102,
+      "lines": 1777
+    },
+    "sections/04-critical-paths.tex": {
+      "sha256": "48930f052660e6e5316c23c8b6b27124fa2a4b6ff3c9f6500c6f835ff7509040",
+      "size": 95775,
+      "lines": 1794
+    },
+    "sections/05-scalar-tools.tex": {
+      "sha256": "61234e6a1844224b1ce058e56e8f76492d304d441e706871ac1838bd125483dc",
+      "size": 50170,
+      "lines": 1142
+    },
+    "sections/06-isotropic.tex": {
+      "sha256": "08a895d92716dd2e4e68048dd55edf391404c1b37757b99482b63599477236ba",
+      "size": 86878,
+      "lines": 1936
+    },
+    "sections/06a-retained-edge.tex": {
+      "sha256": "c80fbb364aafc0bdd77e325bf7266c17e3a79032c0e3b7c192fd108502a38c60",
+      "size": 32502,
+      "lines": 729
+    },
+    "sections/07-finite-narrowness.tex": {
+      "sha256": "e0b7915fcdfab73c800aa40837659682e13ac1dbbfde540b64a1512e9aa96e69",
+      "size": 77895,
+      "lines": 1554
+    },
+    "sections/08-critical-rates.tex": {
+      "sha256": "017961cbcf340a0868e57964184564985825ed56287131cb98eb80586237d624",
+      "size": 67117,
+      "lines": 1101
+    },
+    "sections/09-unbounded-narrowness.tex": {
+      "sha256": "02e6e98f25c5945fa2af0b46b5a123034d5ab357abeba9b4ec0ba3ccddcf397b",
+      "size": 54169,
+      "lines": 1232
+    },
+    "sections/10-consequences.tex": {
+      "sha256": "c9bb67358f0008a20638dcf898ccd7f96b5eb0225e5e06058ebd92a05e3d1662",
+      "size": 14352,
+      "lines": 348
+    }
+  }
+}

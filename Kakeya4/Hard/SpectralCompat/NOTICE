@@ -1,0 +1,5 @@
+CausalSmith compatibility sources, Apache-2.0.
+Copyright 2026 Jiyuan Tan.
+Upstream commit: a7085d88d2e4b30003db7097ca374f4718da0f01.
+Module import paths were adapted. Original copyright headers are retained.
+See THIRD_PARTY_NOTICES.md.

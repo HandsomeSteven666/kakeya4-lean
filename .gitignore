@@ -1,0 +1,13 @@
+.lake/
+*.olean
+*.ilean
+*.c
+*.trace
+*.hash
+__pycache__/
+.venv/
+*.log
+*.aux
+*.out
+*.toc
+docs/SORRY.md

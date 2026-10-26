@@ -1,0 +1,4 @@
+OpenAI/math compatibility sources, Apache-2.0.
+Upstream commit: 1581d4cbdd69a0faf34b2089614fe2a814316a6a.
+Original copyright headers are retained. Imports and selected proof resource/tactic settings were adapted for the fixed toolchain.
+See THIRD_PARTY_NOTICES.md.

@@ -1,0 +1,12 @@
+name = "kakeya4"
+version = "0.1.0"
+defaultTargets = ["Kakeya4"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a9a88447f391672d7aeea117da03b6f7016b0d"
+
+[[lean_lib]]
+name = "Kakeya4"
+globs = ["Kakeya4", "Kakeya4.+"]

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "entries": {
+    "lem:weighted-planks": {
+      "status": "stated",
+      "lean_module": "Kakeya4.Foundation.Defs.Plank",
+      "lean_expr": "Kakeya4.Plank.WeightedPlanks"
+    },
+    "re:graph-bsg": {
+      "status": "stated",
+      "lean_module": "Kakeya4.Hard.Externals.Statements",
+      "lean_expr": "Kakeya4.GraphBalogSzemerediGowers"
+    },
+    "lem:quadratic-sublevel": {
+      "status": "stated",
+      "lean_module": "Kakeya4.Foundation.Lemmas.QuadraticSublevel",
+      "lean_expr": "Kakeya4.QuadraticSublevelStatement"
+    }
+  }
+}

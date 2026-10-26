@@ -1,0 +1,178 @@
+{
+ "nodes": [
+  "thm:main",
+  "def:exact-problem",
+  "a01:tempered",
+  "a01:density-operations",
+  "a01:flattening",
+  "a01:homogenization",
+  "a01:cap-class",
+  "a01:angular-coarsening",
+  "def:true-chart",
+  "lem:quadratic-sublevel",
+  "a01:saturation",
+  "a01:witness-budgets",
+  "a01:largest-axis",
+  "lem:normalization",
+  "def:horizon",
+  "lem:weighted-planks",
+  "a01:horizon-bound",
+  "thm:model-reduction",
+  "lem:algebraic-norm",
+  "a02:algebraic-path",
+  "lem:two-color-matching",
+  "a02:local-graph-matching",
+  "lem:terminal-extension",
+  "a03:composition",
+  "a03:positive-rate",
+  "prop:critical-path",
+  "a03:zero-depth",
+  "a03:excluded-improvements",
+  "a03:finite-guard",
+  "prop:tangent-palette",
+  "a03:finite-state-conditioning",
+  "a03:time-slice",
+  "a03:candidates",
+  "prop:candidate-upgrade",
+  "a03:actual-lists",
+  "a03:breadth",
+  "lem:scalar-clustering",
+  "a04:scalar-data",
+  "a04:dense-entropy",
+  "prop:scalar-normal",
+  "a04:planar-input",
+  "prop:higher-jets",
+  "thm:isotropic-improvement",
+  "a05:velocity-graph",
+  "a05:qualification",
+  "a05:common-local-choice",
+  "a05:conservativity",
+  "lem:tensor-kernels",
+  "a05:real-conic",
+  "prop:degree-restoration",
+  "a05:scalar-zero-horizon",
+  "re:graph-bsg",
+  "re:common-sets",
+  "re:flat-coefficients",
+  "re:parallel-strips",
+  "re:retained-edge-rigidity",
+  "a06:row-fit",
+  "thm:scalar-mesh-projection",
+  "a06:projected-comparison",
+  "prop:wide-interval",
+  "prop:horizontal-model",
+  "a06:horizontal-affine-approximation",
+  "lem:horizontal-affine",
+  "a06:nested-affine-slopes",
+  "a06:horizontal-coefficient-count",
+  "a07:simultaneous-floors",
+  "prop:critical-rate",
+  "a07:bootstrap-property",
+  "a07:full-time-comparison",
+  "prop:bootstrap",
+  "prop:offcritical-wide",
+  "prop:unbounded-improvement",
+  "prop:full-time-localization",
+  "a08:balanced-packets",
+  "a08:earlier-graphs",
+  "a08:projected-bounds",
+  "cor:general-directions-four",
+  "cor:nikodym-four",
+  "cor:curved-kakeya-four",
+  "cor:quadratic-curved-three"
+ ],
+ "edges": [
+  {
+   "from": "a03:zero-depth",
+   "to": "lem:normalization"
+  },
+  {
+   "from": "a03:finite-guard",
+   "to": "a03:excluded-improvements"
+  },
+  {
+   "from": "prop:tangent-palette",
+   "to": "a03:finite-state-conditioning"
+  },
+  {
+   "from": "prop:candidate-upgrade",
+   "to": "a03:candidates"
+  },
+  {
+   "from": "prop:candidate-upgrade",
+   "to": "a03:finite-guard"
+  },
+  {
+   "from": "prop:candidate-upgrade",
+   "to": "prop:tangent-palette"
+  },
+  {
+   "from": "prop:scalar-normal",
+   "to": "a04:dense-entropy"
+  },
+  {
+   "from": "prop:scalar-normal",
+   "to": "a04:scalar-data"
+  },
+  {
+   "from": "prop:higher-jets",
+   "to": "a04:scalar-data"
+  },
+  {
+   "from": "thm:isotropic-improvement",
+   "to": "prop:tangent-palette"
+  },
+  {
+   "from": "a05:real-conic",
+   "to": "lem:tensor-kernels"
+  },
+  {
+   "from": "prop:degree-restoration",
+   "to": "thm:isotropic-improvement"
+  },
+  {
+   "from": "re:flat-coefficients",
+   "to": "re:common-sets"
+  },
+  {
+   "from": "re:parallel-strips",
+   "to": "re:common-sets"
+  },
+  {
+   "from": "a06:summable-pruning",
+   "to": "a03:finite-state-conditioning"
+  },
+  {
+   "from": "a06:horizontal-affine-approximation",
+   "to": "prop:horizontal-model"
+  },
+  {
+   "from": "lem:horizontal-affine",
+   "to": "a06:horizontal-affine-approximation"
+  },
+  {
+   "from": "a06:nested-affine-slopes",
+   "to": "lem:horizontal-affine"
+  },
+  {
+   "from": "a06:horizontal-coefficient-count",
+   "to": "lem:horizontal-affine"
+  },
+  {
+   "from": "prop:critical-rate",
+   "to": "prop:candidate-upgrade"
+  },
+  {
+   "from": "prop:offcritical-wide",
+   "to": "prop:wide-interval"
+  },
+  {
+   "from": "prop:unbounded-improvement",
+   "to": "prop:critical-path"
+  },
+  {
+   "from": "a08:balanced-packets",
+   "to": "prop:full-time-localization"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "id": "lem:weighted-planks",
+      "status": "stated",
+      "lean_name": "Kakeya4.Plank.WeightedPlanks",
+      "lean_module": "Kakeya4.Foundation.Defs.Plank",
+      "bundle_field": "weightedPlanks",
+      "alias_name": "Kakeya4.WeightedPlanks",
+      "statement_alias": "Kakeya4.Sec02.lem_weighted_planks_statement",
+      "wiring_theorem": "Kakeya4.weightedPlanks_eq_plank",
+      "overlay_label": "lem:weighted-planks",
+      "manuscript": {
+        "label": "lem:weighted-planks",
+        "section": "02",
+        "line_start": 885,
+        "line_end": 926
+      },
+      "reviewed_at": "2026-10-19"
+    },
+    {
+      "id": "ext:determinant-multilinear-kakeya",
+      "status": "proved",
+      "lean_name": "Kakeya4.DeterminantMultilinearKakeya",
+      "lean_module": "Kakeya4.Hard.Externals.Statements",
+      "bundle_field": "determinantMultilinearKakeya",
+      "wiring_theorem": "Kakeya4.determinantMultilinearKakeya_proof",
+      "reviewed_at": "2026-10-23"
+    },
+    {
+      "id": "ext:restricted-triple-dot-product",
+      "status": "opaque",
+      "lean_name": "Kakeya4.RestrictedTripleDotProduct",
+      "lean_module": "Kakeya4.Hard.Externals.Statements",
+      "bundle_field": "restrictedTripleDotProduct"
+    },
+    {
+      "id": "ext:multiplicative-convolution",
+      "status": "opaque",
+      "lean_name": "Kakeya4.MultiplicativeConvolution",
+      "lean_module": "Kakeya4.Hard.Externals.Statements",
+      "bundle_field": "multiplicativeConvolution"
+    },
+    {
+      "id": "ext:graph-balog-szemeredi-gowers",
+      "status": "proved",
+      "lean_name": "Kakeya4.GraphBalogSzemerediGowers",
+      "lean_module": "Kakeya4.Hard.Externals.Statements",
+      "bundle_field": "graphBalogSzemerediGowers",
+      "overlay_label": "re:graph-bsg",
+      "reviewed_at": "2026-10-20"
+    }
+  ]
+}
