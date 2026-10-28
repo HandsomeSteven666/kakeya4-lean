@@ -1,0 +1,19 @@
+import OAI.MeasureTheory.Falconer.EightVariableNoise
+
+#print axioms OAI.Falconer.triple_relation_mass_le_bad_add_fiber
+#print axioms OAI.Falconer.exists_good_parameter_large_fiber
+#print axioms OAI.Falconer.bilinear_difference_projection_measurable
+#print axioms OAI.Falconer.bilinear_difference_large_image_of_OSS
+#print axioms OAI.Falconer.uniform_bilinear_difference_large_image
+#print axioms OAI.Falconer.eight_real_groups_measurable
+#print axioms OAI.Falconer.uneight_real_groups_measurable
+#print axioms OAI.Falconer.eight_parameter_map_measurable
+#print axioms OAI.Falconer.original_pi_eight_grouped_law
+#print axioms OAI.Falconer.original_pi_eight_parameter_law
+#print axioms OAI.Falconer.eight_bilinear_value_identity
+#print axioms OAI.Falconer.eight_bilinear_value_measurable
+#print axioms OAI.Falconer.original_pi_eight_bilinear_law
+#print axioms OAI.Falconer.planar_product_open_frostman
+#print axioms OAI.Falconer.uniform_eight_variable_Frostman_large_image
+#print axioms OAI.Falconer.eight_bilinear_anchor_target
+#print axioms OAI.Falconer.eight_bilinear_noisyHalf_error

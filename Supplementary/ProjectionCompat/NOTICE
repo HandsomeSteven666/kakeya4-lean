@@ -1,0 +1,5 @@
+OpenAI/math source adaptations and local analytic adapters.
+Upstream: https://github.com/openai/math
+Revision: 1581d4cbdd69a0faf34b2089614fe2a814316a6a
+Upstream material is Apache-2.0; original copyright headers retained.
+See README.md, LICENSE and ../../THIRD_PARTY_NOTICES.md.

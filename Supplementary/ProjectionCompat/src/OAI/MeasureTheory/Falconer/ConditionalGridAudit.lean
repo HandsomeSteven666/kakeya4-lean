@@ -1,0 +1,29 @@
+import OAI.MeasureTheory.Falconer.ConditionalSupportCore
+
+#print axioms OAI.Falconer.normalized_restriction_absolutelyContinuous
+#print axioms OAI.Falconer.normalized_restriction_scale_bound
+#print axioms OAI.Falconer.RadialCapBound.normalized_restrictions
+#print axioms OAI.Falconer.radialTransport_support_map_subset
+#print axioms OAI.Falconer.radialTransport_support_map_eq
+#print axioms OAI.Falconer.radialZoom_radialDirection
+#print axioms OAI.Falconer.RadialCapBound.radialZoom
+#print axioms OAI.Falconer.RadialCapBound.radialZoom_iff
+#print axioms OAI.Falconer.dyadic_depth_point_center_bound
+#print axioms OAI.Falconer.dyadic_depth_centers_distance_bound
+#print axioms OAI.Falconer.dyadic_far_cells_uniform_normalization
+#print axioms OAI.Falconer.dyadic_near_cells_point_distance
+#print axioms OAI.Falconer.retained_dyadic_complement_mass
+#print axioms OAI.Falconer.finite_disjoint_probability_masses_le_one
+#print axioms OAI.Falconer.original_restriction_denormalize
+#print axioms OAI.Falconer.original_product_restriction_denormalize
+#print axioms OAI.Falconer.finite_relation_fiber_weighted_bound
+#print axioms OAI.Falconer.finite_product_relation_weighted_deletion
+#print axioms OAI.Falconer.cell_zoom_frostman_factor_le_sixteen
+#print axioms OAI.Falconer.normalized_cell_zoom_uniform_budget
+#print axioms OAI.Falconer.conditional_radial_weighted_fibers
+#print axioms OAI.Falconer.finite_conditional_cells_radial_bound
+#print axioms OAI.Falconer.fineDyadicFarRegion_measurable
+#print axioms OAI.Falconer.retainedDyadicPaths_positive
+#print axioms OAI.Falconer.fineDyadicFarRegion_complement_mass
+#print axioms OAI.Falconer.exists_fine_dyadic_far_pruning
+#print axioms OAI.Falconer.exists_radial_support_core

@@ -1,0 +1,662 @@
+{
+  "upstream": "https://github.com/openai/math",
+  "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "files": [
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/AdapterAudit.lean",
+      "sha256": "c6fa41a300d2952ca58424678c959a972c13c651ce02aa15805b4352b1c1eef1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/AllScaleOSSProjectionAudit.lean",
+      "sha256": "46e6da1f1a29d9bac87e6bec30d9b77cafc906dd2af1b84b2ef9a16a843402a4"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/AngularExtensionAudit.lean",
+      "sha256": "013c6069ed3d418cae1659d54e3ab45893f0065628ceea703c4beadef4d5a640"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BilinearDifferenceLargeImage.lean",
+      "sha256": "efc309f7f562049b53fa5cd71c79292460276ab15de0beb88ee7e7491fff6c08"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BilinearLargeImageAudit.lean",
+      "sha256": "aafdac8a297dbc2d80abb7320feadd1dcd3dd7c29775a567ff015189f9971162"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BundledAngularExtension.lean",
+      "sha256": "bd9ced9baa8b6f82fa94a43f38af19de5ebe7a4bb00a1181ab6c5ca5325353f6"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BundledAudit.lean",
+      "sha256": "fa9f379e3766998a8bc9366776f43a24b7a6caede6019d25414059df934e0474"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BundledIncidence.lean",
+      "sha256": "878257d338905614b165e551b29eab6122c015f298448bea06944864edd45843"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/BundledWindowSupport.lean",
+      "sha256": "0c6524508f559b884edb05d713a77aeaa910e195d3f07eb54b67978f02827146"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/CellZoomUniformBudget.lean",
+      "sha256": "bf11bd65288c9517f10c4a9d9d04eda459b9029cdab3cc9b24922427a540dbdb"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/CompactGainUniformization.lean",
+      "sha256": "bdde320ae55889e2c5f954b87d5e1da1ba6735b49e08ee0f5e93461350c38d5b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConditionalCellRecombination.lean",
+      "sha256": "56db7d4b6a172cd311cff74c4b1ca5a1e27f2a1a6599ec52000c18ca67758d3d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConditionalGridAudit.lean",
+      "sha256": "cf81043d98382be17728786f34cc7042e4f77b0afd38412816604c5530bb32d8"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConditionalRadialTransport.lean",
+      "sha256": "ab352ac6670229d2ac4145a33120b6e4f1478ce04ad6acd4785c136cf103d609"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConditionalSupportCore.lean",
+      "sha256": "3cfafba285bd58c35951c5d462895f8433f9f072bb433fabafd73c67a5d74d50"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConvolutionLargeImageAudit.lean",
+      "sha256": "5e429a05c51b88c6e402ddd6691a18fcfaa268a82c60f2894fc12383a58d606e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ConvolutionLargeImageTransport.lean",
+      "sha256": "0a954c6dd1dfa72072ede5278da0034b67dda4cfd444923f6c07f6136a84941c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/CrossedParameterLaw.lean",
+      "sha256": "e83517726823e0df6b804921909970960706966ef6b6b9e50ce85d667cbd8696"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DifferenceConvolutionEightLaw.lean",
+      "sha256": "860d72b3346c7c0025bd77def02782134eb6832be4b1b2a8e7219a7769e27774"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DirectionCollisionAverage.lean",
+      "sha256": "1d6f1ceeb29c919cd0a20abb2a37f8fd7ee0933cdd0b954d212804d80c6b8ffe"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DirectionKaufmanAudit.lean",
+      "sha256": "0473ebfb7258d0a791a6c047dbac34bc9351d7fb56ed0af18b7f6e70f6368c40"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DirectionProjectionSublevel.lean",
+      "sha256": "5a2401329428e9fec61d84e2209646579c9e13c23d83c301f9a1a29ceba67b13"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DyadicOSSFrostmanProjection.lean",
+      "sha256": "8ded5bbf08dc9223f3980cd40fdc68ab1a4125e430532766a8acd4e8f462720c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DyadicOSSProjectionAudit.lean",
+      "sha256": "83da730eec28a3c81980a471771e71e8241282107ab4548a03ccade048067411"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DyadicProjectionScaleTransfer.lean",
+      "sha256": "56653a9b5b8e3dea95cba2b30a8e525d7e3c7b7cffeedb15941d1c5bddcfc7a6"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/DyadicSeparationScaleCosts.lean",
+      "sha256": "750a2e9ae675c16c9c50014fcab52c55f7594fd097209e47c82c147650b5d9b5"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EightValueMassTransport.lean",
+      "sha256": "cd1fbb6f0db7dcfaf07cf3b8d15b639686ff6809858e6e0d745256d937127f7a"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EightVariableBilinearLaw.lean",
+      "sha256": "ed27733b2eff43437eaab2fab007f3928ae97f64085a3913072ee03e66553d8d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EightVariableFrostmanLargeImage.lean",
+      "sha256": "5e75b7257403ce3d538cefed26abf3656c86ff25d800f088dfb278c55c218a8f"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EightVariableNoise.lean",
+      "sha256": "b8f6a6cd317ad11668eca1afb2ac3ad74883b589aa78f8e387c37bebada03dc7"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyDifferenceConvolutionPowers.lean",
+      "sha256": "e5f166e700f16722b8dc87c087b31ca310be247c145e8ee5347fef883e6cb921"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyDifferenceConvolutionSquare.lean",
+      "sha256": "2769114207ba0d9c2e4781b829476054de923a39bd6dfa8ad9e2c343e2444dd1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyEightVariableLargeImage.lean",
+      "sha256": "d2c10de8ac566babdc316294b90e237260f97b2cf2b677a3b1fa2d2a6fe4a338"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyExtractedOSSProjection.lean",
+      "sha256": "19a10d5df3a0011cd66153d0088df19b9941279f1342339dfd9921b20771d914"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyLargeImageAudit.lean",
+      "sha256": "1f8b85d70c2cacf4fa0f8f870428667d3408f40171d95d3bae7df50bb9249d40"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyLargeImageBudgets.lean",
+      "sha256": "01c67bdd844c5cf77b4fa078c470f9a3c0a31df9d0ba319412c45dd0f3217976"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/EnergyParameterBootstrap.lean",
+      "sha256": "fd2f8bfd1734923fda46cdc2938020b5f436e00625477ac9bf09ff6d9815913d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FarCellBootstrapConsumer.lean",
+      "sha256": "1010413fb338f4653c64e5d702a006b3c0cd722307b53e3d7441e56e632bd893"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FineDyadicPruning.lean",
+      "sha256": "d1b74a8aecc4d4f008b3c644dbf17c6b9568aa27846024fb1d05a6e776211015"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FineDyadicSeparation.lean",
+      "sha256": "c1dc5e607f5abc99a8afdb203a3d8f3762011c540c90b86bd15076a505dd770b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FiniteBootstrapAudit.lean",
+      "sha256": "96e33d53022d82d5f5f2bad0445f23a15fa758ed17681cb092f154b995c56c07"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FiniteScaleKaufmanAverage.lean",
+      "sha256": "b526dd6eb502f85155e81375e4450449f100d2a0ded58da64970b2f3db06b2dc"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FiniteUniformRadialBootstrap.lean",
+      "sha256": "4cf45949b60a08ad135a52bce8707fd19d4193414b7fda790f88486378c48eb6"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningAllScalePairMass.lean",
+      "sha256": "0bc3a23be56bd426cc8e80ccabc53611cc122c5313e48beec0dc91891741341c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningBoxComparison.lean",
+      "sha256": "f7cfc5f3f5265166085e621df7985d452fbb41a56d4a493bcf5a6fd8625c99fd"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningCellCover.lean",
+      "sha256": "a1f4aae4dccfea143c933be952282551c6cda322072e6418e415c0aac42f805d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningCellEnvelope.lean",
+      "sha256": "547665f8faa4e2d257a48c969c67b22f8e89eb5e598b7f2c30890303f77d2a24"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningCellSupremum.lean",
+      "sha256": "4090644d853602ed060a796b5e4e6dbbc7dabd366c1cb7a2a29802ad5573677f"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningCoarseL2.lean",
+      "sha256": "decd0f852cf5ab9cd1da13d5f5034b277a4d7f87052ab9cefe592aff01e7a4ea"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningCorrelation.lean",
+      "sha256": "edd39c51c6d12d47c5454ee61df6471b65ded4b90d5d9f551f1cf3b8b603aca3"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningDeficitEnergy.lean",
+      "sha256": "14855e33458663715fe9936bbf568c3ee6d08e4327c0790bedd1599b12a1bd66"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningDensityL2.lean",
+      "sha256": "1b58cf9cc54cfa37a546e7313f6ab10fa6b54c47690e9449c867954691cc12e1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningDensityLevels.lean",
+      "sha256": "107b974b1eb6280c3a1d78a7c042c5de9f6f7cd30c816998f5b19bb705fac000"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningDoubleSmoothing.lean",
+      "sha256": "a369fe5b7a3f3ad5a5eedaa32f4deff65c745b91ce1fad726420b1f27ea81f94"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningDyadicEnergy.lean",
+      "sha256": "efddb93781a440b7de0b740ba3c3266f2b1511fc3cf6f3876072a8157653dd8d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningEnergyContraction.lean",
+      "sha256": "acb64a9d85522d801850b1b54fabd053a0c13dddaeabf3f35a40c37eb79a0926"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningEnergyScale.lean",
+      "sha256": "5f3c8d46e4540e4114259baadb0995c0f7fda43ec994d9869a7d8a8605e2e99c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningExponentGrid.lean",
+      "sha256": "cb3763433b6714e99efe752ce2bf3af987af68d38d34e4283ceb0714e98cdf4b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningFinePairMass.lean",
+      "sha256": "1fd248c43c456021cfc61da8337ef1f28d4208dc19063191ab17539f4f42546e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningFiniteL2.lean",
+      "sha256": "a3b69f6452fd18ed47b94492971739119fc772691a7d1d48c89f6f4f035d3be0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningFiniteSelection.lean",
+      "sha256": "8284e1bc634e7edb8778698f8cb819d2ead2332dd69a6a78590fbf02c9d40fb1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningIndicatorEstimate.lean",
+      "sha256": "1ff648d5399a8e92462bb068c7e320fde6ad9a29cc48bd751f7973d1cf96d5a5"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningInteriorEnergy.lean",
+      "sha256": "66b826ef01c5d6c0628f0352bc37b6c17c17fbd369ba0b2de198c43ca0c791b0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningIntermediateEnergyCap.lean",
+      "sha256": "5fd89a94060f53eb6d81961599575c209f0ebbd6f6f6a5156bd1b4ccd110bfe3"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningIntermediateL2.lean",
+      "sha256": "d55264512cf59982040b9d0f9c87680b03ef81dde81587ad4fdb5c39124ebe00"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningJointLayerConsumer.lean",
+      "sha256": "ea01a3756d709a95837470274553a1b75a8020384828d1265999ad1b396d9489"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningKernelComparison.lean",
+      "sha256": "175cf7929e52d0a1d4bdc8faa7af0d58150ab05bec6d5acdf4d2842773f0f6a0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLargeImageLayer.lean",
+      "sha256": "a224e1f42b0b5570bd6833829e5874cf99e3a29e574cf8756c8975be0b4a0e06"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLayerConvolution.lean",
+      "sha256": "a0aa2eff2dfb83dc52993760b223d51395b09f76a6f8c100516df55ce8b9d11a"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLayerEnvelope.lean",
+      "sha256": "370bdd89124be5b135c85a9b742461077d94c92bec745c1c881eff75c8f17811"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLayerLoss.lean",
+      "sha256": "59e96d94837b564d828a67afb6a311229422422dcef6475c0ef7dda764c09156"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLayerProduct.lean",
+      "sha256": "6c241850109b837956f119df28259895007f0ff07a65f6a4651b16923222b778"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLayerSelection.lean",
+      "sha256": "df129dd940ebfdd17e4676800f8d6df46350eeaea75e33adc8179d32f2901d83"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLocalL2Bound.lean",
+      "sha256": "c1eb5b1a00540b6b500961ca8b264508174058629249cc178c1dc7342c7ae10b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLocalPower.lean",
+      "sha256": "e26e92471c7813b80398e3537e446e9d77d83c966edbefb13811304c3e2f7ade"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningLowerExponent.lean",
+      "sha256": "9b7945dadf74b8888cdec54a5cce7d4fb8b63ecaf0fe7328c419dd5ccf4054bd"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningMassThreshold.lean",
+      "sha256": "b09bc77a40d1c72ed70f8eb82060b6ced889d4f708dbaceec15b81e07bb54a2c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningNeighborhoodMass.lean",
+      "sha256": "74d2bad51ab4f3d0bad29d16f15a2715f1773c0eab2063f52d4d25ca8950eb88"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningOriginalEnergyLayer.lean",
+      "sha256": "aa75bfe5aa20bb7e312aeae681570ecb163fdf10e065f0758e47fd5dae92a596"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningPaidLayerConsumer.lean",
+      "sha256": "779a33a8036ee6de47eb0905cfd484ef2a571356ecbc6a2bcbdeb2c896c1902b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningPairEnergyBound.lean",
+      "sha256": "3d07e355353d760e567d7242c4c3e0eb06b9a3199d354d76cf605ff5c660ba23"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningPairMass.lean",
+      "sha256": "baafd5947837bef21b30f678f29961ca6b89253045294af75541cf9fa6259759"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningPowerDoubling.lean",
+      "sha256": "c562525c9002de0d91dece90bc24c4450231c44daa8629f7c25e016357ca7328"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningSeparatedEnergy.lean",
+      "sha256": "c3f680bded1934d5cc0258e4e2bac566c851631c93e3c629e63bae52b18561d8"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningSlowLayerMass.lean",
+      "sha256": "172f639ee60197464ced1c16793cf451d9a8cf0a75092ed8b44d82146e3afaa3"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningThreeRanges.lean",
+      "sha256": "42ab79ea8d85d6d70f32e3c61bdb07ae0648b8bd1b2a821e4ebac44b0167776e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FlatteningUniformInterior.lean",
+      "sha256": "47b52277efcb6a7ea9f55e4b038ac6fb6aa9b2d9e3eee1bfe1205b4a0d700723"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierAllFactors.lean",
+      "sha256": "21ecece86dfeacf5b2ea893b83eea0be73b9e7180f0d1bbbf1da198c4a92ad4f"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierFineScaleEnergy.lean",
+      "sha256": "892b5f4c2b76280161d31b8d3187070d5f95557d4302a192a55de0afcba0764d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierFlattenedMerge.lean",
+      "sha256": "10bbe625897f9615f09eb23592d036ec20e2acc524d2ffbf8427426f6279d2a6"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierFlatteningTransfer.lean",
+      "sha256": "90f9ab2887a6570e43885a16ccf57ece0c759e354ab7f1c6ad6f6ce8ecef65fe"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierInductionParameters.lean",
+      "sha256": "81230946ad7d2757f73723c443d259fe51e30fa4dfa6a0e57043e9f85ba0e2cf"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierPowerSupport.lean",
+      "sha256": "c151527ecf7c88ae2fa50406d1cdec4d8358f536ae8cefe749970af7ce02390e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierProductSplit.lean",
+      "sha256": "a51b025bf857049868dd5b894c4f93454dfca36aa4506bfd4598bbbe65471f07"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierScaledCaps.lean",
+      "sha256": "0ab937c036497cd955b364953a5223d59a240bf956fb860c6428db5ca378fffb"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/FourierScaling.lean",
+      "sha256": "38eadfdee86ed2e4ea02c592c025904d3dcf0975fc40b59f365c8dc481bdc202"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralControlledAngularGain.lean",
+      "sha256": "d41341f82b26a01f63ee3435018c0b6b760b5a0a4f1bd18d6576d4c3b213b329"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralGaussianPlanarExclusion.lean",
+      "sha256": "a963acc79c1b75d34014f69c80d7b20d13cb61381cd4c21547f8d9be92d32c55"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralLabelledFurstenberg.lean",
+      "sha256": "03efbdcd20387ee1587523c50f52b9e70ecdb267e5dffe7b159dd6885f129bdb"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointAngularGain.lean",
+      "sha256": "5e1fece710805db2d1b1624bb28c6fc2c011bdb07f77a77fd03eba90af143519"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointBadDirections.lean",
+      "sha256": "7b2a2315d9e4b55672fb135a075b3e8339becbb9a633c87c3b224359e68283d7"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointChartGain.lean",
+      "sha256": "a09531e38d3371d4d1e1b73590c657737958d39a4be0c6463a7c6226038649b9"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointContactGain.lean",
+      "sha256": "44ad9ee2f96f71833e7fa32f4e436b15314b147e6a5b085a05a4c52158b43a10"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointMiddleRadial.lean",
+      "sha256": "7014609773bb6d586f972693dd4c735b7bc2441bc033fad724afdf8f71fdb12f"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointOriginalMiddle.lean",
+      "sha256": "d6ad2113abe1be7f63a7240609aa8726d961445534240f67dd79ebdc787df0e5"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointRadialBadDirections.lean",
+      "sha256": "96b9c03815df87acd3d9dd7af6b3f59d5f59e7d9e8b6c5c4da4115c0d51d34be"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointSourceMiddle.lean",
+      "sha256": "38bffd21d35098e985a83cc43ff3b98b473a6ddc74dd3e277ce421d11b8af5a7"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralNonendpointTubeGain.lean",
+      "sha256": "b448058d101daf3150cff5c3539a4569699ebc2bb2fab77fdd5a077604c51e33"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarAETubeGain.lean",
+      "sha256": "e1b768d4beb0b4765b9f6c1ba0bdcf871275aa287b67ec4d98c459fc09b57cf3"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarIncidence.lean",
+      "sha256": "c6d4f01009aee0f7686db444fe37d2bbaefd38a44851b3c41b2e78845ca7581c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarMeasureGain.lean",
+      "sha256": "7ba98d841eb6cb671575e070fca6100ae31c0e72fdde4ee466ad4b60ec3d7cc4"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarMeasureIncidence.lean",
+      "sha256": "a6d6d94888f845114b78e1a227e7c10924a1fe3b3721c6953ca1df81a8d2f4a7"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarSelectedGain.lean",
+      "sha256": "eb7b2a410ca3f92942a07abfcc635f254cf012e38d92faab0d7570bda05c7ca2"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralPlanarUnitTubeGain.lean",
+      "sha256": "9e7d6aae651b8ebe24780a3347c65a8831834b6a3c266618e332ba39d63b0d5b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralSampledFurstenberg.lean",
+      "sha256": "2b619d8266777ef217f6192d1dc1fbb6c685a8511517eca62d864251331f6d30"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GeneralScaleNonendpointOneScale.lean",
+      "sha256": "b9254aab9c68b4c807a94020f0a92fcdf2e31e96397e97bbdf7aeb94feb82dab"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/GoodParameterLargeFiber.lean",
+      "sha256": "83e53274dded2784b534540dd7eef746a67dca84160e407227edcceb248c004f"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/KaufmanPowerBudget.lean",
+      "sha256": "b7d08fe8c8a73b6babb1045ed4ecf1820e5f3f5753e8ecd3e253cdc6d02e023b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/KaufmanRobustOuterConsumer.lean",
+      "sha256": "d68de49927ffab95ae0aeef7c556c7e177a6495d539931e52208c4fd86026fcf"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/NonunitProjectionCollision.lean",
+      "sha256": "71504231d9d43b242b4362263caeeb1b878f2316637311d7dc1a4a304809b945"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/OSSEnergyLargeImage.lean",
+      "sha256": "e38858897093669e917d81eb01bb5be493d34c2f4b4c88f671f71bd8e4eb2ee1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/OSSFrostmanProjection.lean",
+      "sha256": "f2e44fe5ced05e7b3b4034e100c6e84a0346b3d8aba2cd264c3cf4792b306de3"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/OuterMassCollisionCover.lean",
+      "sha256": "5378655b968207fe17666d2b7f1a14114d5ab484c9bb626033063c75d32f3f29"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ParameterProductsAudit.lean",
+      "sha256": "22e35ebf0657c917716fc99d82d9f6cc931f304651c69887f560cd50a3cb4b71"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ProductParameterBootstrap.lean",
+      "sha256": "c53ea504a0ffb84304ea74f9eef3432852da0dbaa21e5e0bd7466cbf6069c9f2"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ProductParameterNormalization.lean",
+      "sha256": "efcaaf47c2581b4674f7ec47253d228d050927ec51ccf02b9cb67c318d030cd2"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ProductParameterSeed.lean",
+      "sha256": "d290932ca668f47857f9b6f59674eeb890bf7e2b9df02a39d6bee19abea20b90"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/RetainedDirectionLaw.lean",
+      "sha256": "88e9f8c612d83472c52b7eda6e8356fb6bafcf07bdf0c0e2db5c6da94a0158dc"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/RieszCoefficientBudget.lean",
+      "sha256": "f04e076bd70fccbdc1a9684cdb6c43ac99ec29c19bc4128c0f22c6d542cba897"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/RobustOuterCoverAudit.lean",
+      "sha256": "189a372613d73f20c10ab060c6cb4211a36831cb47d6584bd4acdef2b420df03"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/RobustOuterProjectionCover.lean",
+      "sha256": "f80d1dfc044fd0db9e94359c89353cd2e15a68d634eaa87550783a86eb436b76"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ScaledKaufmanBudget.lean",
+      "sha256": "9b52c03a9e6d2e9dcdff153a595d50024305080597edcbd5b11fd62afd39216b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ScaleFrostmanProfiles.lean",
+      "sha256": "7730a5d870dbf1e1b776dd72efa49c3bae6be3263a2855631d441e1dd55b68a2"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ScaleNonendpointOneScale.lean",
+      "sha256": "6489c2c156bcb5a5205ffed1a528e987b047c38da180b62d9a3b1a53309e43dd"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ScaleSeparationBudgets.lean",
+      "sha256": "3661192d3cfbc43af183e2476b2a370ab53415e02a28a15534a743ef895d05e9"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ScaleSourceClassContact.lean",
+      "sha256": "7ec1eb15f78bdf274e998eb545c6ffbaed6208942277c85d08a2933757cd77f0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/SeparatedCellNormalization.lean",
+      "sha256": "bcd5ac34818092caf90d2252fc6f9a093106699169ca1dee1db5f703c2f5bd7c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/ShortPairDirectionConsumer.lean",
+      "sha256": "8d5ed058987a572097f02c5e5ddd1fcd91586a179e310131d42f09d78ba2c0d0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformBilinearDifferenceLargeImage.lean",
+      "sha256": "fe8e4f5c208b932cbf541561684ea06235aec510eaea832320f96b8b2ef89655"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformCenteredPlanarIncidence.lean",
+      "sha256": "af84887136eceb10275d30c26221adbde68e8cf6ffc3d366d635d488d74b7938"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGeneralOneScale.lean",
+      "sha256": "eadcb514c0e3f2ef41fe2dff8b09d91651cad7b0ab88c7ba0c295469c910b33c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGeneralPlanarIncidence.lean",
+      "sha256": "083c5107bf263d1240dfef64d727d5117cf56dc9582552967fefb5ade076f46d"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGeneralRadialGain.lean",
+      "sha256": "ea139382ffb26a7b0c47603b83772d61ad4b946ab9c5d5bb48d923d0368941d4"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGeneralScaleWindow.lean",
+      "sha256": "23bda6f3893b91b65fa007bc2abc960d6efca3cb9d02c5e417d19d72de02332e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGeneralTwoSidedScale.lean",
+      "sha256": "e7a9042b6365936abb7703f4ec970f847b00e320db57a6221f608eb46c29df27"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformGridBootstrap.lean",
+      "sha256": "c55b1426773a4a72902fce3558cb0b6a0da04442dcb9ff7a1da2445550e13a5a"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformKaufmanRobustCover.lean",
+      "sha256": "f7c9e4efc2c5464e4ba8c581865e848fa6260bedaee77d0db31fa59e219353e1"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformLeafIncidenceGain.lean",
+      "sha256": "0acdf25a7e91096fd88b5bc53e54dd4eabbe326c83224c096a6ad3b26be72907"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformOneScaleAudit.lean",
+      "sha256": "4e1e18d21162e33b33fcf84f38ff43ca5b1a6277e8adb07c19697acf5c508093"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformOriginalBlockIncidence.lean",
+      "sha256": "793c7cc6e9c52d086b02f6123ff4374329b61d6e3cdcd18ec3a151d2fe9da3ed"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformProductNonunitProjection.lean",
+      "sha256": "cee4449fd5a54fbb179f77d7a61f62e66fa6c3f9142d575b750b603d3666f00b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformProductNormalizedProjection.lean",
+      "sha256": "cb91cdead7768361cd462393ea6b0bd35b0799c03e19a38f668b509f52c9f447"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformProductProjectionAudit.lean",
+      "sha256": "45a2589fa05113f39569934e539fb8e330b28a5fe39e02a3cf661461ba2d3563"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformProfileGain.lean",
+      "sha256": "33d988ceac63be08452a5e216889c5083607a37f3751131f0402e739dcf7ce0c"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformRadialAudit.lean",
+      "sha256": "6115bae30443cb2e89698d702cb972ec84af479ba5048165abec8536c271e60e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformRadialBootstrapEndpoint.lean",
+      "sha256": "e012f9f1674e645053f6128b89cca82a4d6fe5c53ea73621726b17eef4c37d70"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformRetainedNonunitProjection.lean",
+      "sha256": "ea1eb9dccec6579ee7bcc18653932f1ee1daf441bb738a656dcc2093295f8b9a"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformRetainedProjectionConsumer.lean",
+      "sha256": "9295e99f94ed2a5c4e8761d4773bcc5801bf82892559bd0241c1146e11894c25"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformScaledKaufmanBadSet.lean",
+      "sha256": "9b72cd0e1abe74b2ff95bba65ed86bdf2ac31772e282b4aa64e023ef731ce9b0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformUnseparatedRadialBootstrap.lean",
+      "sha256": "51501188db3f85e2f6140b798626cb1a1f2c0839f97b546687784923d4ed9cd0"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UniformWindowAudit.lean",
+      "sha256": "e905b3ae6b6134db73b72e90e34664b879712b74f4899728cd5303a4ee90447e"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UnitCircleSublevel.lean",
+      "sha256": "fb85a3fbf66e3669881cc6bca12d160107f9b89c8b7241189a3a19925cb38e6a"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/UnseparatedBootstrapAudit.lean",
+      "sha256": "12a8a58573003de39582916c959b4a8046ec8d8da490e4c7c82549d93b5a1c8b"
+    },
+    {
+      "path": "Supplementary/ProjectionCompat/src/OAI/MeasureTheory/Falconer/WeightedCellRecombination.lean",
+      "sha256": "85e4af302a3cf82e4a96bf39a507995e8e58e9ca5714bbc0ba022d1724d2debd"
+    }
+  ]
+}

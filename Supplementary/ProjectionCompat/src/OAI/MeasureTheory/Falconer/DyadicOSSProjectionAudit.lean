@@ -1,0 +1,17 @@
+import OAI.MeasureTheory.Falconer.DyadicOSSFrostmanProjection
+
+#print axioms OAI.Falconer.kaufman_real_scaled_budget
+#print axioms OAI.Falconer.uniform_scaled_kaufman_collision_bad_set
+#print axioms OAI.Falconer.normalized_first_cross_sublevel
+#print axioms OAI.Falconer.nonunit_direction_collision_le
+#print axioms OAI.Falconer.uniform_retained_nonunit_projection
+#print axioms OAI.Falconer.Regularization.uniform_product_parameter_nonunit_projection
+#print axioms OAI.Falconer.crossed_real_groups_measurable
+#print axioms OAI.Falconer.uncross_real_groups_measurable
+#print axioms OAI.Falconer.crossed_parameter_map_measurable
+#print axioms OAI.Falconer.original_pi_four_crossed_law
+#print axioms OAI.Falconer.original_pi_four_parameter_law
+#print axioms OAI.Falconer.crossed_OSS_projection_identity
+#print axioms OAI.Falconer.real_closed_ball_bound_of_open
+#print axioms OAI.Falconer.unit_cube_product_diameter
+#print axioms OAI.Falconer.dyadic_OSS_Frostman_projection

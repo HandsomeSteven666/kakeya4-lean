@@ -1,0 +1,5 @@
+import OAI.MeasureTheory.Falconer.UniformGeneralOneScale
+
+#print axioms Kakeya4.Hard.MultiplicativeConvolution.exists_uniform_gain_cover
+#print axioms OAI.Falconer.Regularization.cap_budget_transfer_nearby
+#print axioms OAI.Falconer.Regularization.uniform_general_one_scale_gain

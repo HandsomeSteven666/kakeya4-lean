@@ -1,0 +1,8 @@
+import OAI.MeasureTheory.Falconer.EnergyEightVariableLargeImage
+
+#print axioms OAI.Falconer.pi_eight_unit_cube_mass
+#print axioms OAI.Falconer.eight_value_noise_mass_transport
+#print axioms OAI.Falconer.original_eight_value_mass_le_smoothed_add_loss
+#print axioms OAI.Falconer.exists_small_scaled_rpow_budget
+#print axioms OAI.Falconer.eight_noisy_cover_transfer
+#print axioms OAI.Falconer.energy_eight_variable_large_image

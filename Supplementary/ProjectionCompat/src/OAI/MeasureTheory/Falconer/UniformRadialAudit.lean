@@ -1,0 +1,3 @@
+import OAI.MeasureTheory.Falconer.UniformGeneralRadialGain
+
+#print axioms OAI.Falconer.Regularization.uniform_general_radial_gain

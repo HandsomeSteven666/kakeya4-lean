@@ -1,0 +1,57 @@
+import OAI.MeasureTheory.Falconer.UniformProfileGain
+import OAI.MeasureTheory.Falconer.UniformLeafIncidenceGain
+import OAI.MeasureTheory.Falconer.UniformCenteredPlanarIncidence
+import OAI.MeasureTheory.Falconer.UniformOriginalBlockIncidence
+import OAI.MeasureTheory.Falconer.GeneralPlanarIncidence
+import OAI.MeasureTheory.Falconer.UniformGeneralPlanarIncidence
+import OAI.MeasureTheory.Falconer.ScaleFrostmanProfiles
+import OAI.MeasureTheory.Falconer.ScaleSourceClassContact
+import OAI.MeasureTheory.Falconer.ScaleNonendpointOneScale
+import OAI.MeasureTheory.Falconer.GeneralLabelledFurstenberg
+import OAI.MeasureTheory.Falconer.GeneralSampledFurstenberg
+import OAI.MeasureTheory.Falconer.GeneralPlanarMeasureIncidence
+import OAI.MeasureTheory.Falconer.GeneralPlanarMeasureGain
+import OAI.MeasureTheory.Falconer.GeneralPlanarUnitTubeGain
+import OAI.MeasureTheory.Falconer.GeneralPlanarAETubeGain
+import OAI.MeasureTheory.Falconer.GeneralPlanarSelectedGain
+import OAI.MeasureTheory.Falconer.GeneralGaussianPlanarExclusion
+import OAI.MeasureTheory.Falconer.GeneralControlledAngularGain
+import OAI.MeasureTheory.Falconer.GeneralNonendpointChartGain
+import OAI.MeasureTheory.Falconer.GeneralNonendpointAngularGain
+import OAI.MeasureTheory.Falconer.GeneralNonendpointTubeGain
+import OAI.MeasureTheory.Falconer.GeneralNonendpointBadDirections
+import OAI.MeasureTheory.Falconer.GeneralNonendpointRadialBadDirections
+import OAI.MeasureTheory.Falconer.GeneralNonendpointMiddleRadial
+import OAI.MeasureTheory.Falconer.GeneralNonendpointOriginalMiddle
+import OAI.MeasureTheory.Falconer.GeneralNonendpointSourceMiddle
+import OAI.MeasureTheory.Falconer.GeneralNonendpointContactGain
+import OAI.MeasureTheory.Falconer.GeneralScaleNonendpointOneScale
+
+#print axioms OAI.Falconer.uniform_profile_endpoint_gain_all_parameters
+#print axioms OAI.Falconer.uniform_leaf_incidence_gain_all_parameters
+#print axioms OAI.Falconer.uniform_centered_planar_incidence_all_parameters
+#print axioms OAI.Falconer.original_block_incidence_all_parameters
+#print axioms OAI.Falconer.general_planar_furstenberg
+#print axioms OAI.Falconer.general_planar_furstenberg_uniform
+#print axioms OAI.Falconer.Regularization.scale_frostman_profile_envelope
+#print axioms OAI.Falconer.Regularization.scale_source_classes_uniform_contact
+#print axioms OAI.Falconer.Regularization.scale_nonendpoint_one_scale_gain
+#print axioms OAI.Falconer.general_labelled_furstenberg_obstruction
+#print axioms OAI.Falconer.general_sampled_furstenberg_obstruction
+#print axioms OAI.Falconer.general_planar_measure_incidence_obstruction
+#print axioms OAI.Falconer.general_planar_measure_projection_gain
+#print axioms OAI.Falconer.general_planar_unit_tube_gain
+#print axioms OAI.Falconer.general_planar_ae_tube_gain
+#print axioms OAI.Falconer.general_planar_selected_slice_gain
+#print axioms OAI.Falconer.general_gaussian_planar_slice_exclusion
+#print axioms OAI.Falconer.general_controlled_dyadic_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_chart_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_dyadic_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_dyadic_tube_gain
+#print axioms OAI.Falconer.general_nonendpoint_bad_direction_envelope
+#print axioms OAI.Falconer.general_nonendpoint_radial_bad_directions
+#print axioms OAI.Falconer.general_nonendpoint_middle_radial_pruning
+#print axioms OAI.Falconer.general_nonendpoint_original_middle_pruning
+#print axioms OAI.Falconer.Regularization.general_nonendpoint_source_class_middle_pruning
+#print axioms OAI.Falconer.Regularization.general_nonendpoint_contact_gain
+#print axioms OAI.Falconer.Regularization.general_scale_nonendpoint_one_scale_gain

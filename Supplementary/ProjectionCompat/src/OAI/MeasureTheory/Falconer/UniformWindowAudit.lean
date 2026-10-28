@@ -1,0 +1,4 @@
+import OAI.MeasureTheory.Falconer.UniformGeneralScaleWindow
+
+#print axioms OAI.Falconer.Regularization.uniform_general_two_sided_one_scale
+#print axioms OAI.Falconer.Regularization.uniform_general_scale_window_gain

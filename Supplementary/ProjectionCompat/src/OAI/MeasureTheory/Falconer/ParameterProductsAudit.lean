@@ -1,0 +1,16 @@
+import OAI.MeasureTheory.Falconer.EnergyParameterBootstrap
+
+#print axioms OAI.Falconer.normalized_cap_cross_bound
+#print axioms OAI.Falconer.root_radial_cap_mass_of_slabs
+#print axioms OAI.Falconer.product_parameter_root_cap_mass
+#print axioms OAI.Falconer.parameter_products_initial_radial_cap
+#print axioms OAI.Falconer.parameter_quarter_root_preimage
+#print axioms OAI.Falconer.parameter_quarter_pair_root
+#print axioms OAI.Falconer.parameter_product_wide_root_carried
+#print axioms OAI.Falconer.quarter_parameter_root_carried
+#print axioms OAI.Falconer.parameter_product_full_frostman
+#print axioms OAI.Falconer.quarter_parameter_full_frostman
+#print axioms OAI.Falconer.probability_frostman_lower_exponent
+#print axioms OAI.Falconer.quarter_parameter_products_initial_radial_cap
+#print axioms OAI.Falconer.Regularization.uniform_parameter_product_bootstrap
+#print axioms OAI.Falconer.Regularization.energy_parameter_product_bootstrap

@@ -1,0 +1,22 @@
+import OAI.MeasureTheory.Falconer.BundledAngularExtension
+
+#print axioms OAI.Falconer.Regularization.scale_nonendpoint_one_scale_gain
+#print axioms OAI.Falconer.general_labelled_furstenberg_obstruction
+#print axioms OAI.Falconer.general_sampled_furstenberg_obstruction
+#print axioms OAI.Falconer.general_planar_measure_incidence_obstruction
+#print axioms OAI.Falconer.general_planar_measure_projection_gain
+#print axioms OAI.Falconer.general_planar_unit_tube_gain
+#print axioms OAI.Falconer.general_planar_ae_tube_gain
+#print axioms OAI.Falconer.general_planar_selected_slice_gain
+#print axioms OAI.Falconer.general_gaussian_planar_slice_exclusion
+#print axioms OAI.Falconer.general_controlled_dyadic_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_chart_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_dyadic_angular_gain
+#print axioms OAI.Falconer.general_nonendpoint_dyadic_tube_gain
+#print axioms OAI.Falconer.general_nonendpoint_bad_direction_envelope
+#print axioms OAI.Falconer.general_nonendpoint_radial_bad_directions
+#print axioms OAI.Falconer.general_nonendpoint_middle_radial_pruning
+#print axioms OAI.Falconer.general_nonendpoint_original_middle_pruning
+#print axioms OAI.Falconer.Regularization.general_nonendpoint_source_class_middle_pruning
+#print axioms OAI.Falconer.Regularization.general_nonendpoint_contact_gain
+#print axioms OAI.Falconer.Regularization.general_scale_nonendpoint_one_scale_gain

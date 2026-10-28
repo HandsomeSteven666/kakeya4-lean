@@ -1,0 +1,10 @@
+import OAI.MeasureTheory.Falconer.UniformProductNormalizedProjection
+
+#print axioms OAI.Falconer.riesz_small_ball_linear_in_coefficient
+#print axioms OAI.Falconer.exists_uniform_riesz_linear_constant
+#print axioms OAI.Falconer.uniform_riesz_dyadic_coefficient_budget
+#print axioms OAI.Falconer.kaufman_real_dyadic_budget
+#print axioms OAI.Falconer.kaufman_cover_exponent_identity
+#print axioms OAI.Falconer.uniform_kaufman_robust_cover
+#print axioms OAI.Falconer.uniform_retained_pair_robust_projection
+#print axioms OAI.Falconer.Regularization.uniform_product_parameter_normalized_projection

@@ -1,0 +1,13 @@
+import OAI.MeasureTheory.Falconer.SeparatedCellNormalization
+
+#print axioms OAI.Falconer.RadialCapBound.enlarge_loss
+#print axioms OAI.Falconer.RadialCapBound.lower_exponent
+#print axioms OAI.Falconer.Regularization.uniform_radial_finite_iteration
+#print axioms OAI.Falconer.Regularization.uniform_radial_bootstrap_endpoint
+#print axioms OAI.Falconer.Regularization.uniform_radial_bootstrap_power_cost
+#print axioms OAI.Falconer.original_two_law_close_pair_mass
+#print axioms OAI.Falconer.exists_relative_separated_pairs
+#print axioms OAI.Falconer.normalized_restriction_full_frostman
+#print axioms OAI.Falconer.normalized_restriction_zoom_frostman
+#print axioms OAI.Falconer.normalized_restriction_zoom_scale_budget
+#print axioms OAI.Falconer.separated_cell_pair_normalization

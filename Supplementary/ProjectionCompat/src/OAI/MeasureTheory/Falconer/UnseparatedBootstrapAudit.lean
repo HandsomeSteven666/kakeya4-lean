@@ -1,0 +1,13 @@
+import OAI.MeasureTheory.Falconer.UniformUnseparatedRadialBootstrap
+
+#print axioms OAI.Falconer.normalized_restriction_map_carried
+#print axioms OAI.Falconer.Regularization.uniform_far_cell_bootstrap
+#print axioms OAI.Falconer.radialCapBound_empty_relation
+#print axioms OAI.Falconer.retained_dyadic_carriers_pairwise
+#print axioms OAI.Falconer.Regularization.uniform_grid_bootstrap_raw_cost
+#print axioms OAI.Falconer.dyadic_scaled_depth_card_bound
+#print axioms OAI.Falconer.dyadic_scaled_depth_inverse_bound
+#print axioms OAI.Falconer.dyadic_small_cell_scale_cost
+#print axioms OAI.Falconer.dyadic_near_pair_scale_cost
+#print axioms OAI.Falconer.dyadic_grid_bootstrap_error_absorbed
+#print axioms OAI.Falconer.Regularization.uniform_unseparated_radial_bootstrap

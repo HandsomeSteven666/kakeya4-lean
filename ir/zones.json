@@ -4274,6 +4274,48 @@
       "target": "Kakeya4/Hard/RestrictedTriple/ActiveNormalization.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/AffineLineTransport.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.AffineLineTransport",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/AffineLineTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/AngularFrostmanInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.AngularFrostmanInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/AngularFrostmanInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/AxialDirections.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.AxialDirections",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/AxialDirections.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/AxialRescaling.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.AxialRescaling",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/AxialRescaling.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/BipartiteCleaning.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.BipartiteCleaning",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/BipartiteCleaning.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/BranchReadyInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.BranchReadyInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/BranchReadyInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CapPacking.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CapPacking",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CapPacking.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/CellGeometry.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.CellGeometry",
       "zone": "hard",
@@ -4290,6 +4332,12 @@
       "module": "Kakeya4.Hard.RestrictedTriple.CoordinateRefinement",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/CoordinateRefinement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/CoordinateRestriction.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.CoordinateRestriction",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/CoordinateRestriction.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/CoordinateTransport.lean",
@@ -4316,16 +4364,34 @@
       "target": "Kakeya4/Hard/RestrictedTriple/DensePrunedInput.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/DirectionRelation.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.DirectionRelation",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/DirectionRelation.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/DiscreteInput.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.DiscreteInput",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/DiscreteInput.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/EndpointFibers.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.EndpointFibers",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/EndpointFibers.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/EndpointNormalization.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.EndpointNormalization",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/EndpointNormalization.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/EndpointSquare.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.EndpointSquare",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/EndpointSquare.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/Exclusion.lean",
@@ -4358,6 +4424,12 @@
       "target": "Kakeya4/Hard/RestrictedTriple/FiberDensityPayment.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/FineArcInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FineArcInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FineArcInput.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/FiniteModel.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.FiniteModel",
       "zone": "hard",
@@ -4368,6 +4440,12 @@
       "module": "Kakeya4.Hard.RestrictedTriple.FrostmanInput",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/FrostmanInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/FrostmanPacking.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.FrostmanPacking",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/FrostmanPacking.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/GeometricPayment.lean",
@@ -4388,6 +4466,12 @@
       "target": "Kakeya4/Hard/RestrictedTriple/ImageTransport.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/InnerStrip.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.InnerStrip",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/InnerStrip.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/IntervalMesh.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.IntervalMesh",
       "zone": "hard",
@@ -4398,6 +4482,24 @@
       "module": "Kakeya4.Hard.RestrictedTriple.IntervalTransport",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/IntervalTransport.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/LastEndpoint.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.LastEndpoint",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/LastEndpoint.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/LastRestrictionReclean.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.LastRestrictionReclean",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/LastRestrictionReclean.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/LastTwoEndsCleanGraph.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.LastTwoEndsCleanGraph",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/LastTwoEndsCleanGraph.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/MarginalCardinality.lean",
@@ -4424,6 +4526,12 @@
       "target": "Kakeya4/Hard/RestrictedTriple/Normalization.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/NormalizedConcentration.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.NormalizedConcentration",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/NormalizedConcentration.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/NormalizedExpansionTransport.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.NormalizedExpansionTransport",
       "zone": "hard",
@@ -4436,10 +4544,58 @@
       "target": "Kakeya4/Hard/RestrictedTriple/NormalizedInput.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/OrthogonalStripAlternative.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.OrthogonalStripAlternative",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/OrthogonalStripAlternative.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/PlanarStrip.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.PlanarStrip",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/PlanarStrip.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/ProjectionGrowthBudget.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.ProjectionGrowthBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/ProjectionGrowthBudget.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/PrunedInput.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.PrunedInput",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/PrunedInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/RadialCap.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.RadialCap",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/RadialCap.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/RadialFineArc.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.RadialFineArc",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/RadialFineArc.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/RadialReadyInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.RadialReadyInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/RadialReadyInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/RescaledAngularInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.RescaledAngularInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/RescaledAngularInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/RestrictionReclean.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.RestrictionReclean",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/RestrictionReclean.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/Rounding.lean",
@@ -4460,10 +4616,52 @@
       "target": "Kakeya4/Hard/RestrictedTriple/SelectedFrostman.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/SequentialOrthogonalInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SequentialOrthogonalInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SequentialOrthogonalInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SequentialPowerBudget.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SequentialPowerBudget",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SequentialPowerBudget.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SequentialTwoEnds.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SequentialTwoEnds",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SequentialTwoEnds.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/Similarity.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.Similarity",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/Similarity.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SquareCells.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SquareCells",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SquareCells.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SquareDenseInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SquareDenseInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SquareDenseInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SquareGeometricInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SquareGeometricInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SquareGeometricInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/SquareReadyInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.SquareReadyInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/SquareReadyInput.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/StandardCells.lean",
@@ -4490,6 +4688,48 @@
       "target": "Kakeya4/Hard/RestrictedTriple/Statement.lean"
     },
     {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripProjection.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripProjectionEntropy.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripProjectionEntropy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripProjectionEntropy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripProjectionWindow.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripProjectionWindow",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripProjectionWindow.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripRadialEntropy.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripRadialEntropy",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripRadialEntropy.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripRadialGeometry.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripRadialGeometry",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripRadialGeometry.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripReadyInput.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripReadyInput",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripReadyInput.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/StripWidthMesh.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.StripWidthMesh",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/StripWidthMesh.lean"
+    },
+    {
       "path": "Kakeya4/Hard/RestrictedTriple/ThreeClassRefinement.lean",
       "module": "Kakeya4.Hard.RestrictedTriple.ThreeClassRefinement",
       "zone": "hard",
@@ -4500,6 +4740,42 @@
       "module": "Kakeya4.Hard.RestrictedTriple.TripartiteRefinement",
       "zone": "hard",
       "target": "Kakeya4/Hard/RestrictedTriple/TripartiteRefinement.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TripleFiberProjection.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TripleFiberProjection",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TripleFiberProjection.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TwoEndsCleanGraph.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TwoEndsCleanGraph",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TwoEndsCleanGraph.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TwoEndsFrostman.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TwoEndsFrostman",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TwoEndsFrostman.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TwoEndsGraph.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TwoEndsGraph",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TwoEndsGraph.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/TwoEndsStrip.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.TwoEndsStrip",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/TwoEndsStrip.lean"
+    },
+    {
+      "path": "Kakeya4/Hard/RestrictedTriple/UniformSequentialTwoEnds.lean",
+      "module": "Kakeya4.Hard.RestrictedTriple.UniformSequentialTwoEnds",
+      "zone": "hard",
+      "target": "Kakeya4/Hard/RestrictedTriple/UniformSequentialTwoEnds.lean"
     },
     {
       "path": "Kakeya4/Hard/RestrictedTriple/VariableExpansion.lean",

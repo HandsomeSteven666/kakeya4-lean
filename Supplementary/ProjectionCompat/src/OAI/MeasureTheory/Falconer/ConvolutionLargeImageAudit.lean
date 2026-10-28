@@ -1,0 +1,15 @@
+import OAI.MeasureTheory.Falconer.OSSEnergyLargeImage
+
+#print axioms OAI.Falconer.difference_law_eq_pair_map
+#print axioms OAI.Falconer.difference_mconv_eq_pair_product_map
+#print axioms OAI.Falconer.eight_difference_groups_measurable
+#print axioms OAI.Falconer.original_pi_eight_difference_grouped_law
+#print axioms OAI.Falconer.sourceEightMarginals_probability
+#print axioms OAI.Falconer.original_pi_eight_eq_difference_mconv_square
+#print axioms OAI.Falconer.energy_difference_mconv_square_large_image
+#print axioms OAI.Falconer.exists_large_convolution_fiber
+#print axioms OAI.Falconer.convolution_large_image_of_base
+#print axioms OAI.Falconer.additiveLawPower_probability
+#print axioms OAI.Falconer.additive_law_power_two_add
+#print axioms OAI.Falconer.energy_difference_mconv_all_powers_large_image
+#print axioms OAI.Falconer.OSS_energy_large_image

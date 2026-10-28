@@ -1,0 +1,9 @@
+import OAI.MeasureTheory.Falconer.KaufmanRobustOuterConsumer
+
+#print axioms OAI.Falconer.finite_disjoint_self_pairs_le
+#print axioms OAI.Falconer.finite_partition_outer_mass_collision
+#print axioms OAI.Falconer.finite_projection_cover_collision
+#print axioms OAI.Falconer.finite_projection_cover_card_lower
+#print axioms OAI.Falconer.external_projection_cover_card_lower
+#print axioms OAI.Falconer.direction_collision_robust_outer_cover
+#print axioms OAI.Falconer.finite_scale_kaufman_robust_outer_projection

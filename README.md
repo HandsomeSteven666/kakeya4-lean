@@ -1,8 +1,10 @@
 # Kakeya4 Lean
 
-四维挂谷猜想的 Lean 4 形式化工程，包含可复用的几何估计、测度论与 Fourier 分析组件；主定理形式化尚未完成。
+四维挂谷猜想 Lean 4 形式化研究的结项源码，保留几何估计、测度论与 Fourier 分析组件；主定理形式化未完成。
 
-A work in progress toward formalizing the four-dimensional Kakeya conjecture in Lean 4, with reusable components in geometric inequalities, measure theory, and Fourier analysis.
+Research sources from a discontinued Lean 4 formalization of the four-dimensional Kakeya conjecture, preserving reusable components in geometric inequalities, measure theory, and Fourier analysis.
+
+Development ended on 2026-10-28 by the maintainer's decision following subsequent external mathematical developments. This is a source preservation snapshot; the incomplete formalization is retained as it stands. No further proof development is planned.
 
 ## Mathematical scope
 
@@ -21,7 +23,12 @@ The main theorem still contains a proof placeholder. Some manuscript statements 
 - `Kakeya4/Hard`: analytic inputs and compatibility libraries.
 - `Kakeya4/Sec*.lean`: generated manuscript statement index.
 - `Experiments`: additional source modules outside the default build.
+- `Supplementary/ProjectionCompat`: original compatibility source assets outside the default build.
 - `scripts`, `ir`, `blueprint`: build checks, statement metadata, and mathematical index.
+
+## Validation at closure
+
+The final packaging preserves proof/code tokens while removing internal process comments. The restricted-triple input package has a matching existing 86-module, 576-declaration verification receipt; the Fourier package retains its existing scoped verification. These are component results. No fresh complete Lean build or shared-integration acceptance is claimed for this final distribution. The main theorem and remaining statement placeholders are unchanged.
 
 ## Build
 
